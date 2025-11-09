@@ -1,5 +1,5 @@
 import { hookSecret } from "@/lib/env.api";
-import { revalidateTag } from "next/cache";
+import { revalidatePath } from "next/cache";
 import { type NextRequest, NextResponse } from "next/server";
 import { parseBody } from "next-sanity/webhook";
 
@@ -18,7 +18,9 @@ export async function POST(req: NextRequest) {
       return new Response("Bad Request", { status: 400 });
     }
 
-    revalidateTag(body._type);
+    // Revalidate all pages for this content type
+    revalidatePath("/", "layout");
+    
     return NextResponse.json({
       status: 200,
       revalidated: true,
