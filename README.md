@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://victoreke.com"><img src="./public/logo.png" width="60px"></a>
+<a href="https://darrenwang.com"><img src="./public/logo.png" width="60px"></a>
 </div>
 
 <div align="center">
-<h1>victoreke.com</h1>
-<p>My personal portfolio website</p>
+<h1>darrenwang.com</h1>
+<p>Personal portfolio website of Darren Wang - Software Engineer & QA Engineer</p>
 </div>
 
 # Tech Stack
@@ -31,9 +31,7 @@ This project uses the latest stable versions (as of November 2025):
 
 ## Project Overview
 
-| [Site][site]          | [Studio][studio]                 |
-| --------------------- | -------------------------------- |
-| ![Site][site-preview] | ![Sanity Studio][studio-preview] |
+Portfolio website featuring personal projects, professional experience, and technical skills. Built with modern web technologies and managed through Sanity CMS.
 
 ## Prerequisites
 
@@ -50,8 +48,8 @@ Follow this guide to get this site running locally:
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/Evavic44/victoreke.com.git
-cd victoreke.com
+git clone https://github.com/whydarren-6uom/top.git
+cd top
 ```
 
 ### 2. Install Dependencies
@@ -110,7 +108,7 @@ Edit your `.env.local` file with the following:
 # Sanity Configuration
 NEXT_PUBLIC_SANITY_PROJECT_ID="your-project-id-here"
 NEXT_PUBLIC_SANITY_DATASET="production"
-NEXT_PUBLIC_SANITY_API_VERSION="2025-11-09"
+NEXT_PUBLIC_SANITY_API_VERSION="2023-07-21"
 
 # Optional: Sanity Access Token (not required for public data)
 # NEXT_PUBLIC_SANITY_ACCESS_TOKEN=""
@@ -147,7 +145,7 @@ The application will be available at:
 By default, the UI will be blank. To add content:
 
 1. Visit [http://localhost:3000/studio][localhost-studio]
-2. Create your profile, projects, blog posts, and other content
+2. Create your profile, projects, jobs, education, and other content
 3. The changes will appear on your site immediately
 
 ## Build for Production
@@ -210,7 +208,7 @@ Vercel is made by the creators of Next.js and offers:
 ├── app/                          # Next.js App Router
 │   ├── layout.tsx               # Root layout with providers
 │   ├── page.tsx                 # Homepage
-│   ├── blog/                    # Blog pages
+│   ├── about/                   # About page
 │   ├── projects/                # Projects pages
 │   ├── studio/                  # Sanity Studio mount point
 │   ├── components/              # React components
@@ -223,9 +221,10 @@ Vercel is made by the creators of Next.js and offers:
 │   ├── sanity.query.ts         # GROQ queries
 │   └── env.api.ts              # Environment variables
 ├── schemas/                     # Sanity schema definitions
-│   ├── post.ts                 # Blog post schema
 │   ├── project.ts              # Project schema
-│   └── profile.ts              # Profile schema
+│   ├── profile.ts              # Profile schema
+│   ├── job.ts                  # Job/Experience schema
+│   └── education.ts            # Education schema
 ├── sanity.config.ts            # Sanity Studio configuration
 ├── tailwind.config.js          # Tailwind CSS configuration (legacy)
 ├── postcss.config.js           # PostCSS configuration
@@ -277,14 +276,17 @@ npm install
 ### Known Warnings & Security Notes
 
 **`--localstorage-file` warning:**
+
 ```
 (node:xxxxx) Warning: `--localstorage-file` was provided without a valid path
 ```
+
 This warning comes from Sanity Studio and doesn't affect functionality. It's safe to ignore.
 
 **Security vulnerabilities in dev dependencies:**
 
 The project may show 3 moderate vulnerabilities in `prismjs`/`refractor` packages:
+
 - These are DOM Clobbering vulnerabilities (CVE in PrismJS <1.30.0)
 - Only affect scenarios with untrusted user input
 - **Safe for personal portfolios** where you control all content
@@ -292,12 +294,14 @@ The project may show 3 moderate vulnerabilities in `prismjs`/`refractor` package
 - **No action needed** unless you allow untrusted users to submit code snippets
 
 To check vulnerabilities:
+
 ```bash
 npm audit                    # All dependencies
 npm audit --production       # Production only (should show 0)
 ```
 
 **Why we use older versions:**
+
 - `react-refractor@2.2.0` and `refractor@3.6.0` for Next.js 16 compatibility
 - Version 4+ have breaking API changes requiring significant code refactoring
 - Trade-off: Stable functionality vs. minor security issue in controlled environment
@@ -315,7 +319,12 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License & Usage
 
-This portfolio is MIT-licensed so you are free to use it as an inspiration or you can just copy the whole thing (excluding my personal content of course), I don't really mind. Just make sure you link back to [victoreke.com][site] on the footer section as attribution to the original source.
+This portfolio is based on the [victoreke.com][victor-site] template by Victor Eke, which is MIT-licensed. Feel free to use this code as inspiration for your own portfolio.
+
+If you use this template, please provide attribution by linking to the original source:
+
+- **Template by**: [Victor Eke](https://victoreke.com)
+- **Customized by**: [Darren Wang](https://darrenwang.com)
 
 ---
 
@@ -332,13 +341,12 @@ Built with ❤️ using Next.js 16, React 19, Tailwind CSS v4, and Sanity v4
 [framer]: https://www.framer.com/motion
 [nexttheme]: https://github.com/pacocoursey/next-themes
 [reactrefractor]: https://github.com/rexxars/react-refractor
-[site]: https://victoreke.com
-[studio]: https://victoreke.com/studio
-[studio-preview]: https://github.com/Evavic44/victoreke.com/assets/62628408/a2574479-a352-4437-ba67-14bd976e48eb
-[site-preview]: https://github.com/Evavic44/victoreke.com/assets/62628408/e84ac72f-1ba1-4c46-bfc0-2512ffa0e5fa
-[env-example]: https://github.com/Evavic44/victoreke.com/blob/main/.env.example
+[site]: https://darrenwang.com
+[victor-site]: https://victoreke.com
+[studio]: https://darrenwang.com/studio
+[env-example]: .env.example
 [localhost]: http://localhost:3000
 [localhost-studio]: http://localhost:3000/studio
-[env-api]: https://github.com/Evavic44/victoreke.com/blob/main/lib/env.api.ts
+[env-api]: lib/env.api.ts
 [sanity-manage]: https://sanity.io/manage
 [sanity-guide]: https://www.freecodecamp.org/news/how-to-build-a-portfolio-site-with-sanity-and-nextjs
