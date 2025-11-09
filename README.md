@@ -1,9 +1,9 @@
 <div align="center">
-<a href="https://darrenwang.com"><img src="./public/logo.png" width="60px"></a>
+<a href="https://darrenwang.site"><img src="./public/logo.png" width="60px"></a>
 </div>
 
 <div align="center">
-<h1>darrenwang.com</h1>
+<h1>darrenwang.site</h1>
 <p>Personal portfolio website of Darren Wang - Software Engineer & QA Engineer</p>
 </div>
 
@@ -324,7 +324,7 @@ This portfolio is based on the [victoreke.com][victor-site] template by Victor E
 If you use this template, please provide attribution by linking to the original source:
 
 - **Template by**: [Victor Eke](https://victoreke.com)
-- **Customized by**: [Darren Wang](https://darrenwang.com)
+- **Customized by**: [Darren Wang](https://darrenwang.site)
 
 ---
 
@@ -341,9 +341,9 @@ Built with ❤️ using Next.js 16, React 19, Tailwind CSS v4, and Sanity v4
 [framer]: https://www.framer.com/motion
 [nexttheme]: https://github.com/pacocoursey/next-themes
 [reactrefractor]: https://github.com/rexxars/react-refractor
-[site]: https://darrenwang.com
+[site]: https://darrenwang.site
 [victor-site]: https://victoreke.com
-[studio]: https://darrenwang.com/studio
+[studio]: https://darrenwang.site/studio
 [env-example]: .env.example
 [localhost]: http://localhost:3000
 [localhost-studio]: http://localhost:3000/studio

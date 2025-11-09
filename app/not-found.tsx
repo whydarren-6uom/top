@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <NotFoundComponent
       title="Error 404!"
-      description="Oopsies! This page does not exist on darrenwang.com."
+      description="Oopsies! This page does not exist on darrenwang.site."
     />
   );
 }

@@ -20,7 +20,7 @@ const options = {
   title: "Darren Wang | Software Engineer & QA Engineer",
   description:
     "Darren Wang is a Software Engineer and QA Engineer based in Tokyo, Japan, specializing in full-stack development, API integration, and quality assurance automation",
-  url: "https://darrenwang.com",
+  url: "https://darrenwang.site",
   ogImage:
     "https://res.cloudinary.com/victoreke/image/upload/v1692635746/victoreke/og.png",
 };
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: options.title,
     url: options.url,
-    siteName: "darrenwang.com",
+    siteName: "darrenwang.site",
     locale: "en-US",
     type: "website",
     description: options.description,
