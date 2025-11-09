@@ -21,8 +21,6 @@ const options = {
   description:
     "Darren Wang is a Software Engineer and QA Engineer based in Tokyo, Japan, specializing in full-stack development, API integration, and quality assurance automation",
   url: "https://darrenwang.site",
-  ogImage:
-    "https://res.cloudinary.com/victoreke/image/upload/v1692635746/victoreke/og.png",
 };
 
 export const metadata: Metadata = {
@@ -36,7 +34,6 @@ export const metadata: Metadata = {
     locale: "en-US",
     type: "website",
     description: options.description,
-    images: options.ogImage,
   },
   alternates: { canonical: options.url },
   other: {
