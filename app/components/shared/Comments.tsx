@@ -10,8 +10,13 @@ export default function Comments() {
     theme.theme === "light"
       ? "light"
       : theme.theme === "dark"
-      ? "transparent_dark"
-      : "dark";
+        ? "transparent_dark"
+        : "dark";
+
+  // Don't render comments if Giscus is not configured
+  if (!giscusRepoId || !giscusCategoryId) {
+    return null;
+  }
 
   return (
     <Giscus
