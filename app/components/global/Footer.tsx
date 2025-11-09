@@ -64,19 +64,20 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col lg:items-end items-center lg:text-start text-center">
-            {/* <a
-              className="flex items-center justify-center gap-x-2 dark:bg-primary-bg bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md py-2 px-4 text-center mb-3    font-bold tracking-tight"
-              href="https://github.com/Evavic44/victoreke.com"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <BiLogoGithub />
-              Stars <em className="text-primary-color not-italic">3,329</em>
-            </a> */}
-
             <small className="text-zinc-500">
-              Copyright &copy; Victor Eke {new Date().getFullYear()} All rights
+              Copyright &copy; Darren Wang {new Date().getFullYear()} All rights
               Reserved
+            </small>
+            <small className="text-zinc-500 mt-1">
+              Template by{" "}
+              <a
+                href="https://victoreke.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-zinc-700 dark:hover:text-zinc-300"
+              >
+                Victor Eke
+              </a>
             </small>
           </div>
         </div>

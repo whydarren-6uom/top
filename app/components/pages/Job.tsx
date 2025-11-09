@@ -9,10 +9,7 @@ import EmptyState from "../shared/EmptyState";
 import { RiBriefcase3Fill } from "react-icons/ri";
 
 export default async function Job() {
-  const jobs: JobType[] = await sanityFetch({
-    query: jobQuery,
-    tags: ["job"],
-  });
+  const jobs: JobType[] = await sanityFetch({ query: jobQuery, tags: ["job"] });
 
   return (
     <section className="mt-32">
@@ -36,13 +33,17 @@ export default async function Job() {
                   href={job.url}
                   className="grid place-items-center dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 min-h-[80px] min-w-[80px] p-2 rounded-md overflow-clip relative"
                 >
-                  <Image
-                    src={job.logo}
-                    className="object-cover duration-300"
-                    alt={`${job.name} logo`}
-                    width={50}
-                    height={50}
-                  />
+                  {job.logo ? (
+                    <Image
+                      src={job.logo}
+                      className="object-cover duration-300"
+                      alt={`${job.name} logo`}
+                      width={50}
+                      height={50}
+                    />
+                  ) : (
+                    <RiBriefcase3Fill className="text-4xl" />
+                  )}
                 </RefLink>
                 <div className="flex flex-col items-start">
                   <h3 className="text-xl font-semibold">{job.name}</h3>

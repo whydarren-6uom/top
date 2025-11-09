@@ -9,11 +9,7 @@ import { urlFor } from "@/lib/sanity.image";
 import { sanityFetch } from "@/lib/sanity.client";
 import { BiLinkExternal, BiLogoGithub } from "react-icons/bi";
 
-type Props = {
-  params: {
-    project: string;
-  };
-};
+type Props = { params: { project: string } };
 
 const fallbackImage: string =
   "https://res.cloudinary.com/victoreke/image/upload/v1692636087/victoreke/projects.png";
@@ -21,34 +17,63 @@ const fallbackImage: string =
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.project;
-  const project: ProjectType = await sanityFetch({
-    query: singleProjectQuery,
-    tags: ["project"],
-    qParams: { slug },
-  });
 
-  return {
-    title: `${project.name} | Project`,
-    metadataBase: new URL(`https://victoreke.com/projects/${project.slug}`),
-    description: project.tagline,
-    openGraph: {
-      images: project.coverImage
-        ? urlFor(project.coverImage.image).width(1200).height(630).url()
-        : fallbackImage,
-      url: `https://victoreke.com/projects/${project.slug}`,
-      title: project.name,
+  try {
+    const project: ProjectType = await sanityFetch({
+      query: singleProjectQuery,
+      tags: ["project"],
+      qParams: { slug },
+    });
+
+    return {
+      title: `${project.name} | Project`,
+      metadataBase: new URL(`https://darrenwang.com/projects/${project.slug}`),
       description: project.tagline,
-    },
-  };
+      openGraph: {
+        images: project.coverImage
+          ? urlFor(project.coverImage.image).width(1200).height(630).url()
+          : fallbackImage,
+        url: `https://darrenwang.com/projects/${project.slug}`,
+        title: project.name,
+        description: project.tagline,
+      },
+    };
+  } catch (error) {
+    return { title: "Project Not Found" };
+  }
 }
 
 export default async function Project({ params }: Props) {
   const slug = params.project;
-  const project: ProjectType = await sanityFetch({
-    query: singleProjectQuery,
-    tags: ["project"],
-    qParams: { slug },
-  });
+
+  let project: ProjectType | null = null;
+
+  try {
+    project = await sanityFetch({
+      query: singleProjectQuery,
+      tags: ["project"],
+      qParams: { slug },
+    });
+  } catch (error) {
+    console.error("Error fetching project:", error);
+    return (
+      <main className="max-w-6xl mx-auto lg:px-16 px-8">
+        <h1 className="font-incognito font-black text-3xl">
+          Project Not Found
+        </h1>
+      </main>
+    );
+  }
+
+  if (!project) {
+    return (
+      <main className="max-w-6xl mx-auto lg:px-16 px-8">
+        <h1 className="font-incognito font-black text-3xl">
+          Project Not Found
+        </h1>
+      </main>
+    );
+  }
 
   return (
     <main className="max-w-6xl mx-auto lg:px-16 px-8">

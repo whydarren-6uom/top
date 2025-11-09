@@ -5,20 +5,18 @@ import type { ProfileType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { BiEnvelope, BiLinkExternal, BiSolidDownload } from "react-icons/bi";
 import { CustomPortableText } from "../components/shared/CustomPortableText";
-import Heroes from "../components/pages/Heroes";
-import Usage from "../components/pages/Usage";
 import { Slide } from "../animation/Slide";
 import { sanityFetch } from "@/lib/sanity.client";
 import RefLink from "../components/shared/RefLink";
 
 export const metadata: Metadata = {
-  title: "About | Victor Eke",
-  metadataBase: new URL("https://victoreke.com/about"),
+  title: "About | Darren Wang",
+  metadataBase: new URL("https://darrenwang.com/about"),
   description:
     "Learn more about my skills, experience and technical background",
   openGraph: {
-    title: "About | Victor Eke",
-    url: "https://victoreke.com/about",
+    title: "About | Darren Wang",
+    url: "https://darrenwang.com/about",
     description:
       "Learn more about my skills, experience and technical background",
     images:
@@ -78,7 +76,7 @@ export default async function About() {
                 <div className="flex flex-col text-center gap-y-4">
                   <div className="flex items-center gap-x-3">
                     <RefLink
-                      href="https://www.craft.me/s/WQpQF3jrPIodXp"
+                      href={profile?.resumeURL || "#"}
                       className="flex items-center justify-center text-center gap-x-2 basis-[90%] dark:bg-primary-bg bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md py-2 text-lg font-incognito font-semibold"
                     >
                       View Résumé <BiLinkExternal className="text-base" />
@@ -107,10 +105,6 @@ export default async function About() {
             </Slide>
           </aside>
         </section>
-        <Slide delay={0.14}>
-          <Usage />
-        </Slide>
-        <Heroes />
       </div>
     </main>
   );

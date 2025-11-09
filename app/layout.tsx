@@ -1,4 +1,5 @@
 import "@/app/styles/globals.css";
+import "@/app/styles/prism.css";
 import Script from "next/script";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -15,10 +16,10 @@ const inter = Inter({
 });
 
 const options = {
-  title: "Victor Eke | Software Developer",
+  title: "Darren Wang | Software Engineer & QA Engineer",
   description:
-    "Victor Eke is a Software Developer and Technical Writer who is passionate about building solutions and contributing to open source communities",
-  url: "https://victoreke.com",
+    "Darren Wang is a Software Engineer and QA Engineer based in Tokyo, Japan, specializing in full-stack development, API integration, and quality assurance automation",
+  url: "https://darrenwang.com",
   ogImage:
     "https://res.cloudinary.com/victoreke/image/upload/v1692635746/victoreke/og.png",
 };
@@ -30,15 +31,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: options.title,
     url: options.url,
-    siteName: "victoreke.com",
+    siteName: "darrenwang.com",
     locale: "en-US",
     type: "website",
     description: options.description,
     images: options.ogImage,
   },
-  alternates: {
-    canonical: options.url,
-  },
+  alternates: { canonical: options.url },
   other: {
     "google-site-verification": "IzcWMgn5Qjf-LCtA337KTGjivsf9bmod_1pZ-jxYQh8",
   },

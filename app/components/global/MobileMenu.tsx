@@ -3,38 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import {
-  HiBeaker,
-  HiBookmarkAlt,
-  HiCamera,
-  HiOutlineX,
-  HiUser,
-} from "react-icons/hi";
-import Logo from "../../../public/logo.png";
+import { HiBeaker, HiHome, HiOutlineX, HiUser } from "react-icons/hi";
 
 export default function MobileMenu() {
   const [navShow, setNavShow] = useState(false);
   const data = [
-    {
-      title: "About",
-      href: "/about",
-      icon: HiUser,
-    },
-    {
-      title: "Projects",
-      href: "/projects",
-      icon: HiBeaker,
-    },
-    {
-      title: "Blog",
-      href: "/blog",
-      icon: HiBookmarkAlt,
-    },
-    {
-      title: "Photos",
-      href: "/photos",
-      icon: HiCamera,
-    },
+    { title: "Home", href: "/", icon: HiHome },
+    { title: "About", href: "/about", icon: HiUser },
+    { title: "Projects", href: "/projects", icon: HiBeaker },
   ];
 
   const onToggleNav = () => {
@@ -62,11 +38,7 @@ export default function MobileMenu() {
           navShow ? "translate-x-0 rounded-none" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between mt-6 px-8">
-          <Link href="/" onClick={onToggleNav}>
-            <Image src={Logo} width={35} height={35} alt="logo" />
-          </Link>
-
+        <div className="flex items-center justify-end mt-6 px-8">
           <button
             aria-label="Toggle Menu"
             onClick={onToggleNav}

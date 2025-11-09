@@ -5,14 +5,16 @@ import SunIcon from "../../assets/icons/SunIcon";
 import MoonIcon from "../../assets/icons/MoonIcon";
 
 export default function Theme() {
-  const { systemTheme, theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [hasMounted, setHasMounted] = useState(false);
-  const currentTheme = theme === "system" ? systemTheme : theme;
 
   function toggleTheme() {
-    return currentTheme === "light" ? setTheme("dark") : setTheme("light");
+    setTheme(resolvedTheme === "light" ? "dark" : "light");
   }
-  useEffect(() => setHasMounted(true), []);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   if (!hasMounted)
     return (
@@ -22,12 +24,12 @@ export default function Theme() {
   return (
     <button
       onClick={toggleTheme}
-      className={`dark:bg-primary-bg bg-zinc-100 dark:text-primary-color text-zinc-500 border dark:border-zinc-800 border-zinc-200 rounded-full p-2 duration-300 transition-transform group: ${
-        currentTheme === "light" ? "-rotate-180" : "rotate-0"
+      className={`dark:bg-primary-bg bg-zinc-100 dark:text-primary-color text-zinc-500 border dark:border-zinc-800 border-zinc-200 rounded-full p-2 duration-300 transition-transform ${
+        resolvedTheme === "light" ? "-rotate-180" : "rotate-0"
       }`}
       aria-label="Toggle Theme"
     >
-      {currentTheme === "light" ? <SunIcon /> : <MoonIcon />}
+      {resolvedTheme === "light" ? <SunIcon /> : <MoonIcon />}
     </button>
   );
 }

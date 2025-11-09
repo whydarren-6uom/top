@@ -1,3 +1,31 @@
 {
-  "recommendations": ["bradlc.vscode-tailwindcss", "sanity-io.vscode-sanity"]
+  "recommendations": [
+    // Required/Core
+    "bradlc.vscode-tailwindcss",
+    "sanity-io.vscode-sanity",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+
+    // TypeScript/JavaScript
+    "dsznajder.es7-react-js-snippets",
+
+    // Next.js
+    "pmneo.tsimporter",
+
+    // Utilities
+    "usernamehw.errorlens",
+    "christian-kohler.path-intellisense",
+    "visualstudioexptteam.vscodeintellicode",
+
+    // Markdown (for documentation)
+    "yzhang.markdown-all-in-one",
+
+    // Git
+    "eamodio.gitlens",
+
+    // Optional but helpful
+    "gruntfuggly.todo-tree",
+    "wayou.vscode-todo-highlight",
+    "mikestead.dotenv"
+  ]
 }
