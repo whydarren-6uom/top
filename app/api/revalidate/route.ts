@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
 
     // Revalidate all pages for this content type
     revalidatePath("/", "layout");
-    
+
     return NextResponse.json({
       status: 200,
       revalidated: true,
