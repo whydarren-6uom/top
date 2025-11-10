@@ -10,13 +10,11 @@ const job = {
       name: "name",
       title: "Company Name",
       type: "string",
-      description: "What is the name of the company?",
     },
     {
       name: "jobTitle",
       title: "Job Title",
       type: "string",
-      description: "Enter the job title. E.g: Software Developer",
     },
     {
       name: "logo",
@@ -33,7 +31,6 @@ const job = {
       title: "Job Description",
       type: "text",
       rows: 3,
-      description: "Write a brief description about this role",
     },
     {
       name: "startDate",

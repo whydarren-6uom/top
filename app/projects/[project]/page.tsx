@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
+import { notFound, redirect } from "next/navigation";
 import { singleProjectQuery } from "@/lib/sanity.query";
 import type { ProjectType } from "@/types";
 import { PortableText } from "@portabletext/react";
@@ -11,8 +12,7 @@ import { BiLinkExternal, BiLogoGithub } from "react-icons/bi";
 
 type Props = { params: { project: string } };
 
-const fallbackImage: string =
-  "https://res.cloudinary.com/victoreke/image/upload/v1692636087/victoreke/projects.png";
+const fallbackImage: string = "/og-image.png";
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -56,23 +56,16 @@ export default async function Project({ params }: Props) {
     });
   } catch (error) {
     console.error("Error fetching project:", error);
-    return (
-      <main className="max-w-6xl mx-auto lg:px-16 px-8">
-        <h1 className="font-incognito font-black text-3xl">
-          Project Not Found
-        </h1>
-      </main>
-    );
+    notFound();
   }
 
   if (!project) {
-    return (
-      <main className="max-w-6xl mx-auto lg:px-16 px-8">
-        <h1 className="font-incognito font-black text-3xl">
-          Project Not Found
-        </h1>
-      </main>
-    );
+    notFound();
+  }
+
+  // Always redirect to repository if it exists
+  if (project && project.repository) {
+    redirect(project.repository);
   }
 
   return (

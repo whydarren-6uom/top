@@ -13,7 +13,6 @@ export default function Comments() {
         ? "transparent_dark"
         : "dark";
 
-  // Don't render comments if Giscus is not configured
   if (!giscusRepoId || !giscusCategoryId) {
     return null;
   }
@@ -21,7 +20,7 @@ export default function Comments() {
   return (
     <Giscus
       id="comments"
-      repo="evavic44/victoreke.com"
+      repo="whydarren-6uom/top"
       repoId={giscusRepoId}
       category="Announcements"
       categoryId={giscusCategoryId}

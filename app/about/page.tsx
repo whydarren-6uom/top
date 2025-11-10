@@ -19,8 +19,6 @@ export const metadata: Metadata = {
     url: "https://darrenwang.site/about",
     description:
       "Learn more about my skills, experience and technical background",
-    images:
-      "https://res.cloudinary.com/victoreke/image/upload/v1692635746/victoreke/og.png",
   },
 };
 
@@ -34,7 +32,7 @@ export default async function About() {
     <main className="relative lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-6">
       <div key={profile?._id}>
         <section className="relative grid lg:grid-cols-custom grid-cols-1 gap-x-6 justify-items-center">
-          <div className="order-2 lg:order-none">
+          <div className="order-2 lg:order-0">
             <Slide>
               <h1 className="font-incognito font-semibold tracking-tight sm:text-5xl text-3xl lg:leading-tight basis-1/2 mb-8">
                 I&apos;m {profile?.fullName ?? "John Doe"}. I live in{" "}
@@ -54,7 +52,7 @@ export default async function About() {
             </Slide>
           </div>
 
-          <aside className="flex flex-col lg:justify-self-center justify-self-start gap-y-8 lg:order-1 order-none mb-12">
+          <aside className="flex flex-col lg:justify-self-center justify-self-start gap-y-8 lg:order-1 order-0 mb-12">
             <Slide delay={0.1}>
               <div className="sticky top-10">
                 {profile?.profileImage.image ? (

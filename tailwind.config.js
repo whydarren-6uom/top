@@ -32,7 +32,7 @@ module.exports = {
       },
       backgroundImage: {
         noise:
-          "url('https://res.cloudinary.com/victoreke/image/upload/v1691779257/victoreke/noise.png')",
+          "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAElBMVEUAAAAAAAAAAAAAAAAAAAAAAADgKxmiAAAABnRSTlMCCQoNDhGWOmRZAAAAOklEQVQ4y2NgGAWjYBSMglEwEICRkRGKYQIQhgkgmAiEYQIQJhJhogCKGYYJQBgmgGAiEIYJIJhRAADh3gFlIkYyHgAAAABJRU5ErkJggg==')",
       },
       backgroundPosition: {
         zero: "0 0",

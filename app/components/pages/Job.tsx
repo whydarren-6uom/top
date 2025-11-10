@@ -41,6 +41,16 @@ export default async function Job() {
                       width={50}
                       height={50}
                     />
+                  ) : job.url ? (
+                    <div className="w-[50px] h-[50px] flex items-center justify-center">
+                      <Image
+                        src={`https://www.google.com/s2/favicons?domain=${job.url}&sz=128`}
+                        className="object-contain duration-300"
+                        alt={`${job.name} favicon`}
+                        width={40}
+                        height={40}
+                      />
+                    </div>
                   ) : (
                     <RiBriefcase3Fill className="text-4xl" />
                   )}
