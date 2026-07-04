@@ -1,5 +1,7 @@
-import { merchants } from "@/src/data/merchants";
-import { userSettings } from "@/src/data/settings";
+import {
+  localPaymentOptimizerData,
+  type PaymentOptimizerData,
+} from "@/src/data/paymentData";
 import type {
   MerchantCategory,
   MerchantRule,
@@ -16,18 +18,27 @@ const ordinaryCategories: Array<MerchantCategory | string> = [
 
 const normalize = (value: string) => value.trim().toLowerCase();
 
-export function isSmbcTrainingDate(date = "2026-07-03") {
-  return userSettings.smbcTrainingActive && date <= userSettings.smbcTrainingDeadline;
+export function isSmbcTrainingDate(
+  date = "2026-07-03",
+  data: PaymentOptimizerData = localPaymentOptimizerData,
+) {
+  return (
+    data.userSettings.smbcTrainingActive &&
+    date <= data.userSettings.smbcTrainingDeadline
+  );
 }
 
-export function findMerchantRule(query: string): MerchantRule | undefined {
+export function findMerchantRule(
+  query: string,
+  data: PaymentOptimizerData = localPaymentOptimizerData,
+): MerchantRule | undefined {
   const term = normalize(query);
 
   if (!term) {
     return undefined;
   }
 
-  return merchants.find((merchant) => {
+  return data.merchants.find((merchant) => {
     const searchable = [
       merchant.id,
       merchant.name,
@@ -49,12 +60,16 @@ export function getCashierPhrase(merchant: MerchantRule) {
   return phraseStep?.replace(/^.*Say:\s?/i, "") ?? merchant.steps[0] ?? "";
 }
 
-export function recommendPayment(input: RecommendationInput = {}): Recommendation {
+export function recommendPayment(
+  input: RecommendationInput = {},
+  data: PaymentOptimizerData = localPaymentOptimizerData,
+): Recommendation {
   const date = input.date ?? "2026-07-03";
+  const { merchants, userSettings } = data;
   const merchant =
     input.merchantId &&
     merchants.find((merchantRule) => merchantRule.id === input.merchantId);
-  const trainingActive = isSmbcTrainingDate(date);
+  const trainingActive = isSmbcTrainingDate(date, data);
 
   if (merchant) {
     const goal = input.goal;

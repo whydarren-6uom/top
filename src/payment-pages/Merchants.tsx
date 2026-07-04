@@ -1,9 +1,11 @@
 import MerchantCard from "@/src/components/MerchantCard";
+import { usePaymentData } from "@/src/components/PaymentDataProvider";
 import WarningBadge from "@/src/components/WarningBadge";
-import { merchants } from "@/src/data/merchants";
 import { getCashierPhrase } from "@/src/logic/recommend";
 
 export default function Merchants() {
+  const { merchants } = usePaymentData();
+
   return (
     <div className="space-y-6">
       <div>
@@ -11,7 +13,8 @@ export default function Merchants() {
           Store list
         </h2>
         <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-          Every rule here is local data in <code>src/data/merchants.ts</code>.
+          Every rule here is loaded from Sanity JSON or the local{" "}
+          <code>src/data/paymentOptimizer.json</code> fallback.
         </p>
       </div>
 

@@ -1,9 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { merchants } from "@/src/data/merchants";
 import { findMerchantRule } from "@/src/logic/recommend";
 import MerchantCard from "./MerchantCard";
+import { usePaymentData } from "./PaymentDataProvider";
 
 const quickSearches = [
   "FamilyMart",
@@ -21,7 +21,9 @@ const quickSearches = [
 
 export default function SearchBox() {
   const [query, setQuery] = useState("");
-  const result = useMemo(() => findMerchantRule(query), [query]);
+  const data = usePaymentData();
+  const { merchants } = data;
+  const result = useMemo(() => findMerchantRule(query, data), [data, query]);
   const shownMerchants = query ? (result ? [result] : []) : merchants.slice(0, 3);
 
   return (
@@ -58,7 +60,7 @@ export default function SearchBox() {
       {query && !result && (
         <div className="rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-500/40 dark:bg-amber-500/10 dark:text-amber-200">
           No exact local rule matched. Use the quick decision flow or add this
-          merchant to <code>src/data/merchants.ts</code>.
+          merchant to the Sanity JSON payload.
         </div>
       )}
 

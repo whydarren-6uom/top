@@ -1,5 +1,5 @@
+import { usePaymentData } from "@/src/components/PaymentDataProvider";
 import PaymentMethodCard from "@/src/components/PaymentMethodCard";
-import { paymentMethods } from "@/src/data/paymentMethods";
 
 const roles: Record<string, string> = {
   "smbc-olive-gold": "修行 / high-rate Visa touch",
@@ -16,6 +16,8 @@ const roles: Record<string, string> = {
 };
 
 export default function Wallets() {
+  const { paymentMethods } = usePaymentData();
+
   return (
     <div className="space-y-6">
       <div>

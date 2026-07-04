@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PaymentOptimizerApp from "@/src/App";
+import { loadPaymentOptimizerData } from "@/src/data/loadPaymentOptimizerData";
 
 export const metadata: Metadata = {
   title: "Japan Payment Optimizer",
@@ -11,6 +12,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PaymentsPage() {
-  return <PaymentOptimizerApp />;
+export default async function PaymentsPage() {
+  const data = await loadPaymentOptimizerData();
+
+  return <PaymentOptimizerApp data={data} />;
 }

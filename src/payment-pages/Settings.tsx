@@ -1,6 +1,8 @@
-import { userSettings } from "@/src/data/settings";
+import { usePaymentData } from "@/src/components/PaymentDataProvider";
 
 export default function Settings() {
+  const { userSettings } = usePaymentData();
+
   return (
     <div className="space-y-6">
       <div>
@@ -8,8 +10,8 @@ export default function Settings() {
           Settings
         </h2>
         <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-          Hardcoded settings for now. Edit <code>src/data/settings.ts</code> to
-          update the assumptions.
+          Settings come from Sanity JSON when available, with{" "}
+          <code>src/data/paymentOptimizer.json</code> as the local fallback.
         </p>
       </div>
 

@@ -1,10 +1,12 @@
 import type { MerchantRule } from "@/src/data/types";
 import { getCashierPhrase, recommendPayment } from "@/src/logic/recommend";
+import { usePaymentData } from "./PaymentDataProvider";
 import Tag from "./Tag";
 import WarningBadge from "./WarningBadge";
 
 export default function MerchantCard({ merchant }: { merchant: MerchantRule }) {
-  const recommendation = recommendPayment({ merchantId: merchant.id });
+  const data = usePaymentData();
+  const recommendation = recommendPayment({ merchantId: merchant.id }, data);
   const phrase = getCashierPhrase(merchant);
 
   return (

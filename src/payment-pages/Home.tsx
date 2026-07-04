@@ -1,6 +1,6 @@
 import DecisionFlow from "@/src/components/DecisionFlow";
 import SearchBox from "@/src/components/SearchBox";
-import { userSettings } from "@/src/data/settings";
+import { usePaymentData } from "@/src/components/PaymentDataProvider";
 
 const cards = [
   {
@@ -36,6 +36,8 @@ const cards = [
 ];
 
 export default function Home() {
+  const { userSettings } = usePaymentData();
+
   return (
     <div className="space-y-8">
       <section className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">

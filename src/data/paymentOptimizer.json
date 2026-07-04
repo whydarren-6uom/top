@@ -1,0 +1,744 @@
+{
+  "lastUpdated": "2026-07-03",
+  "userSettings": {
+    "smbcTrainingActive": true,
+    "smbcTrainingDeadline": "2026-08-31",
+    "smbcRemainingSpendYen": 350000,
+    "paypayMastercardLimitYen": 30000,
+    "paypayGoldBrand": "Visa",
+    "paypayGoldLimitYen": 300000,
+    "hasAuPayCard": false,
+    "hasAuPayGoldCard": false,
+    "preferJal": true,
+    "preferAna": false
+  },
+  "paymentMethods": [
+    {
+      "id": "smbc-olive-gold",
+      "name": "SMBC Olive Gold",
+      "type": "credit_card",
+      "network": "Visa",
+      "bestFor": [
+        "Ordinary spending until 2026-08-31 because of 100万円修行",
+        "7-Eleven / Lawson / McDonald's / Saizeriya / Sukiya / Gusto / Doutor style SMBC対象店 when using smartphone Visa touch in Credit Mode",
+        "General fallback when no better campaign exists"
+      ],
+      "avoidFor": [
+        "JAL特約店 if I want JAL miles / LSP",
+        "Mobile Suica / PASMO / ICOCA / JAL Pay / au PAY / ANA Pay recharge for SMBC修行, because many of those do not count toward the 100万円 requirement"
+      ],
+      "notes": [
+        "Use Credit Mode smartphone touch for SMBC対象店.",
+        "For 100万円修行, safe-ish counted examples include ordinary card spending, PayPay, d払い, 楽天ペイ, Revolut, Amazon Gift Card purchase/charge.",
+        "Excluded examples include Mobile Suica/PASMO/ICOCA, JAL Pay, ANA Pay, au PAY, Kyash, VポイントPay, WAON/nanaco/Edy."
+      ]
+    },
+    {
+      "id": "jal-club-est-suica",
+      "name": "JAL CLUB EST Suica",
+      "type": "credit_card",
+      "network": "JCB",
+      "bestFor": [
+        "JAL flights / JAL domestic tickets / JAL services",
+        "JALカード特約店 direct credit-card payment",
+        "JAL miles and JAL Life Status Points via shopping miles",
+        "Charging Mobile Suica for JRE POINT",
+        "JR East / Mobile Suica ecosystem"
+      ],
+      "avoidFor": [
+        "Places where I need JCBタッチ; this card does not have ordinary JCB touch on the physical card",
+        "Suica charge if the goal is direct JAL shopping miles or LSP",
+        "JAL特約店 via Apple Pay / QUICPay / Suica unless that store explicitly supports it"
+      ],
+      "notes": [
+        "Direct credit-card payment usually earns JAL shopping miles.",
+        "JALカード特約店 direct payment is usually better for JAL miles.",
+        "Mobile Suica charge earns JRE POINT, not direct JAL shopping miles or LSP.",
+        "JRE POINT can later be converted to JAL miles.",
+        "Physical card can be used for JAL domestic Touch & Go boarding, separate from Suica/JCB touch."
+      ]
+    },
+    {
+      "id": "mobile-suica",
+      "name": "Mobile Suica",
+      "type": "wallet",
+      "network": "Suica",
+      "bestFor": [
+        "JR / train / station shops",
+        "atre / ekinaka",
+        "small payments",
+        "stores that only accept transport IC"
+      ],
+      "avoidFor": [
+        "JAL特約店 when I want JAL特約店 miles",
+        "Spending where I need direct JAL shopping miles / LSP"
+      ],
+      "notes": [
+        "Recharge with JAL CLUB EST Suica / View card.",
+        "Good daily convenience route.",
+        "Use with JRE POINT barcode at atre."
+      ]
+    },
+    {
+      "id": "jp-bank-extage-jcb",
+      "name": "JP BANK EXTAGE JCB",
+      "type": "credit_card",
+      "network": "JCB",
+      "bestFor": [
+        "Amazon when JCB campaign is active",
+        "FamilyMart via FamiPay recharge",
+        "FamilyMart campaign / JCB campaign cases",
+        "Postal / Japan Post related spending"
+      ],
+      "avoidFor": [
+        "SMBC修行 spend",
+        "JAL特約店 where JAL card would be better"
+      ],
+      "notes": [
+        "Currently used to reload FamiPay.",
+        "Need to respect FamiPay recharge limits."
+      ]
+    },
+    {
+      "id": "famipay",
+      "name": "FamiPay",
+      "type": "wallet",
+      "network": "FamiPay",
+      "bestFor": [
+        "FamilyMart"
+      ],
+      "avoidFor": [
+        "Large spend because reload limits may be low",
+        "Non-FamilyMart unless a campaign is active"
+      ],
+      "notes": [
+        "Current route: JP BANK EXTAGE JCB -> FamiPay -> FamilyMart.",
+        "FamilyMart is no longer a JAL特約店, so do not prioritize JAL card there for 2x miles."
+      ]
+    },
+    {
+      "id": "paypay-gold-visa",
+      "name": "PayPay Gold Visa",
+      "type": "credit_card",
+      "network": "Visa",
+      "bestFor": [
+        "PayPay coupons",
+        "Yahoo!ショッピング",
+        "LOHACO",
+        "LYP Premium benefits",
+        "PayPay ecosystem",
+        "Situations where 30万円 credit line matters"
+      ],
+      "avoidFor": [
+        "Costco / Mastercard-only, because this card is Visa",
+        "JAL特約店 if JAL miles/LSP is the goal"
+      ],
+      "notes": [
+        "Has LYP Premium included.",
+        "Annual fee is meaningful; review before renewal.",
+        "If annual spend reaches required threshold, annual points can offset annual fee.",
+        "Keep for now because LYP Premium is useful and credit line is 30万円."
+      ]
+    },
+    {
+      "id": "paypay-card-mastercard",
+      "name": "PayPay Card Mastercard ordinary",
+      "type": "credit_card",
+      "network": "Mastercard",
+      "bestFor": [
+        "Small Mastercard-only transactions",
+        "Costco small amount backup"
+      ],
+      "avoidFor": [
+        "Large Costco purchases because credit line is only 3万円"
+      ],
+      "notes": [
+        "Credit line only 3万円.",
+        "Could request credit line increase later."
+      ]
+    },
+    {
+      "id": "jal-pay",
+      "name": "JAL Pay",
+      "type": "prepaid",
+      "network": "Mastercard",
+      "bestFor": [
+        "Mastercard-only backup",
+        "Costco test route",
+        "Overseas spending",
+        "Monthly JAL Pay charge route for possible JAL Life Status Point promotion",
+        "Alternative to PayPay Mastercard when limit is too low"
+      ],
+      "avoidFor": [
+        "JALカード特約店 where direct JAL card payment is better",
+        "Assuming JAL card -> JAL Pay charge earns normal JAL shopping miles"
+      ],
+      "notes": [
+        "JAL card charge to JAL Pay is not ordinary shopping-mile route.",
+        "Current special LSP route: monthly JAL card charge of 4万円 plus at least one JAL Pay Apple Pay / Google Pay payment may earn 1 LSP/month during the campaign period.",
+        "Use as first Mastercard-only prepaid option."
+      ]
+    },
+    {
+      "id": "au-pay",
+      "name": "au PAY",
+      "type": "prepaid",
+      "network": "Mastercard",
+      "bestFor": [
+        "Ponta ecosystem",
+        "Mastercard prepaid backup",
+        "au/UQ/Ponta ecosystem spending",
+        "Backup if JAL Pay does not work"
+      ],
+      "avoidFor": [
+        "JAL miles / LSP optimization",
+        "Assuming it is the best UQ mobile bill payment method by default"
+      ],
+      "notes": [
+        "au PAY Prepaid / virtual card can act as Mastercard route.",
+        "Useful with Ponta.",
+        "If I later get au PAY Card, UQ mobile bill payment may become better with au PAY Card."
+      ]
+    },
+    {
+      "id": "ana-pay",
+      "name": "ANA Pay",
+      "type": "prepaid",
+      "network": "Visa",
+      "bestFor": [
+        "Visa touch / iD backup",
+        "Experimental charge routes"
+      ],
+      "avoidFor": [
+        "Main strategy, because my main airline route is currently JAL, not ANA",
+        "Mastercard-only situations"
+      ],
+      "notes": [
+        "Keep as backup.",
+        "Not my main mileage ecosystem."
+      ]
+    },
+    {
+      "id": "toyota-wallet",
+      "name": "TOYOTA Wallet",
+      "type": "wallet",
+      "network": "iD",
+      "bestFor": [
+        "Experimental charge route only"
+      ],
+      "avoidFor": [
+        "Main strategy"
+      ],
+      "notes": [
+        "Potential experimental chain: JAL Pay -> au PAY -> ANA Pay -> TOYOTA Wallet.",
+        "This route may stop working anytime.",
+        "Test only with small amounts."
+      ]
+    },
+    {
+      "id": "jre-point",
+      "name": "JRE POINT",
+      "type": "point_card",
+      "bestFor": [
+        "atre / JR East ecosystem",
+        "Mobile Suica related spending",
+        "Later conversion to JAL miles"
+      ],
+      "avoidFor": [
+        "Assuming direct JAL LSP"
+      ],
+      "notes": [
+        "At atre, show JRE POINT barcode first, then pay.",
+        "Can be used as JAL miles buffer before converting."
+      ]
+    },
+    {
+      "id": "ponta",
+      "name": "Ponta",
+      "type": "point_card",
+      "bestFor": [
+        "au / UQ / Ponta partner stores",
+        "Life / Lawson / Ponta stores when applicable"
+      ],
+      "avoidFor": [
+        "Replacing payment-card optimization"
+      ],
+      "notes": [
+        "Often should be scanned before payment.",
+        "Payment method should still be selected separately."
+      ]
+    },
+    {
+      "id": "muji-app",
+      "name": "MUJI App / MUJI GOOD PROGRAM",
+      "type": "membership",
+      "network": "Other",
+      "bestFor": [
+        "MUJI purchases"
+      ],
+      "avoidFor": [
+        "Payment optimization by itself"
+      ],
+      "notes": [
+        "At MUJI, scan MUJI app first.",
+        "If inside atre, scan JRE POINT too."
+      ]
+    },
+    {
+      "id": "lacuca-life",
+      "name": "LaCuCa / Life app",
+      "type": "membership",
+      "network": "Other",
+      "bestFor": [
+        "Life Supermarket"
+      ],
+      "avoidFor": [
+        "Payment optimization by itself"
+      ],
+      "notes": [
+        "At Life, scan LaCuCa / Life app first, then pay with best card/wallet."
+      ]
+    }
+  ],
+  "merchants": [
+    {
+      "id": "familymart",
+      "name": "FamilyMart",
+      "category": "convenience_store",
+      "defaultRecommendation": "JP BANK EXTAGE JCB -> FamiPay -> pay with FamiPay",
+      "duringSmbcTrainingRecommendation": "Still use FamiPay if campaign / normal small spend. Use SMBC only if trying to push real spending and no FamiPay/JCB benefit matters.",
+      "afterSmbcTrainingRecommendation": "FamiPay remains default.",
+      "steps": [
+        "Reload FamiPay with JP BANK EXTAGE JCB.",
+        "At checkout say: FamiPayでお願いします"
+      ],
+      "alternatives": [
+        "SMBC Olive Gold if no FamiPay balance and I want to count spending."
+      ],
+      "warnings": [
+        "FamilyMart is no longer a JAL特約店.",
+        "Do not use JAL card expecting 2x特約店 miles.",
+        "FamiPay reload limits may apply."
+      ],
+      "tags": [
+        "FamiPay",
+        "JCB",
+        "convenience",
+        "not JAL特約店"
+      ],
+      "aliases": [
+        "famima",
+        "ファミマ",
+        "ファミリーマート"
+      ]
+    },
+    {
+      "id": "seven-eleven",
+      "name": "7-Eleven",
+      "category": "convenience_store",
+      "defaultRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold Credit Mode smartphone Visa touch",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch if it remains high-rate. If JP BANK JCB campaign is higher, use JP BANK JCB temporarily.",
+      "steps": [
+        "Scan 7-Eleven app if relevant.",
+        "Say: Visaのタッチでお願いします",
+        "Use smartphone touch with SMBC Olive in Credit Mode."
+      ],
+      "alternatives": [
+        "JP BANK EXTAGE JCB only when there is a stronger campaign."
+      ],
+      "warnings": [
+        "Physical card touch / iD / insert payment may not count for the high SMBC rate.",
+        "Confirm current campaign before overriding."
+      ],
+      "tags": [
+        "SMBC",
+        "Visa touch",
+        "convenience",
+        "high-rate"
+      ],
+      "aliases": [
+        "7eleven",
+        "seven",
+        "セブン",
+        "セブンイレブン"
+      ]
+    },
+    {
+      "id": "atre",
+      "name": "atre",
+      "category": "station_mall",
+      "defaultRecommendation": "JRE POINT barcode + Mobile Suica",
+      "duringSmbcTrainingRecommendation": "Still Mobile Suica for station convenience unless making a large purchase where SMBC修行 matters more.",
+      "afterSmbcTrainingRecommendation": "JRE POINT barcode + Mobile Suica remains default.",
+      "steps": [
+        "Show JRE POINT barcode.",
+        "Say: JRE POINTお願いします。支払いはSuicaで。",
+        "Pay with Mobile Suica."
+      ],
+      "alternatives": [
+        "If store is a clear JAL特約店, direct JAL card may be better."
+      ],
+      "warnings": [
+        "Mobile Suica charge earns JRE POINT, not direct JAL shopping miles/LSP."
+      ],
+      "tags": [
+        "Suica",
+        "JRE POINT",
+        "station",
+        "atre"
+      ],
+      "aliases": [
+        "アトレ",
+        "jr station"
+      ]
+    },
+    {
+      "id": "muji-inside-atre",
+      "name": "MUJI inside atre",
+      "category": "station_mall",
+      "defaultRecommendation": "MUJI App + JRE POINT barcode + Mobile Suica",
+      "duringSmbcTrainingRecommendation": "MUJI App + JRE POINT barcode + Mobile Suica unless a large SMBC修行 purchase matters more.",
+      "afterSmbcTrainingRecommendation": "MUJI App + JRE POINT barcode + Mobile Suica remains default.",
+      "steps": [
+        "Show MUJI app membership barcode.",
+        "Show JRE POINT barcode.",
+        "Say: 支払いはSuicaでお願いします",
+        "Pay with Mobile Suica."
+      ],
+      "alternatives": [
+        "If a specific credit card campaign beats this, override manually."
+      ],
+      "warnings": [
+        "Do not assume direct JAL card is better here unless special campaign exists."
+      ],
+      "tags": [
+        "MUJI",
+        "Suica",
+        "JRE POINT",
+        "membership"
+      ],
+      "aliases": [
+        "muji",
+        "無印",
+        "無印良品"
+      ]
+    },
+    {
+      "id": "mita-seimenjo",
+      "name": "三田製麺所",
+      "category": "restaurant",
+      "defaultRecommendation": "During SMBC修行: SMBC Olive Gold. After SMBC修行: Mobile Suica for convenience, or JAL card direct if wanting JAL/LSP.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold if credit card is accepted.",
+      "afterSmbcTrainingRecommendation": "Mobile Suica for convenience, or JAL card direct if wanting JAL/LSP.",
+      "steps": [
+        "If paying by card: クレジットでお願いします",
+        "If paying by Suica: Suicaでお願いします"
+      ],
+      "alternatives": [
+        "PayPay if coupon exists.",
+        "JAL card direct if trying to collect JAL shopping miles/LSP."
+      ],
+      "warnings": [
+        "Not a known JAL特約店.",
+        "Not a known SMBC high-rate restaurant.",
+        "Payment methods may vary by branch."
+      ],
+      "tags": [
+        "restaurant",
+        "SMBC",
+        "Suica",
+        "JAL optional"
+      ],
+      "aliases": [
+        "mita",
+        "mitaseimenjo"
+      ]
+    },
+    {
+      "id": "ganso-aburado",
+      "name": "元祖油堂",
+      "category": "restaurant",
+      "defaultRecommendation": "Mobile Suica",
+      "duringSmbcTrainingRecommendation": "Use SMBC if the branch supports credit card and I want to count spend. Otherwise Mobile Suica.",
+      "afterSmbcTrainingRecommendation": "Mobile Suica remains default. JAL card direct if credit card accepted and I want JAL/LSP.",
+      "steps": [
+        "At ticket machine / cashier, use transport IC if available.",
+        "Say: Suicaでお願いします"
+      ],
+      "alternatives": [
+        "PayPay if coupon exists.",
+        "SMBC during training if credit card accepted."
+      ],
+      "warnings": [
+        "Payment methods vary by branch.",
+        "Ticket machine may make Suica easiest."
+      ],
+      "tags": [
+        "restaurant",
+        "Suica",
+        "branch-dependent"
+      ],
+      "aliases": [
+        "油堂",
+        "aburado",
+        "ganso aburado"
+      ]
+    },
+    {
+      "id": "life-supermarket",
+      "name": "Life Supermarket",
+      "category": "supermarket",
+      "defaultRecommendation": "LaCuCa / Life app + best payment method",
+      "duringSmbcTrainingRecommendation": "LaCuCa / Life app + SMBC Olive Gold",
+      "afterSmbcTrainingRecommendation": "LaCuCa / Life app + best current campaign. Options: PayPay / d払い / au PAY / 楽天ペイ / JAL card / SMBC.",
+      "steps": [
+        "Show LaCuCa / Life app.",
+        "Say: クレジットでお願いします for SMBC/JAL.",
+        "Or say the QR payment name if using PayPay/d払い/au PAY/楽天ペイ."
+      ],
+      "alternatives": [
+        "Use PayPay/d払い/au PAY/楽天ペイ if campaign is better.",
+        "Use JAL card direct if focusing on JAL/LSP after SMBC training."
+      ],
+      "warnings": [
+        "LaCuCa is a membership/point layer. Payment method is separate.",
+        "Do not open a new Life credit card unless monthly Life spend is large."
+      ],
+      "tags": [
+        "supermarket",
+        "LaCuCa",
+        "SMBC",
+        "campaign"
+      ],
+      "aliases": [
+        "life",
+        "ライフ"
+      ]
+    },
+    {
+      "id": "maruman-supermarket",
+      "name": "Maruman Supermarket / マルマンストア",
+      "category": "supermarket",
+      "defaultRecommendation": "During SMBC修行: SMBC Olive Gold. After SMBC修行: JAL card direct for JAL/LSP, or best QR campaign.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold",
+      "afterSmbcTrainingRecommendation": "JAL card direct for JAL/LSP, or best QR campaign.",
+      "steps": [
+        "Say: クレジットでお願いします for SMBC/JAL.",
+        "Say PayPayで, d払いで, 楽天ペイで, etc. when using QR campaign."
+      ],
+      "alternatives": [
+        "Mobile Suica for small quick purchases.",
+        "PayPay/d払い/楽天ペイ if campaign is strong."
+      ],
+      "warnings": [
+        "Not a known JAL特約店.",
+        "Choose based on current campaign or current goal."
+      ],
+      "tags": [
+        "supermarket",
+        "SMBC",
+        "JAL optional",
+        "campaign"
+      ],
+      "aliases": [
+        "maruman",
+        "マルマン",
+        "マルマンストア"
+      ]
+    },
+    {
+      "id": "jal-flights",
+      "name": "JAL flights / JAL domestic tickets",
+      "category": "airline",
+      "defaultRecommendation": "JAL CLUB EST Suica direct credit-card payment",
+      "duringSmbcTrainingRecommendation": "JAL CLUB EST Suica direct credit-card payment remains preferred.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica direct credit-card payment remains preferred.",
+      "steps": [
+        "Log into JMB before booking.",
+        "Confirm JMB number is attached.",
+        "Pay with JAL CLUB EST Suica.",
+        "For domestic JAL, physical JAL card may be usable for Touch & Go boarding."
+      ],
+      "alternatives": [
+        "Use JAL Pay only when it is specifically better for overseas / prepaid / campaign context."
+      ],
+      "warnings": [
+        "JAL Touch & Go is not Suica/JCB touch. It is JAL IC/JMB identity."
+      ],
+      "tags": [
+        "JAL",
+        "airline",
+        "LSP",
+        "miles"
+      ],
+      "aliases": [
+        "jal",
+        "jal flights",
+        "jal ticket",
+        "jmb"
+      ]
+    },
+    {
+      "id": "jal-tokuyakuten",
+      "name": "JALカード特約店 general",
+      "category": "other",
+      "defaultRecommendation": "JAL CLUB EST Suica physical card direct credit-card payment",
+      "duringSmbcTrainingRecommendation": "Use JAL CLUB EST Suica direct if JAL miles/LSP matter more than SMBC修行 progress.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica physical card direct credit-card payment.",
+      "steps": [
+        "Say: クレジットでお願いします.",
+        "Use physical card / ordinary credit-card payment."
+      ],
+      "alternatives": [
+        "Do not use Apple Pay / QUICPay / Suica unless that specific merchant explicitly supports特約店 miles via that route."
+      ],
+      "warnings": [
+        "Direct card payment matters.",
+        "Apple Pay / QUICPay / QR may not receive特約店 miles."
+      ],
+      "tags": [
+        "JAL特約店",
+        "JAL",
+        "miles",
+        "direct card"
+      ],
+      "examples": [
+        "AEON",
+        "マツキヨ / ココカラ",
+        "ウエルシア",
+        "Nojima",
+        "大丸 / 松坂屋",
+        "Royal Host",
+        "JAL services"
+      ],
+      "aliases": [
+        "tokuyakuten",
+        "特約店",
+        "aeon",
+        "nojima",
+        "royal host"
+      ]
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon.co.jp",
+      "category": "online",
+      "defaultRecommendation": "JP BANK EXTAGE JCB if JCB campaign is active. SMBC Olive Gold if during SMBC修行 and needing counted spend.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold or Amazon Gift Card charge if filling the SMBC修行 gap.",
+      "afterSmbcTrainingRecommendation": "JP BANK EXTAGE JCB when JCB campaign is active.",
+      "steps": [
+        "Choose the active best card in Amazon checkout."
+      ],
+      "alternatives": [
+        "Amazon Gift Card charge with SMBC can be used to safely fill SMBC修行 gap."
+      ],
+      "warnings": [
+        "Do not lock too much money in Amazon Gift Card unless I will use it.",
+        "JCB campaign rules should be checked before large purchases."
+      ],
+      "tags": [
+        "Amazon",
+        "JCB",
+        "SMBC",
+        "campaign"
+      ],
+      "aliases": [
+        "amazon.co.jp",
+        "アマゾン"
+      ]
+    },
+    {
+      "id": "yahoo-lohaco",
+      "name": "Yahoo!ショッピング / LOHACO",
+      "category": "online",
+      "defaultRecommendation": "PayPay Gold / PayPay Credit",
+      "duringSmbcTrainingRecommendation": "PayPay Gold / PayPay Credit unless SMBC修行 progress is more important than PayPay ecosystem value.",
+      "afterSmbcTrainingRecommendation": "PayPay Gold / PayPay Credit",
+      "steps": [
+        "Use PayPay ecosystem payment."
+      ],
+      "alternatives": [
+        "Use other cards only if a specific campaign beats PayPay."
+      ],
+      "warnings": [
+        "PayPay Gold value depends on LYP, Yahoo/LOHACO usage, and annual fee math."
+      ],
+      "tags": [
+        "PayPay",
+        "Yahoo",
+        "LOHACO",
+        "LYP"
+      ],
+      "aliases": [
+        "yahoo",
+        "lohaco",
+        "ヤフー",
+        "ロハコ"
+      ]
+    },
+    {
+      "id": "costco",
+      "name": "Costco Japan",
+      "category": "other",
+      "defaultRecommendation": "JAL Pay first test. au PAY Prepaid backup. PayPay ordinary Mastercard only for small purchases due to 3万円 line.",
+      "duringSmbcTrainingRecommendation": "Mastercard-only route still applies: JAL Pay -> au PAY Prepaid -> PayPay ordinary Mastercard if small.",
+      "afterSmbcTrainingRecommendation": "JAL Pay first test. au PAY Prepaid backup. Consider Costco Global Card if spend becomes frequent/large.",
+      "steps": [
+        "Try small transaction first.",
+        "Say: Mastercardのタッチでお願いします",
+        "Use Apple Pay JAL Pay if accepted."
+      ],
+      "alternatives": [
+        "au PAY Prepaid Mastercard",
+        "Cash",
+        "Costco Global Card if Costco spend becomes frequent/large"
+      ],
+      "warnings": [
+        "PayPay Gold is Visa, so not suitable.",
+        "PayPay ordinary Mastercard has only 3万円 limit.",
+        "Prepaid/contactless acceptance should be tested before large purchase."
+      ],
+      "tags": [
+        "Mastercard-only",
+        "Costco",
+        "JAL Pay",
+        "au PAY"
+      ],
+      "aliases": [
+        "コストコ",
+        "mastercard only"
+      ]
+    },
+    {
+      "id": "uq-mobile",
+      "name": "UQ mobile bill",
+      "category": "other",
+      "defaultRecommendation": "If I have au PAY Card and plan is eligible for payment discount, use au PAY Card. If I do not have au PAY Card, use SMBC Olive Gold during SMBC修行.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold if no au PAY Card discount applies.",
+      "afterSmbcTrainingRecommendation": "Re-evaluate based on whether au PAY Card exists and whether discount applies.",
+      "steps": [
+        "Set the best eligible payment method in UQ mobile billing settings."
+      ],
+      "alternatives": [
+        "JAL card if focusing on JAL/LSP and no au PAY Card discount."
+      ],
+      "warnings": [
+        "au PAY balance payment is not automatically best.",
+        "UQ monthly payment is a stable spend source for SMBC修行."
+      ],
+      "tags": [
+        "UQ",
+        "au PAY",
+        "SMBC",
+        "recurring"
+      ],
+      "aliases": [
+        "uq",
+        "uq mobile",
+        "uqモバイル",
+        "mobile bill"
+      ]
+    }
+  ]
+}
