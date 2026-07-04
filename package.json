@@ -42,5 +42,11 @@
     "react-refractor": "^4.0.0",
     "refractor": "^5.0.0",
     "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "@sanity/preview-url-secret": {
+      "@sanity/uuid": "^3.0.3"
+    },
+    "postcss": "$postcss"
   }
 }
