@@ -5,26 +5,11 @@ import { findMerchantRule } from "@/src/logic/recommend";
 import MerchantCard from "./MerchantCard";
 import { usePaymentData } from "./PaymentDataProvider";
 
-const quickSearches = [
-  "FamilyMart",
-  "7-Eleven",
-  "atre",
-  "MUJI",
-  "三田製麺所",
-  "元祖油堂",
-  "Life",
-  "Maruman",
-  "Costco",
-  "Amazon",
-  "UQ",
-];
-
 export default function SearchBox() {
   const [query, setQuery] = useState("");
   const data = usePaymentData();
-  const { merchants } = data;
   const result = useMemo(() => findMerchantRule(query, data), [data, query]);
-  const shownMerchants = query ? (result ? [result] : []) : merchants.slice(0, 3);
+  const shownMerchants = query ? (result ? [result] : []) : [];
 
   return (
     <section className="space-y-4">
@@ -44,19 +29,6 @@ export default function SearchBox() {
         />
       </div>
 
-      <div className="flex flex-wrap gap-2">
-        {quickSearches.map((term) => (
-          <button
-            key={term}
-            type="button"
-            onClick={() => setQuery(term)}
-            className="rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm text-zinc-700 hover:border-green-400 hover:text-zinc-950 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-green-500 dark:hover:text-white"
-          >
-            {term}
-          </button>
-        ))}
-      </div>
-
       {query && !result && (
         <div className="rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-500/40 dark:bg-amber-500/10 dark:text-amber-200">
           No exact Sanity rule matched. Use the quick decision flow or add this
@@ -64,11 +36,13 @@ export default function SearchBox() {
         </div>
       )}
 
-      <div className="grid gap-4">
-        {shownMerchants.map((merchant) => (
-          <MerchantCard key={merchant.id} merchant={merchant} />
-        ))}
-      </div>
+      {shownMerchants.length > 0 && (
+        <div className="grid gap-4">
+          {shownMerchants.map((merchant) => (
+            <MerchantCard key={merchant.id} merchant={merchant} />
+          ))}
+        </div>
+      )}
     </section>
   );
 }

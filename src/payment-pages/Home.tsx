@@ -1,39 +1,5 @@
-import DecisionFlow from "@/src/components/DecisionFlow";
 import SearchBox from "@/src/components/SearchBox";
 import { usePaymentData } from "@/src/components/PaymentDataProvider";
-
-const cards = [
-  {
-    title: "What should I use right now?",
-    body: "Ordinary spend -> SMBC Olive Gold; JAL特約店 -> JAL card direct; station/JR/atre -> Mobile Suica; Mastercard-only -> JAL Pay.",
-    tone: "border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900",
-  },
-  {
-    title: "SMBC修行 mode",
-    body: "Active until 2026-08-31. Use SMBC Olive Gold for ordinary spend unless a strong merchant-specific route applies.",
-    tone: "border-green-200 bg-green-50 dark:border-green-500/30 dark:bg-green-500/10",
-  },
-  {
-    title: "JAL mode",
-    body: "For JAL miles/LSP, use JAL CLUB EST Suica direct credit-card payment, especially at JAL flights and JALカード特約店.",
-    tone: "border-red-200 bg-red-50 dark:border-red-500/30 dark:bg-red-500/10",
-  },
-  {
-    title: "Suica / station mode",
-    body: "Use Mobile Suica for JR, atre, ekinaka, transport IC only, and fast small payments.",
-    tone: "border-emerald-200 bg-emerald-50 dark:border-emerald-500/30 dark:bg-emerald-500/10",
-  },
-  {
-    title: "Mastercard-only mode",
-    body: "Try JAL Pay first, then au PAY Prepaid, then PayPay ordinary Mastercard only for small amounts.",
-    tone: "border-orange-200 bg-orange-50 dark:border-orange-500/30 dark:bg-orange-500/10",
-  },
-  {
-    title: "PayPay / Yahoo mode",
-    body: "Use PayPay Gold / PayPay Credit for Yahoo!ショッピング, LOHACO, LYP, and PayPay coupon cases.",
-    tone: "border-blue-200 bg-blue-50 dark:border-blue-500/30 dark:bg-blue-500/10",
-  },
-];
 
 export default function Home() {
   const { userSettings } = usePaymentData();
@@ -59,27 +25,9 @@ export default function Home() {
         </dl>
       </section>
 
-      <section className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-        {cards.map((card) => (
-          <article key={card.title} className={`rounded-lg border p-4 ${card.tone}`}>
-            <h3 className="text-base font-semibold text-zinc-950 dark:text-white">
-              {card.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
-              {card.body}
-            </p>
-          </article>
-        ))}
-      </section>
-
       <section className="space-y-3">
         <SectionTitle title="Search first" />
         <SearchBox />
-      </section>
-
-      <section className="space-y-3">
-        <SectionTitle title="Quick decision flow" />
-        <DecisionFlow />
       </section>
     </div>
   );
