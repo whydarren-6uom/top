@@ -11,8 +11,8 @@ export default defineConfig({
   name: "darrenwang",
   title: "darrenwang.site",
   basePath: "/studio",
-  projectId,
-  dataset,
+  projectId: projectId ?? "local-dev",
+  dataset: dataset ?? "production",
   plugins: [structureTool({ structure }), visionTool(), codeInput(), table()],
   schema: { types: schemaTypes },
 });

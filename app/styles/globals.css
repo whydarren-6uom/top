@@ -28,6 +28,11 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --inter: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
 body {
   background-image: url("../../public/noise.png");
   background-size: 200px 200px;

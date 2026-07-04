@@ -23,10 +23,16 @@ export const metadata: Metadata = {
 };
 
 export default async function About() {
-  const profile: ProfileType = await sanityFetch({
-    query: profileQuery,
-    tags: ["profile"],
-  });
+  let profile: ProfileType | null = null;
+
+  try {
+    profile = await sanityFetch({
+      query: profileQuery,
+      tags: ["profile"],
+    });
+  } catch (error) {
+    console.error("Error fetching profile:", error);
+  }
 
   return (
     <main className="relative lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-6">
@@ -55,7 +61,7 @@ export default async function About() {
           <aside className="flex flex-col lg:justify-self-center justify-self-start gap-y-8 lg:order-1 order-0 mb-12">
             <Slide delay={0.1}>
               <div className="sticky top-10">
-                {profile?.profileImage.image ? (
+                {profile?.profileImage?.image ? (
                   <Image
                     className="rounded-2xl mb-4 object-cover max-h-96 min-h-96 bg-top"
                     src={profile?.profileImage.image}

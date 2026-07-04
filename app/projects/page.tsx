@@ -20,10 +20,16 @@ export const metadata: Metadata = {
 };
 
 export default async function Project() {
-  const projects: ProjectType[] = await sanityFetch({
-    query: projectsQuery,
-    tags: ["project"],
-  });
+  let projects: ProjectType[] = [];
+
+  try {
+    projects = await sanityFetch({
+      query: projectsQuery,
+      tags: ["project"],
+    });
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+  }
 
   return (
     <main className="max-w-7xl mx-auto md:px-16 px-6">

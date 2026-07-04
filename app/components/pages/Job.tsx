@@ -9,7 +9,13 @@ import EmptyState from "../shared/EmptyState";
 import { RiBriefcase3Fill } from "react-icons/ri";
 
 export default async function Job() {
-  const jobs: JobType[] = await sanityFetch({ query: jobQuery, tags: ["job"] });
+  let jobs: JobType[] = [];
+
+  try {
+    jobs = await sanityFetch({ query: jobQuery, tags: ["job"] });
+  } catch (error) {
+    console.error("Error fetching jobs:", error);
+  }
 
   return (
     <section className="mt-32">

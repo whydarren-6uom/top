@@ -1,10 +1,23 @@
 import "server-only";
 import { createClient, type QueryParams } from "next-sanity";
-import { projectId, dataset, apiVersion } from "@/lib/env.api";
+import {
+  apiVersion,
+  dataset,
+  getMissingSanityConfigMessage,
+  hasSanityConfig,
+  projectId,
+} from "@/lib/env.api";
 import { profileQuery } from "./sanity.query";
 import { ProfileType } from "@/types";
 
-const client = createClient({ projectId, dataset, apiVersion, useCdn: false });
+const client = hasSanityConfig
+  ? createClient({
+      projectId: projectId!,
+      dataset: dataset!,
+      apiVersion,
+      useCdn: false,
+    })
+  : null;
 
 export async function sanityFetch<QueryResponse>({
   query,
@@ -15,6 +28,10 @@ export async function sanityFetch<QueryResponse>({
   qParams?: QueryParams;
   tags: string[];
 }): Promise<QueryResponse> {
+  if (!client) {
+    throw new Error(getMissingSanityConfigMessage());
+  }
+
   return client.fetch<QueryResponse>(query, qParams, {
     cache: "no-store",
     next: { tags },
@@ -22,5 +39,9 @@ export async function sanityFetch<QueryResponse>({
 }
 
 export async function getProfile(): Promise<ProfileType> {
+  if (!client) {
+    throw new Error(getMissingSanityConfigMessage());
+  }
+
   return client.fetch(profileQuery, {}, { cache: "no-store" });
 }
