@@ -1,4 +1,3 @@
-import paymentOptimizerJson from "./paymentOptimizer.json";
 import type { MerchantRule, PaymentMethod } from "./types";
 
 export type PaymentOptimizerData = {
@@ -18,6 +17,3 @@ export type PaymentOptimizerData = {
   paymentMethods: PaymentMethod[];
   merchants: MerchantRule[];
 };
-
-export const localPaymentOptimizerData =
-  paymentOptimizerJson as PaymentOptimizerData;

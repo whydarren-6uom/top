@@ -1,7 +1,4 @@
-import {
-  localPaymentOptimizerData,
-  type PaymentOptimizerData,
-} from "@/src/data/paymentData";
+import type { PaymentOptimizerData } from "@/src/data/paymentData";
 import type {
   MerchantCategory,
   MerchantRule,
@@ -20,7 +17,7 @@ const normalize = (value: string) => value.trim().toLowerCase();
 
 export function isSmbcTrainingDate(
   date = "2026-07-03",
-  data: PaymentOptimizerData = localPaymentOptimizerData,
+  data: PaymentOptimizerData,
 ) {
   return (
     data.userSettings.smbcTrainingActive &&
@@ -30,7 +27,7 @@ export function isSmbcTrainingDate(
 
 export function findMerchantRule(
   query: string,
-  data: PaymentOptimizerData = localPaymentOptimizerData,
+  data: PaymentOptimizerData,
 ): MerchantRule | undefined {
   const term = normalize(query);
 
@@ -62,7 +59,7 @@ export function getCashierPhrase(merchant: MerchantRule) {
 
 export function recommendPayment(
   input: RecommendationInput = {},
-  data: PaymentOptimizerData = localPaymentOptimizerData,
+  data: PaymentOptimizerData,
 ): Recommendation {
   const date = input.date ?? "2026-07-03";
   const { merchants, userSettings } = data;

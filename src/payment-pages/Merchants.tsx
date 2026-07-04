@@ -13,8 +13,7 @@ export default function Merchants() {
           Store list
         </h2>
         <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-          Every rule here is loaded from Sanity JSON or the local{" "}
-          <code>src/data/paymentOptimizer.json</code> fallback.
+          Every rule here is loaded from the Sanity Payment Optimizer JSON file.
         </p>
       </div>
 

@@ -2,33 +2,50 @@ import "server-only";
 
 import { groq } from "next-sanity";
 import { sanityFetch } from "@/lib/sanity.client";
-import {
-  localPaymentOptimizerData,
-  type PaymentOptimizerData,
-} from "./paymentData";
+import type { PaymentOptimizerData } from "./paymentData";
 
 type PaymentOptimizerDocument = {
   lastUpdated?: string;
-  dataJson?: string;
+  dataFile?: {
+    asset?: {
+      url?: string;
+      originalFilename?: string;
+      mimeType?: string;
+    };
+  };
 };
 
 export const paymentOptimizerQuery = groq`*[_type == "paymentOptimizer" && key == "default"][0]{
   lastUpdated,
-  dataJson
+  dataFile {
+    asset-> {
+      url,
+      originalFilename,
+      mimeType
+    }
+  }
 }`;
 
-export async function loadPaymentOptimizerData(): Promise<PaymentOptimizerData> {
+export async function loadPaymentOptimizerData(): Promise<PaymentOptimizerData | null> {
   try {
     const document = await sanityFetch<PaymentOptimizerDocument | null>({
       query: paymentOptimizerQuery,
       tags: ["paymentOptimizer"],
     });
 
-    if (!document?.dataJson) {
-      return localPaymentOptimizerData;
+    if (!document) {
+      return null;
     }
 
-    const parsed = JSON.parse(document.dataJson) as PaymentOptimizerData;
+    const json = document.dataFile?.asset?.url
+      ? await fetchJsonFile(document.dataFile.asset.url)
+      : null;
+
+    if (!json) {
+      return null;
+    }
+
+    const parsed = JSON.parse(json) as PaymentOptimizerData;
 
     return {
       ...parsed,
@@ -36,6 +53,16 @@ export async function loadPaymentOptimizerData(): Promise<PaymentOptimizerData> 
     };
   } catch (error) {
     console.error("Error loading payment optimizer data:", error);
-    return localPaymentOptimizerData;
+    return null;
   }
+}
+
+async function fetchJsonFile(url: string) {
+  const response = await fetch(url, { cache: "no-store" });
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch payment optimizer JSON file: ${url}`);
+  }
+
+  return response.text();
 }

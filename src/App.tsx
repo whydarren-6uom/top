@@ -3,10 +3,7 @@
 import { useState } from "react";
 import Notice from "@/src/components/Notice";
 import { PaymentDataProvider } from "@/src/components/PaymentDataProvider";
-import {
-  localPaymentOptimizerData,
-  type PaymentOptimizerData,
-} from "@/src/data/paymentData";
+import type { PaymentOptimizerData } from "@/src/data/paymentData";
 import Home from "@/src/payment-pages/Home";
 import Merchants from "@/src/payment-pages/Merchants";
 import Rules from "@/src/payment-pages/Rules";
@@ -24,9 +21,9 @@ const tabs: Array<{ id: Tab; label: string }> = [
 ];
 
 export default function PaymentOptimizerApp({
-  data = localPaymentOptimizerData,
+  data,
 }: {
-  data?: PaymentOptimizerData;
+  data: PaymentOptimizerData;
 }) {
   const [activeTab, setActiveTab] = useState<Tab>("home");
 
@@ -43,8 +40,9 @@ export default function PaymentOptimizerApp({
                 Which card or wallet should I use?
               </h1>
               <p className="mt-3 max-w-3xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                Static local rules for SMBC修行, JAL miles/LSP, Mobile Suica,
-                PayPay, FamiPay, Mastercard-only routes, and UQ mobile strategy.
+                Sanity-managed JSON rules for SMBC修行, JAL miles/LSP, Mobile
+                Suica, PayPay, FamiPay, Mastercard-only routes, and UQ mobile
+                strategy.
               </p>
             </div>
             <Notice />

@@ -10,8 +10,7 @@ export default function Settings() {
           Settings
         </h2>
         <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-          Settings come from Sanity JSON when available, with{" "}
-          <code>src/data/paymentOptimizer.json</code> as the local fallback.
+          Settings come from the Sanity Payment Optimizer JSON file.
         </p>
       </div>
 

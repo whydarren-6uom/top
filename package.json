@@ -48,5 +48,12 @@
       "@sanity/uuid": "^3.0.3"
     },
     "postcss": "$postcss"
+  },
+  "allowScripts": {
+    "@vercel/speed-insights@1.2.0": true,
+    "esbuild@0.27.0": true,
+    "fsevents@2.3.3": true,
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.11.1": true
   }
 }

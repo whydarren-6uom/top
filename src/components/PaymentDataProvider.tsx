@@ -1,14 +1,9 @@
 "use client";
 
 import { createContext, useContext } from "react";
-import {
-  localPaymentOptimizerData,
-  type PaymentOptimizerData,
-} from "@/src/data/paymentData";
+import type { PaymentOptimizerData } from "@/src/data/paymentData";
 
-const PaymentDataContext = createContext<PaymentOptimizerData>(
-  localPaymentOptimizerData,
-);
+const PaymentDataContext = createContext<PaymentOptimizerData | null>(null);
 
 export function PaymentDataProvider({
   data,
@@ -25,5 +20,11 @@ export function PaymentDataProvider({
 }
 
 export function usePaymentData() {
-  return useContext(PaymentDataContext);
+  const data = useContext(PaymentDataContext);
+
+  if (!data) {
+    throw new Error("Payment optimizer data provider is missing.");
+  }
+
+  return data;
 }

@@ -59,8 +59,8 @@ export default function SearchBox() {
 
       {query && !result && (
         <div className="rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-500/40 dark:bg-amber-500/10 dark:text-amber-200">
-          No exact local rule matched. Use the quick decision flow or add this
-          merchant to the Sanity JSON payload.
+          No exact Sanity rule matched. Use the quick decision flow or add this
+          merchant to the Payment Optimizer JSON file in Sanity.
         </div>
       )}
 

@@ -29,25 +29,15 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "dataJson",
-      title: "Data JSON",
-      type: "text",
-      rows: 30,
+      name: "dataFile",
+      title: "Data JSON File",
+      type: "file",
       description:
-        "Paste the full payment optimizer JSON object. Keep the same shape as src/data/paymentOptimizer.json.",
-      validation: (rule) =>
-        rule.required().custom((value) => {
-          if (!value) {
-            return true;
-          }
-
-          try {
-            JSON.parse(value);
-            return true;
-          } catch (error) {
-            return "Must be valid JSON.";
-          }
-        }),
+        "Upload the full payment optimizer JSON file. This is the source of truth for /payments.",
+      options: {
+        accept: "application/json,.json",
+      },
+      validation: (rule) => rule.required(),
     }),
   ],
   preview: {
