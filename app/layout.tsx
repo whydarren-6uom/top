@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   title: options.title,
   metadataBase: new URL(options.url),
   description: options.description,
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: options.title,
     url: options.url,
@@ -27,6 +31,20 @@ export const metadata: Metadata = {
     locale: "en-US",
     type: "website",
     description: options.description,
+    images: [
+      {
+        url: "/profile-thumbnail.jpg",
+        width: 1128,
+        height: 1129,
+        alt: "Darren Wang",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: options.title,
+    description: options.description,
+    images: ["/profile-thumbnail.jpg"],
   },
   alternates: { canonical: options.url },
   other: {
