@@ -1,0 +1,2366 @@
+{
+  "lastUpdated": "2026-07-12",
+  "userSettings": {
+    "smbcTrainingActive": true,
+    "smbcTrainingDeadline": "2026-08-31",
+    "smbcRemainingSpendYen": 350000,
+    "paypayMastercardLimitYen": 30000,
+    "paypayGoldBrand": "Visa",
+    "paypayGoldLimitYen": 300000,
+    "hasAuPayCard": false,
+    "hasAuPayGoldCard": false,
+    "preferJal": true,
+    "preferAna": false,
+    "hasMujiShareholderCoupon": true,
+    "hasUsmhShareholderVouchers": true
+  },
+  "paymentMethods": [
+    {
+      "id": "ana-pay",
+      "name": "ANA Pay",
+      "type": "prepaid",
+      "network": "Visa",
+      "bestFor": [
+        "Visa touch / iD backup",
+        "Experimental charge routes"
+      ],
+      "avoidFor": [
+        "Main strategy, because my main airline route is currently JAL, not ANA",
+        "Mastercard-only situations"
+      ],
+      "notes": [
+        "Keep as backup.",
+        "Not my main mileage ecosystem."
+      ]
+    },
+    {
+      "id": "au-pay",
+      "name": "au PAY",
+      "type": "prepaid",
+      "network": "Mastercard",
+      "bestFor": [
+        "Ponta ecosystem",
+        "Mastercard prepaid backup",
+        "au/UQ/Ponta ecosystem spending",
+        "Backup if JAL Pay does not work"
+      ],
+      "avoidFor": [
+        "JAL miles / LSP optimization",
+        "Assuming it is the best UQ mobile bill payment method by default"
+      ],
+      "notes": [
+        "au PAY Prepaid / virtual card can act as Mastercard route.",
+        "Useful with Ponta.",
+        "If I later get au PAY Card, UQ mobile bill payment may become better with au PAY Card."
+      ]
+    },
+    {
+      "id": "famipay",
+      "name": "FamiPay",
+      "type": "wallet",
+      "network": "FamiPay",
+      "bestFor": [
+        "FamilyMart"
+      ],
+      "avoidFor": [
+        "Large spend because reload limits may be low",
+        "Non-FamilyMart unless a campaign is active"
+      ],
+      "notes": [
+        "Current route: JP BANK EXTAGE JCB -> FamiPay -> FamilyMart.",
+        "FamilyMart is no longer a JAL特約店, so do not prioritize JAL card there for 2x miles."
+      ]
+    },
+    {
+      "id": "jal-club-est-suica",
+      "name": "JAL CLUB EST Suica",
+      "type": "credit_card",
+      "network": "JCB",
+      "bestFor": [
+        "JAL flights / JAL domestic tickets / JAL services",
+        "JALカード特約店 direct credit-card payment",
+        "JAL miles and JAL Life Status Points via shopping miles",
+        "Charging Mobile Suica for JRE POINT",
+        "JR East / Mobile Suica ecosystem"
+      ],
+      "avoidFor": [
+        "Places where I need JCBタッチ; this card does not have ordinary JCB touch on the physical card",
+        "Suica charge if the goal is direct JAL shopping miles or LSP",
+        "JAL特約店 via Apple Pay / QUICPay / Suica unless that store explicitly supports it"
+      ],
+      "notes": [
+        "Direct credit-card payment usually earns JAL shopping miles.",
+        "JALカード特約店 direct payment is usually better for JAL miles.",
+        "Mobile Suica charge earns JRE POINT, not direct JAL shopping miles or LSP.",
+        "JRE POINT can later be converted to JAL miles.",
+        "Physical card can be used for JAL domestic Touch & Go boarding, separate from Suica/JCB touch."
+      ]
+    },
+    {
+      "id": "jal-pay",
+      "name": "JAL Pay",
+      "type": "prepaid",
+      "network": "Mastercard",
+      "bestFor": [
+        "Mastercard-only backup",
+        "Costco test route",
+        "Overseas spending",
+        "Monthly JAL Pay charge route for possible JAL Life Status Point promotion",
+        "Alternative to PayPay Mastercard when limit is too low"
+      ],
+      "avoidFor": [
+        "JALカード特約店 where direct JAL card payment is better",
+        "Assuming JAL card -> JAL Pay charge earns normal JAL shopping miles"
+      ],
+      "notes": [
+        "JAL card charge to JAL Pay is not ordinary shopping-mile route.",
+        "Current special LSP route: monthly JAL card charge of 4万円 plus at least one JAL Pay Apple Pay / Google Pay payment may earn 1 LSP/month during the campaign period.",
+        "Use as first Mastercard-only prepaid option."
+      ]
+    },
+    {
+      "id": "jp-bank-extage-jcb",
+      "name": "JP BANK EXTAGE JCB",
+      "type": "credit_card",
+      "network": "JCB",
+      "bestFor": [
+        "Amazon when JCB campaign is active",
+        "FamilyMart via FamiPay recharge",
+        "FamilyMart campaign / JCB campaign cases",
+        "Postal / Japan Post related spending"
+      ],
+      "avoidFor": [
+        "SMBC修行 spend",
+        "JAL特約店 where JAL card would be better"
+      ],
+      "notes": [
+        "Currently used to reload FamiPay.",
+        "Need to respect FamiPay recharge limits."
+      ]
+    },
+    {
+      "id": "jre-point",
+      "name": "JRE POINT",
+      "type": "point_card",
+      "bestFor": [
+        "atre / JR East ecosystem",
+        "Mobile Suica related spending",
+        "Later conversion to JAL miles"
+      ],
+      "avoidFor": [
+        "Assuming direct JAL LSP"
+      ],
+      "notes": [
+        "At atre, show JRE POINT barcode first, then pay.",
+        "Can be used as JAL miles buffer before converting."
+      ]
+    },
+    {
+      "id": "lacuca-life",
+      "name": "LaCuCa / Life app",
+      "type": "membership",
+      "network": "Other",
+      "bestFor": [
+        "Life Supermarket"
+      ],
+      "avoidFor": [
+        "Payment optimization by itself"
+      ],
+      "notes": [
+        "At Life, scan LaCuCa / Life app first, then pay with best card/wallet."
+      ]
+    },
+    {
+      "id": "mobile-suica",
+      "name": "Mobile Suica",
+      "type": "wallet",
+      "network": "Suica",
+      "bestFor": [
+        "JR / train / station shops",
+        "atre / ekinaka",
+        "small payments",
+        "stores that only accept transport IC"
+      ],
+      "avoidFor": [
+        "JAL特約店 when I want JAL特約店 miles",
+        "Spending where I need direct JAL shopping miles / LSP"
+      ],
+      "notes": [
+        "Recharge with JAL CLUB EST Suica / View card.",
+        "Good daily convenience route.",
+        "Use with JRE POINT barcode at atre."
+      ]
+    },
+    {
+      "id": "muji-app",
+      "name": "MUJI App / MUJI GOOD PROGRAM",
+      "type": "membership",
+      "network": "Other",
+      "bestFor": [
+        "MUJI purchases"
+      ],
+      "avoidFor": [
+        "Payment optimization by itself"
+      ],
+      "notes": [
+        "At MUJI, scan the MUJI App before payment.",
+        "The registered shareholder-benefit coupon applies 7% off automatically at eligible stores/products.",
+        "If inside an eligible atre/JR facility, show JRE POINT as a separate layer where accepted.",
+        "Payment-card optimization happens after the MUJI discount."
+      ]
+    },
+    {
+      "id": "muji-shareholder-coupon",
+      "name": "MUJI shareholder benefit coupon",
+      "type": "discount",
+      "network": "MUJI App",
+      "bestFor": [
+        "Eligible MUJI stores and MUJI online store",
+        "Café&Meal MUJI / Café MUJI / MUJI Bakery / MUJI Diner",
+        "IDÉE"
+      ],
+      "avoidFor": [
+        "MUJI products sold inside Lawson",
+        "Overseas MUJI stores",
+        "MUJI HOTEL and other excluded services/products"
+      ],
+      "notes": [
+        "Provides 7% off through the MUJI App.",
+        "Can be used repeatedly during the validity period.",
+        "Scan the MUJI App before payment; at eligible checkouts the discount is applied automatically.",
+        "When another discount is running, the other discount may take priority rather than stacking."
+      ]
+    },
+    {
+      "id": "paypay-card-mastercard",
+      "name": "PayPay Card Mastercard ordinary",
+      "type": "credit_card",
+      "network": "Mastercard",
+      "bestFor": [
+        "Small Mastercard-only transactions",
+        "Costco small amount backup"
+      ],
+      "avoidFor": [
+        "Large Costco purchases because credit line is only 3万円"
+      ],
+      "notes": [
+        "Credit line only 3万円.",
+        "Could request credit line increase later."
+      ]
+    },
+    {
+      "id": "paypay-gold-visa",
+      "name": "PayPay Gold Visa",
+      "type": "credit_card",
+      "network": "Visa",
+      "bestFor": [
+        "PayPay coupons",
+        "Yahoo!ショッピング",
+        "LOHACO",
+        "LYP Premium benefits",
+        "PayPay ecosystem",
+        "Situations where 30万円 credit line matters"
+      ],
+      "avoidFor": [
+        "Costco / Mastercard-only, because this card is Visa",
+        "JAL特約店 if JAL miles/LSP is the goal"
+      ],
+      "notes": [
+        "Has LYP Premium included.",
+        "Annual fee is meaningful; review before renewal.",
+        "If annual spend reaches required threshold, annual points can offset annual fee.",
+        "Keep for now because LYP Premium is useful and credit line is 30万円.",
+        "Card brand cannot be changed in place; switching Visa to Mastercard requires cancellation and a new application/re-screening."
+      ]
+    },
+    {
+      "id": "ponta",
+      "name": "Ponta",
+      "type": "point_card",
+      "bestFor": [
+        "au / UQ / Ponta partner stores",
+        "Life / Lawson / Ponta stores when applicable"
+      ],
+      "avoidFor": [
+        "Replacing payment-card optimization"
+      ],
+      "notes": [
+        "Often should be scanned before payment.",
+        "Payment method should still be selected separately."
+      ]
+    },
+    {
+      "id": "quo-card-pay",
+      "name": "QUO Card Pay",
+      "type": "digital_gift",
+      "network": "QUO Card Pay",
+      "bestFor": [
+        "Using an existing or discounted QUO Card Pay balance",
+        "Sushiro at participating branches",
+        "Other QUO Card Pay merchants"
+      ],
+      "avoidFor": [
+        "Buying at face value solely to replace a reward-earning card",
+        "Assuming ordinary physical QUO Card and QUO Card Pay have the same acceptance"
+      ],
+      "notes": [
+        "Use only when already held or acquired below face value.",
+        "Some shopping-mall or department-store branches can be excluded."
+      ]
+    },
+    {
+      "id": "smbc-olive-gold",
+      "name": "SMBC Olive Gold",
+      "type": "credit_card",
+      "network": "Visa",
+      "bestFor": [
+        "Ordinary eligible spending until 2026-08-31 because of 100万円修行",
+        "Current SMBC target convenience stores and restaurants using Olive Credit Mode smartphone Visa touch",
+        "Eligible mobile-order transactions at McDonald's / MOS Burger / KFC / Yoshinoya / Sukiya / Starbucks",
+        "General fallback when no shareholder benefit, JAL特約店, coupon, or stronger campaign exists"
+      ],
+      "avoidFor": [
+        "JAL特約店 if I want JAL miles / LSP",
+        "Mobile Suica / PASMO / ICOCA / JAL Pay / au PAY / ANA Pay recharge for SMBC修行, because many of those do not count toward the 100万円 requirement"
+      ],
+      "notes": [
+        "At current target stores, Olive Credit Mode earns the target-store rate only through smartphone touch or an explicitly eligible mobile-order route.",
+        "Physical-card touch, iD, card insertion, and magnetic-stripe payment are excluded from the target-store bonus.",
+        "Commercial-facility branches and some specific locations can be excluded.",
+        "For 100万円修行, ordinary card purchases are the safest counted route; recharge and prepaid routes must be checked individually.",
+        "Current excluded examples include Mobile Suica/PASMO/ICOCA, JAL Pay, ANA Pay, au PAY, Kyash, VポイントPay, WAON/nanaco/Edy."
+      ]
+    },
+    {
+      "id": "toyota-wallet",
+      "name": "TOYOTA Wallet",
+      "type": "wallet",
+      "network": "iD",
+      "bestFor": [
+        "Experimental charge route only"
+      ],
+      "avoidFor": [
+        "Main strategy"
+      ],
+      "notes": [
+        "Potential experimental chain: JAL Pay -> au PAY -> ANA Pay -> TOYOTA Wallet.",
+        "This route may stop working anytime.",
+        "Test only with small amounts."
+      ]
+    },
+    {
+      "id": "usmh-shareholder-vouchers",
+      "name": "USMH shareholder vouchers",
+      "type": "discount_voucher",
+      "network": "Paper voucher",
+      "bestFor": [
+        "Maruetsu / Maruetsu Petit",
+        "Kasumi",
+        "Inageya",
+        "Eligible AEON Food Style-operated stores including eligible Daiei / Peacock Store locations"
+      ],
+      "avoidFor": [
+        "AEON stores that are not operated by an eligible USMH group company",
+        "Ineligible tenants inside participating supermarkets",
+        "Tobacco, gift certificates, stamps, postage and other excluded products"
+      ],
+      "notes": [
+        "Each voucher discounts ¥100.",
+        "One voucher may be used for each full ¥1,000 of eligible tax-included spend.",
+        "Hand vouchers to the cashier before completing payment.",
+        "After applying vouchers, pay the remaining balance with the best card/wallet.",
+        "Check the current eligible-store list because exclusions exist."
+      ]
+    }
+  ],
+  "merchants": [
+    {
+      "id": "aeon",
+      "name": "AEON / まいばすけっと / MaxValu eligible AEON group",
+      "category": "supermarket",
+      "defaultRecommendation": "JAL CLUB EST Suica direct credit-card payment if the specific AEON group store is JAL特約店 eligible.",
+      "duringSmbcTrainingRecommendation": "Use JAL direct if JAL特約店 miles/LSP matter; use SMBC only if SMBC修行 progress is more important.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica direct credit-card payment when eligible.",
+      "steps": [
+        "Show any relevant store point/member barcode if applicable.",
+        "Say: クレジットでお願いします.",
+        "Pay with JAL CLUB EST Suica direct."
+      ],
+      "alternatives": [
+        "Mobile Suica for very small purchases if accepted and speed matters.",
+        "SMBC during training if you choose 修行 progress over JAL特約店."
+      ],
+      "warnings": [
+        "AEON JAL特約店 eligibility differs by operating company/store type and some specialty tenants are excluded.",
+        "Do not assume every store inside an AEON mall is eligible."
+      ],
+      "tags": [
+        "JAL特約店",
+        "supermarket",
+        "AEON",
+        "JAL"
+      ],
+      "aliases": [
+        "イオン",
+        "aeon",
+        "まいばすけっと",
+        "my basket",
+        "maxvalu",
+        "マックスバリュ"
+      ]
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon.co.jp",
+      "category": "online",
+      "defaultRecommendation": "JP BANK EXTAGE JCB if JCB campaign is active. SMBC Olive Gold if during SMBC修行 and needing counted spend.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold or Amazon Gift Card charge if filling the SMBC修行 gap.",
+      "afterSmbcTrainingRecommendation": "JP BANK EXTAGE JCB when JCB campaign is active.",
+      "steps": [
+        "Choose the active best card in Amazon checkout."
+      ],
+      "alternatives": [
+        "Amazon Gift Card charge with SMBC can be used to safely fill SMBC修行 gap."
+      ],
+      "warnings": [
+        "Do not lock too much money in Amazon Gift Card unless I will use it.",
+        "JCB campaign rules should be checked before large purchases."
+      ],
+      "tags": [
+        "Amazon",
+        "JCB",
+        "SMBC",
+        "campaign"
+      ],
+      "aliases": [
+        "amazon.co.jp",
+        "アマゾン"
+      ]
+    },
+    {
+      "id": "atre",
+      "name": "atre",
+      "category": "station_mall",
+      "defaultRecommendation": "JRE POINT barcode + Mobile Suica",
+      "duringSmbcTrainingRecommendation": "Still Mobile Suica for station convenience unless making a large purchase where SMBC修行 matters more.",
+      "afterSmbcTrainingRecommendation": "JRE POINT barcode + Mobile Suica remains default.",
+      "steps": [
+        "Show JRE POINT barcode.",
+        "Say: JRE POINTお願いします。支払いはSuicaで。",
+        "Pay with Mobile Suica."
+      ],
+      "alternatives": [
+        "If store is a clear JAL特約店, direct JAL card may be better."
+      ],
+      "warnings": [
+        "Mobile Suica charge earns JRE POINT, not direct JAL shopping miles/LSP."
+      ],
+      "tags": [
+        "Suica",
+        "JRE POINT",
+        "station",
+        "atre"
+      ],
+      "aliases": [
+        "アトレ",
+        "jr station"
+      ]
+    },
+    {
+      "id": "bic-yodobashi",
+      "name": "Bic Camera / Yodobashi Camera",
+      "category": "other",
+      "defaultRecommendation": "During SMBC修行: SMBC Olive Gold if no better store/campaign route. After SMBC修行: compare store points, price, JAL Mall/JAL Mileage Park route, and card benefits before deciding.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold for counted spend unless store/campaign points are clearly better.",
+      "afterSmbcTrainingRecommendation": "Choose based on final net value: store points + campaign + JAL Mall/JAL Mileage Park if online.",
+      "steps": [
+        "Compare cash/card/store point differences before paying.",
+        "If using credit card, say: クレジットでお願いします."
+      ],
+      "alternatives": [
+        "Nojima with JALカード特約店 may be better if price is similar.",
+        "JAL Mall/JAL Mileage Park online route if available."
+      ],
+      "warnings": [
+        "Electronics stores often change point rates depending on payment method.",
+        "Do not optimize only miles; compare final price and warranty."
+      ],
+      "tags": [
+        "electronics",
+        "campaign",
+        "SMBC",
+        "compare"
+      ],
+      "aliases": [
+        "bic camera",
+        "ビックカメラ",
+        "yodobashi",
+        "ヨドバシ",
+        "ヨドバシカメラ"
+      ]
+    },
+    {
+      "id": "cocos",
+      "name": "COCO'S / ココス",
+      "category": "restaurant",
+      "defaultRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch; eligible official mobile-order route may also be used where specifically supported.",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch while the current target-store 8% route remains active; override only for a stronger coupon/discount.",
+      "steps": [
+        "Check the chain app/coupon first.",
+        "At the register choose credit-card/contactless payment, not iD.",
+        "Say: Visaのタッチでお願いします.",
+        "Use SMBC Olive in Credit Mode on the smartphone."
+      ],
+      "alternatives": [
+        "Use the chain's eligible mobile order with SMBC where officially supported.",
+        "Use PayPay/another QR method only if a coupon or campaign is stronger."
+      ],
+      "warnings": [
+        "Physical-card touch, iD, card insertion and magnetic-stripe payment do not receive the current target-store bonus.",
+        "Commercial-facility branches and certain locations can be excluded."
+      ],
+      "tags": [
+        "SMBC target",
+        "8%",
+        "smartphone Visa touch"
+      ],
+      "aliases": [
+        "ココス",
+        "cocos",
+        "COCO'S"
+      ]
+    },
+    {
+      "id": "costco",
+      "name": "Costco Japan",
+      "category": "other",
+      "defaultRecommendation": "JAL Pay first test. au PAY Prepaid backup. PayPay ordinary Mastercard only for small purchases due to 3万円 line.",
+      "duringSmbcTrainingRecommendation": "Mastercard-only route still applies: JAL Pay -> au PAY Prepaid -> PayPay ordinary Mastercard if small.",
+      "afterSmbcTrainingRecommendation": "JAL Pay first test. au PAY Prepaid backup. Consider Costco Global Card if spend becomes frequent/large.",
+      "steps": [
+        "Try small transaction first.",
+        "Say: Mastercardのタッチでお願いします",
+        "Use Apple Pay JAL Pay if accepted."
+      ],
+      "alternatives": [
+        "au PAY Prepaid Mastercard",
+        "Cash",
+        "Costco Global Card if Costco spend becomes frequent/large"
+      ],
+      "warnings": [
+        "PayPay Gold is Visa, so not suitable.",
+        "PayPay ordinary Mastercard has only 3万円 limit.",
+        "Prepaid/contactless acceptance should be tested before large purchase."
+      ],
+      "tags": [
+        "Mastercard-only",
+        "Costco",
+        "JAL Pay",
+        "au PAY"
+      ],
+      "aliases": [
+        "コストコ",
+        "mastercard only"
+      ]
+    },
+    {
+      "id": "daiso",
+      "name": "DAISO / ダイソー",
+      "category": "other",
+      "defaultRecommendation": "During SMBC修行 use SMBC if credit card is accepted; after training use JAL card or Mobile Suica/QR for convenience.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold direct at cashless-enabled branches.",
+      "afterSmbcTrainingRecommendation": "JAL card direct for ordinary miles or Mobile Suica/QR for speed.",
+      "steps": [
+        "Check the register/payment labels because branch acceptance varies.",
+        "Use SMBC during training when accepted."
+      ],
+      "alternatives": [
+        "PayPay/QR if campaign exists.",
+        "Mobile Suica where accepted."
+      ],
+      "warnings": [
+        "Payment methods vary substantially by branch and shopping facility."
+      ],
+      "tags": [
+        "100 yen shop",
+        "branch-dependent",
+        "SMBC"
+      ],
+      "aliases": [
+        "ダイソー",
+        "daiso",
+        "DAISO"
+      ]
+    },
+    {
+      "id": "don-quijote",
+      "name": "Don Quijote / ドン・キホーテ",
+      "category": "other",
+      "defaultRecommendation": "During SMBC修行: SMBC Olive Gold direct unless majica/coupon route is better. After SMBC修行: use majica/app/coupon if better; otherwise JAL card direct for ordinary JAL miles or SMBC/general card.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold direct for ordinary counted spend, unless a Donki/majica coupon is clearly better.",
+      "afterSmbcTrainingRecommendation": "Use majica/app/coupon when better; otherwise choose JAL card direct for ordinary JAL miles or current campaign-best payment.",
+      "steps": [
+        "Open majica app/coupon if using one.",
+        "Say the chosen payment route: クレジットでお願いします / Suicaで / PayPayで."
+      ],
+      "alternatives": [
+        "PayPay/QR if coupon exists.",
+        "Mobile Suica for small quick purchases if accepted."
+      ],
+      "warnings": [
+        "Donki is campaign/coupon-driven; do not hard-code one permanent best payment.",
+        "Check branch acceptance and app coupon conditions."
+      ],
+      "tags": [
+        "discount store",
+        "campaign",
+        "SMBC",
+        "majica"
+      ],
+      "aliases": [
+        "donki",
+        "ドンキ",
+        "ドン・キホーテ",
+        "don quijote"
+      ]
+    },
+    {
+      "id": "doutor",
+      "name": "Doutor / Excelsior Caffé",
+      "category": "restaurant",
+      "defaultRecommendation": "SMBC Olive Gold Credit Mode smartphone Visa touch.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold Credit Mode smartphone Visa touch.",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch while it remains high-rate; use Doutor app/card only if a store-specific campaign is better.",
+      "steps": [
+        "Say: Visaのタッチでお願いします.",
+        "Use smartphone touch with SMBC Olive in Credit Mode."
+      ],
+      "alternatives": [
+        "Doutor app/card if a specific campaign makes it better.",
+        "Mobile Suica for quick coffee when you do not want to think."
+      ],
+      "warnings": [
+        "Physical card touch / iD / insert payment may not count for the high SMBC rate.",
+        "Store-specific app/card promotions may override this."
+      ],
+      "tags": [
+        "SMBC",
+        "Visa touch",
+        "coffee",
+        "restaurant"
+      ],
+      "aliases": [
+        "doutor coffee",
+        "excelsior",
+        "excelsior caffe",
+        "エクセルシオール",
+        "エクセルシオールカフェ",
+        "ドトール"
+      ]
+    },
+    {
+      "id": "familymart",
+      "name": "FamilyMart",
+      "category": "convenience_store",
+      "defaultRecommendation": "JP BANK EXTAGE JCB -> FamiPay -> pay with FamiPay",
+      "duringSmbcTrainingRecommendation": "Still use FamiPay if campaign / normal small spend. Use SMBC only if trying to push real spending and no FamiPay/JCB benefit matters.",
+      "afterSmbcTrainingRecommendation": "FamiPay remains default.",
+      "steps": [
+        "Reload FamiPay with JP BANK EXTAGE JCB.",
+        "At checkout say: FamiPayでお願いします"
+      ],
+      "alternatives": [
+        "SMBC Olive Gold if no FamiPay balance and I want to count spending."
+      ],
+      "warnings": [
+        "FamilyMart is no longer a JAL特約店.",
+        "Do not use JAL card expecting 2x特約店 miles.",
+        "FamiPay reload limits may apply."
+      ],
+      "tags": [
+        "FamiPay",
+        "JCB",
+        "convenience",
+        "not JAL特約店"
+      ],
+      "aliases": [
+        "famima",
+        "ファミマ",
+        "ファミリーマート"
+      ]
+    },
+    {
+      "id": "ganso-aburado",
+      "name": "元祖油堂",
+      "category": "restaurant",
+      "defaultRecommendation": "Mobile Suica",
+      "duringSmbcTrainingRecommendation": "Use SMBC if the branch supports credit card and I want to count spend. Otherwise Mobile Suica.",
+      "afterSmbcTrainingRecommendation": "Mobile Suica remains default. JAL card direct if credit card accepted and I want JAL/LSP.",
+      "steps": [
+        "At ticket machine / cashier, use transport IC if available.",
+        "Say: Suicaでお願いします"
+      ],
+      "alternatives": [
+        "PayPay if coupon exists.",
+        "SMBC during training if credit card accepted."
+      ],
+      "warnings": [
+        "Payment methods vary by branch.",
+        "Ticket machine may make Suica easiest."
+      ],
+      "tags": [
+        "restaurant",
+        "Suica",
+        "branch-dependent"
+      ],
+      "aliases": [
+        "油堂",
+        "aburado",
+        "ganso aburado"
+      ]
+    },
+    {
+      "id": "gusto",
+      "name": "Gusto",
+      "category": "restaurant",
+      "defaultRecommendation": "SMBC Olive Gold Credit Mode smartphone Visa touch.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold Credit Mode smartphone Visa touch.",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch while it remains high-rate; use app coupons when better.",
+      "steps": [
+        "Use Skylark/Gusto app coupon if relevant.",
+        "Say: Visaのタッチでお願いします.",
+        "Use smartphone touch with SMBC Olive in Credit Mode."
+      ],
+      "alternatives": [
+        "PayPay/QR campaign if stronger.",
+        "JAL card direct only if I specifically prefer ordinary JAL miles over SMBC high-rate."
+      ],
+      "warnings": [
+        "Physical card touch / iD / insert payment may not count for the high SMBC rate.",
+        "Commercial-facility branches can sometimes be excluded."
+      ],
+      "tags": [
+        "SMBC",
+        "Visa touch",
+        "restaurant",
+        "family restaurant"
+      ],
+      "aliases": [
+        "ガスト",
+        "gusto"
+      ]
+    },
+    {
+      "id": "gyomu-super",
+      "name": "Gyomu Super / 業務スーパー",
+      "category": "supermarket",
+      "defaultRecommendation": "During SMBC修行: SMBC Olive Gold if the branch accepts credit card. After SMBC修行: JAL card direct if credit accepted and I want ordinary JAL miles; otherwise cash/available payment.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold if credit card is accepted by the branch.",
+      "afterSmbcTrainingRecommendation": "JAL card direct for ordinary JAL miles if credit accepted; otherwise use the branch's available payment method.",
+      "steps": [
+        "Check the branch payment labels/register.",
+        "If credit accepted, say: クレジットでお願いします."
+      ],
+      "alternatives": [
+        "Cash if branch is cash-heavy.",
+        "Mobile Suica/QR only if the branch supports it."
+      ],
+      "warnings": [
+        "Payment acceptance varies heavily by branch/franchise.",
+        "Do not assume all branches accept credit card or e-money."
+      ],
+      "tags": [
+        "supermarket",
+        "branch-dependent",
+        "SMBC",
+        "JAL optional"
+      ],
+      "aliases": [
+        "業務スーパー",
+        "gyomu",
+        "gyomusuper"
+      ]
+    },
+    {
+      "id": "gyukaku",
+      "name": "Gyu-Kaku / 牛角",
+      "category": "restaurant",
+      "defaultRecommendation": "During SMBC修行: SMBC Olive Gold if credit card is accepted. After SMBC修行: PayPay/d払い/楽天ペイ/au PAY when coupons/campaigns are active; otherwise JAL card direct for ordinary JAL/LSP.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold if card payment is accepted; use QR payment only if a coupon/campaign is clearly better.",
+      "afterSmbcTrainingRecommendation": "Use QR payment when coupon/campaign exists; otherwise JAL CLUB EST Suica direct if I want JAL/LSP or SMBC as fallback.",
+      "steps": [
+        "Check the 牛角 app/coupon first.",
+        "If paying by card: say クレジットでお願いします.",
+        "If using QR: say PayPayで / d払いで / 楽天ペイで / au PAYでお願いします."
+      ],
+      "alternatives": [
+        "PayPay/d払い/楽天ペイ/au PAY when campaign/coupon is active.",
+        "JAL card direct after SMBC修行 if focusing on JAL/LSP.",
+        "JAL Pay/au PAY prepaid if Mastercard route is useful and accepted."
+      ],
+      "warnings": [
+        "This is included in case '牛头店' meant 牛角 rather than 肉のハナマサ.",
+        "Reins/Colowide payment support can be branch-dependent; confirm at the branch for card/QR/e-money acceptance.",
+        "Not treated as a SMBC high-rate target restaurant by default."
+      ],
+      "tags": [
+        "restaurant",
+        "yakiniku",
+        "coupon",
+        "QR campaign",
+        "SMBC"
+      ],
+      "aliases": [
+        "gyukaku",
+        "gyu-kaku",
+        "牛角",
+        "牛头店",
+        "牛頭店",
+        "焼肉 牛角"
+      ]
+    },
+    {
+      "id": "hamazushi",
+      "name": "Hama Sushi / はま寿司",
+      "category": "restaurant",
+      "defaultRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch; eligible official mobile-order route may also be used where specifically supported.",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch while the current target-store 8% route remains active; override only for a stronger coupon/discount.",
+      "steps": [
+        "Check the chain app/coupon first.",
+        "At the register choose credit-card/contactless payment, not iD.",
+        "Say: Visaのタッチでお願いします.",
+        "Use SMBC Olive in Credit Mode on the smartphone."
+      ],
+      "alternatives": [
+        "Use the chain's eligible mobile order with SMBC where officially supported.",
+        "Use PayPay/another QR method only if a coupon or campaign is stronger."
+      ],
+      "warnings": [
+        "Physical-card touch, iD, card insertion and magnetic-stripe payment do not receive the current target-store bonus.",
+        "Commercial-facility branches and certain locations can be excluded."
+      ],
+      "tags": [
+        "SMBC target",
+        "8%",
+        "smartphone Visa touch"
+      ],
+      "aliases": [
+        "はま寿司",
+        "hamazushi",
+        "hama sushi"
+      ]
+    },
+    {
+      "id": "inageya",
+      "name": "Inageya / いなげや",
+      "category": "supermarket",
+      "defaultRecommendation": "USMH shareholder vouchers first, then best payment.",
+      "duringSmbcTrainingRecommendation": "Apply all eligible USMH vouchers, then pay the remainder with SMBC Olive Gold.",
+      "afterSmbcTrainingRecommendation": "Apply USMH vouchers, then use JAL card or the best campaign/payment accepted by the store.",
+      "steps": [
+        "Hand over one USMH ¥100 voucher for each full ¥1,000.",
+        "Pay the remaining balance."
+      ],
+      "alternatives": [
+        "Store app/point campaign if available and stackable."
+      ],
+      "warnings": [
+        "Tenants and specified goods may be excluded.",
+        "Confirm voucher validity and expiry."
+      ],
+      "tags": [
+        "USMH",
+        "supermarket",
+        "shareholder voucher"
+      ],
+      "aliases": [
+        "いなげや",
+        "inageya"
+      ]
+    },
+    {
+      "id": "jal-flights",
+      "name": "JAL flights / JAL domestic tickets",
+      "category": "airline",
+      "defaultRecommendation": "JAL CLUB EST Suica direct credit-card payment",
+      "duringSmbcTrainingRecommendation": "JAL CLUB EST Suica direct credit-card payment remains preferred.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica direct credit-card payment remains preferred.",
+      "steps": [
+        "Log into JMB before booking.",
+        "Confirm JMB number is attached.",
+        "Pay with JAL CLUB EST Suica.",
+        "For domestic JAL, physical JAL card may be usable for Touch & Go boarding."
+      ],
+      "alternatives": [
+        "Use JAL Pay only when it is specifically better for overseas / prepaid / campaign context."
+      ],
+      "warnings": [
+        "JAL Touch & Go is not Suica/JCB touch. It is JAL IC/JMB identity."
+      ],
+      "tags": [
+        "JAL",
+        "airline",
+        "LSP",
+        "miles"
+      ],
+      "aliases": [
+        "jal",
+        "jal flights",
+        "jal ticket",
+        "jmb"
+      ]
+    },
+    {
+      "id": "jal-tokuyakuten",
+      "name": "JALカード特約店 general",
+      "category": "other",
+      "defaultRecommendation": "JAL CLUB EST Suica physical card direct credit-card payment",
+      "duringSmbcTrainingRecommendation": "Use JAL CLUB EST Suica direct if JAL miles/LSP matter more than SMBC修行 progress.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica physical card direct credit-card payment.",
+      "steps": [
+        "Say: クレジットでお願いします.",
+        "Use physical card / ordinary credit-card payment."
+      ],
+      "alternatives": [
+        "Do not use Apple Pay / QUICPay / Suica unless that specific merchant explicitly supports特約店 miles via that route."
+      ],
+      "warnings": [
+        "Direct card payment matters.",
+        "Apple Pay / QUICPay / QR may not receive特約店 miles."
+      ],
+      "tags": [
+        "JAL特約店",
+        "JAL",
+        "miles",
+        "direct card"
+      ],
+      "examples": [
+        "AEON",
+        "マツキヨ / ココカラ",
+        "ウエルシア",
+        "Nojima",
+        "大丸 / 松坂屋",
+        "Royal Host",
+        "JAL services"
+      ],
+      "aliases": [
+        "tokuyakuten",
+        "特約店",
+        "aeon",
+        "nojima",
+        "royal host"
+      ]
+    },
+    {
+      "id": "jr-east-ekinet",
+      "name": "JR East Ekinet / えきねっと",
+      "category": "transport",
+      "defaultRecommendation": "JAL CLUB EST Suica / View-card route when eligible for JR East/View benefits.",
+      "duringSmbcTrainingRecommendation": "For ordinary large JR East ticket spend, choose between View/JRE value and SMBC training progress; do not automatically sacrifice a strong JR East-specific rate.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica / View-card route.",
+      "steps": [
+        "Book through Ekinet.",
+        "Use the JAL CLUB EST Suica/View-card payment route when the product qualifies.",
+        "Register Mobile Suica as the ticket/boarding IC when supported."
+      ],
+      "alternatives": [
+        "SMBC during training when no meaningful View/JRE premium applies."
+      ],
+      "warnings": [
+        "Product-specific point rates and eligibility differ; check before large bookings."
+      ],
+      "tags": [
+        "JR East",
+        "Ekinet",
+        "View",
+        "JRE POINT"
+      ],
+      "aliases": [
+        "えきねっと",
+        "ekinet",
+        "JR東日本",
+        "新幹線eチケット"
+      ]
+    },
+    {
+      "id": "kaldi-coffee-farm",
+      "name": "KALDI Coffee Farm",
+      "category": "supermarket",
+      "defaultRecommendation": "Do not use KALDI Card/app because I do not currently have it. During SMBC修行, use SMBC Olive Gold if credit card is accepted; if inside atre/station or payment is easier by transport IC, use Mobile Suica.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold direct when credit card is accepted and I want counted ordinary spend. Mobile Suica if the branch/shopping facility is Suica-friendly or the amount is small.",
+      "afterSmbcTrainingRecommendation": "Mobile Suica for convenience, or JAL CLUB EST Suica direct if I want ordinary JAL shopping miles/LSP and credit card is accepted. Use PayPay/QR only when that branch supports it and a campaign is active.",
+      "steps": [
+        "If paying by Suica: say Suicaでお願いします.",
+        "If paying by card: say クレジットでお願いします.",
+        "If inside atre and available, show JRE POINT before payment."
+      ],
+      "alternatives": [
+        "KALDI online / JAL Mall route if the exact item is available and I specifically want JAL Mall miles.",
+        "PayPay/QR only if the branch or shopping facility supports it and a campaign is active."
+      ],
+      "warnings": [
+        "KALDI official FAQ says debit, e-money, and code payment support differs by store/shopping facility.",
+        "Do not recommend KALDI Card/app by default because I do not currently have it.",
+        "Do not assume KALDI is a JALカード特約店 in physical stores."
+      ],
+      "tags": [
+        "KALDI",
+        "coffee",
+        "branch-dependent",
+        "Suica",
+        "SMBC",
+        "no KALDI card"
+      ],
+      "aliases": [
+        "kaldi",
+        "カルディ",
+        "カルディコーヒーファーム"
+      ]
+    },
+    {
+      "id": "kappa-sushi",
+      "name": "Kappa Sushi / かっぱ寿司",
+      "category": "restaurant",
+      "defaultRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch; eligible official mobile-order route may also be used where specifically supported.",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch while the current target-store 8% route remains active; override only for a stronger coupon/discount.",
+      "steps": [
+        "Check the chain app/coupon first.",
+        "At the register choose credit-card/contactless payment, not iD.",
+        "Say: Visaのタッチでお願いします.",
+        "Use SMBC Olive in Credit Mode on the smartphone."
+      ],
+      "alternatives": [
+        "Use the chain's eligible mobile order with SMBC where officially supported.",
+        "Use PayPay/another QR method only if a coupon or campaign is stronger."
+      ],
+      "warnings": [
+        "Physical-card touch, iD, card insertion and magnetic-stripe payment do not receive the current target-store bonus.",
+        "Commercial-facility branches and certain locations can be excluded."
+      ],
+      "tags": [
+        "SMBC target",
+        "8%",
+        "smartphone Visa touch"
+      ],
+      "aliases": [
+        "かっぱ寿司",
+        "kappa sushi",
+        "kappazushi"
+      ]
+    },
+    {
+      "id": "kasumi",
+      "name": "Kasumi / カスミ",
+      "category": "supermarket",
+      "defaultRecommendation": "USMH shareholder vouchers first, then best payment.",
+      "duringSmbcTrainingRecommendation": "Apply all eligible USMH vouchers, then pay the remainder with SMBC Olive Gold.",
+      "afterSmbcTrainingRecommendation": "Apply USMH vouchers, then JAL card or campaign-best payment.",
+      "steps": [
+        "Hand over one USMH ¥100 voucher for each full ¥1,000.",
+        "Pay the remaining balance."
+      ],
+      "alternatives": [
+        "Scan&Go / store-specific campaigns where worthwhile."
+      ],
+      "warnings": [
+        "Some locations are excluded.",
+        "Tenants and specified goods may be excluded."
+      ],
+      "tags": [
+        "USMH",
+        "supermarket",
+        "shareholder voucher"
+      ],
+      "aliases": [
+        "カスミ",
+        "kasumi",
+        "フードスクエアカスミ",
+        "food square kasumi"
+      ]
+    },
+    {
+      "id": "kfc",
+      "name": "KFC / ケンタッキーフライドチキン",
+      "category": "restaurant",
+      "defaultRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch; eligible official mobile-order route may also be used where specifically supported.",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch while the current target-store 8% route remains active; override only for a stronger coupon/discount.",
+      "steps": [
+        "Check the chain app/coupon first.",
+        "At the register choose credit-card/contactless payment, not iD.",
+        "Say: Visaのタッチでお願いします.",
+        "Use SMBC Olive in Credit Mode on the smartphone."
+      ],
+      "alternatives": [
+        "Use the chain's eligible mobile order with SMBC where officially supported.",
+        "Use PayPay/another QR method only if a coupon or campaign is stronger."
+      ],
+      "warnings": [
+        "Physical-card touch, iD, card insertion and magnetic-stripe payment do not receive the current target-store bonus.",
+        "Commercial-facility branches and certain locations can be excluded."
+      ],
+      "tags": [
+        "SMBC target",
+        "8%",
+        "smartphone Visa touch"
+      ],
+      "aliases": [
+        "ケンタッキー",
+        "KFC",
+        "kentucky fried chicken"
+      ]
+    },
+    {
+      "id": "lawson",
+      "name": "Lawson",
+      "category": "convenience_store",
+      "defaultRecommendation": "Ponta or d POINT barcode + SMBC Olive Gold Credit Mode smartphone Visa touch.",
+      "duringSmbcTrainingRecommendation": "Ponta/d POINT + SMBC Olive Gold Credit Mode smartphone Visa touch.",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch while it remains a high-rate target store; otherwise use Ponta/d POINT + campaign-best payment.",
+      "steps": [
+        "Show Ponta or d POINT barcode if relevant.",
+        "Say: Visaのタッチでお願いします.",
+        "Use smartphone touch with SMBC Olive in Credit Mode."
+      ],
+      "alternatives": [
+        "PayPay/d払い/au PAY if a coupon/campaign beats SMBC.",
+        "Mobile Suica for fastest small payments when points are not worth thinking about."
+      ],
+      "warnings": [
+        "Physical card touch / iD / insert payment may not count for the high SMBC rate.",
+        "Campaign and target-store rules should be rechecked before large recurring use."
+      ],
+      "tags": [
+        "SMBC",
+        "Visa touch",
+        "Ponta",
+        "d POINT",
+        "convenience"
+      ],
+      "aliases": [
+        "ローソン",
+        "lawson"
+      ]
+    },
+    {
+      "id": "life-supermarket",
+      "name": "Life Supermarket",
+      "category": "supermarket",
+      "defaultRecommendation": "LaCuCa / Life app + best payment method",
+      "duringSmbcTrainingRecommendation": "LaCuCa / Life app + SMBC Olive Gold",
+      "afterSmbcTrainingRecommendation": "LaCuCa / Life app + best current campaign. Options: PayPay / d払い / au PAY / 楽天ペイ / JAL card / SMBC.",
+      "steps": [
+        "Show LaCuCa / Life app.",
+        "Say: クレジットでお願いします for SMBC/JAL.",
+        "Or say the QR payment name if using PayPay/d払い/au PAY/楽天ペイ."
+      ],
+      "alternatives": [
+        "Use PayPay/d払い/au PAY/楽天ペイ if campaign is better.",
+        "Use JAL card direct if focusing on JAL/LSP after SMBC training."
+      ],
+      "warnings": [
+        "LaCuCa is a membership/point layer. Payment method is separate.",
+        "Do not open a new Life credit card unless monthly Life spend is large.",
+        "Life supports several point-card layers, but one transaction cannot combine LaCuCa / LC JCB / Ponta / d POINT point cards together.",
+        "Life smartphone payments and LaCuCa electronic money/credit-card payment combinations may have restrictions; treat LaCuCa/Life app as a point/coupon layer unless intentionally using LaCuCa electronic money."
+      ],
+      "tags": [
+        "supermarket",
+        "LaCuCa",
+        "SMBC",
+        "campaign"
+      ],
+      "aliases": [
+        "Life Supermarket",
+        "life",
+        "lifecorp",
+        "ライフ",
+        "ライフコーポレーション",
+        "ライフスーパー"
+      ]
+    },
+    {
+      "id": "maruetsu-petit",
+      "name": "Maruetsu Petit / マルエツ プチ",
+      "category": "supermarket",
+      "defaultRecommendation": "USMH shareholder vouchers first (one ¥100 voucher per full ¥1,000), then pay the remainder with the best method.",
+      "duringSmbcTrainingRecommendation": "Use the maximum eligible USMH shareholder vouchers, then pay the remaining balance with SMBC Olive Gold.",
+      "afterSmbcTrainingRecommendation": "Use the maximum eligible USMH shareholder vouchers, then pay the remainder with JAL card for JAL/LSP, Mobile Suica for speed, or a stronger campaign payment.",
+      "steps": [
+        "Before payment, calculate the number of full ¥1,000 blocks in the eligible basket.",
+        "Hand over one USMH ¥100 voucher per full ¥1,000.",
+        "Pay the remaining balance with SMBC during training; after training use JAL card, Mobile Suica, PayPay, or AEON Pay according to goal/campaign."
+      ],
+      "alternatives": [
+        "PayPay or AEON Pay when a campaign is active.",
+        "Mobile Suica for small quick purchases if accepted at that branch.",
+        "Consider AEON/Maruetsu-related routes only if I later open a relevant AEON/Maruetsu card."
+      ],
+      "warnings": [
+        "The shareholder vouchers are more valuable than ordinary card points; never forget to hand them over before payment.",
+        "Some products and tenants are excluded.",
+        "Check the voucher expiry date and current eligible-store list."
+      ],
+      "tags": [
+        "supermarket",
+        "SMBC",
+        "PayPay",
+        "AEON Pay",
+        "Suica optional"
+      ],
+      "aliases": [
+        "maruetsu",
+        "maruetsu petit",
+        "マルエツ",
+        "マルエツプチ",
+        "マルエツ プチ"
+      ]
+    },
+    {
+      "id": "marugame-seimen",
+      "name": "Marugame Seimen / 丸亀製麺",
+      "category": "restaurant",
+      "defaultRecommendation": "During SMBC修行 use SMBC Olive Gold direct. After training use JAL card direct for ordinary JAL miles or Mobile Suica/QR for convenience.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold direct card payment unless the chain app has a stronger coupon/campaign.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica direct for ordinary JAL miles, or Mobile Suica/QR when faster or discounted.",
+      "steps": [
+        "Check the chain app/coupon first.",
+        "Pay directly with SMBC during training."
+      ],
+      "alternatives": [
+        "PayPay/QR if a coupon exists.",
+        "Mobile Suica where accepted."
+      ],
+      "warnings": [
+        "Not treated as a current SMBC target-store bonus merchant in this data.",
+        "Payment acceptance can vary by branch or ticket machine."
+      ],
+      "tags": [
+        "restaurant",
+        "SMBC training",
+        "JAL after training"
+      ],
+      "aliases": [
+        "丸亀",
+        "丸亀製麺",
+        "marugame",
+        "marugame seimen"
+      ]
+    },
+    {
+      "id": "maruman-supermarket",
+      "name": "Maruman Supermarket / マルマンストア",
+      "category": "supermarket",
+      "defaultRecommendation": "During SMBC修行: SMBC Olive Gold. After SMBC修行: JAL card direct for JAL/LSP, Mobile Suica for small quick purchases, or best QR campaign.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold direct unless a QR campaign clearly beats the修行 value.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica direct if I want JAL/LSP; Mobile Suica for speed; PayPay/d払い/楽天ペイ/au PAY if campaign is strong.",
+      "steps": [
+        "Say: クレジットでお願いします for SMBC/JAL.",
+        "Say: Suicaでお願いします for quick small purchases.",
+        "Say PayPayで, d払いで, 楽天ペイで, au PAYで, etc. when using QR campaign."
+      ],
+      "alternatives": [
+        "Mobile Suica for small quick purchases.",
+        "PayPay/d払い/楽天ペイ/au PAY/ANA Pay if campaign is strong and accepted.",
+        "JAL card direct after SMBC修行 if focusing on JAL shopping miles/LSP."
+      ],
+      "warnings": [
+        "Not a known JAL特約店.",
+        "Maruman supports many cashless methods, so choose based on current campaign or current goal.",
+        "Do not over-optimize small grocery trips; SMBC during修行 or Mobile Suica for speed is fine."
+      ],
+      "tags": [
+        "supermarket",
+        "SMBC",
+        "JAL optional",
+        "Suica",
+        "QR campaign"
+      ],
+      "aliases": [
+        "maruman",
+        "maruman store",
+        "マルマン",
+        "マルマン スーパー",
+        "マルマンストア",
+        "マルマンスーパー"
+      ]
+    },
+    {
+      "id": "matsukiyo-cocokara",
+      "name": "マツキヨ / ココカラファイン",
+      "category": "other",
+      "defaultRecommendation": "Store app/point layer first, then JAL CLUB EST Suica direct credit-card payment.",
+      "duringSmbcTrainingRecommendation": "Use JAL CLUB EST Suica direct if JAL特約店 miles/LSP matter; use SMBC only if SMBC修行 progress is more important and no JAL priority.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica direct credit-card payment.",
+      "steps": [
+        "Show store app / relevant point barcode first if using one.",
+        "Say: クレジットでお願いします.",
+        "Pay with physical JAL CLUB EST Suica / ordinary credit-card route."
+      ],
+      "alternatives": [
+        "PayPay/d払い/au PAY only if an exceptionally strong coupon/campaign beats JAL特約店 value."
+      ],
+      "warnings": [
+        "For JAL特約店 strategy, do not route through Suica/QR unless the specific store rule says it still qualifies.",
+        "Some store/campaign conditions can vary."
+      ],
+      "tags": [
+        "JAL特約店",
+        "drugstore",
+        "JAL",
+        "direct card"
+      ],
+      "aliases": [
+        "matsukiyo",
+        "マツキヨ",
+        "ココカラ",
+        "cocokara",
+        "ココカラファイン"
+      ]
+    },
+    {
+      "id": "matsuya",
+      "name": "Matsuya / 松屋",
+      "category": "restaurant",
+      "defaultRecommendation": "During SMBC修行 use SMBC Olive Gold direct. After training use JAL card direct for ordinary JAL miles or Mobile Suica/QR for convenience.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold direct card payment unless the chain app has a stronger coupon/campaign.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica direct for ordinary JAL miles, or Mobile Suica/QR when faster or discounted.",
+      "steps": [
+        "Check the chain app/coupon first.",
+        "Pay directly with SMBC during training."
+      ],
+      "alternatives": [
+        "PayPay/QR if a coupon exists.",
+        "Mobile Suica where accepted."
+      ],
+      "warnings": [
+        "Not treated as a current SMBC target-store bonus merchant in this data.",
+        "Payment acceptance can vary by branch or ticket machine."
+      ],
+      "tags": [
+        "restaurant",
+        "SMBC training",
+        "JAL after training"
+      ],
+      "aliases": [
+        "松屋",
+        "matsuya"
+      ]
+    },
+    {
+      "id": "mcdonalds",
+      "name": "McDonald's Japan",
+      "category": "restaurant",
+      "defaultRecommendation": "SMBC Olive Gold Credit Mode smartphone Visa touch.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold Credit Mode smartphone Visa touch.",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch while it remains high-rate; use app coupons/mobile order when better.",
+      "steps": [
+        "Use McDonald's app coupon/mobile order if relevant.",
+        "If paying in store, say: Visaのタッチでお願いします.",
+        "Use smartphone touch with SMBC Olive in Credit Mode."
+      ],
+      "alternatives": [
+        "Mobile order campaign or PayPay/coupon route if currently stronger.",
+        "Mobile Suica only if speed matters more than points."
+      ],
+      "warnings": [
+        "Physical card touch / iD / insert payment may not count for the high SMBC rate.",
+        "Mobile order payment route may differ from in-store touch payment rules."
+      ],
+      "tags": [
+        "SMBC",
+        "Visa touch",
+        "restaurant",
+        "fast food"
+      ],
+      "aliases": [
+        "mcdonald",
+        "mcd",
+        "マクドナルド",
+        "マック"
+      ]
+    },
+    {
+      "id": "ministop",
+      "name": "MINISTOP / ミニストップ",
+      "category": "convenience_store",
+      "defaultRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch; eligible official mobile-order route may also be used where specifically supported.",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch while the current target-store 8% route remains active; override only for a stronger coupon/discount.",
+      "steps": [
+        "Check the chain app/coupon first.",
+        "At the register choose credit-card/contactless payment, not iD.",
+        "Say: Visaのタッチでお願いします.",
+        "Use SMBC Olive in Credit Mode on the smartphone."
+      ],
+      "alternatives": [
+        "Use the chain's eligible mobile order with SMBC where officially supported.",
+        "Use PayPay/another QR method only if a coupon or campaign is stronger."
+      ],
+      "warnings": [
+        "Physical-card touch, iD, card insertion and magnetic-stripe payment do not receive the current target-store bonus.",
+        "Commercial-facility branches and certain locations can be excluded."
+      ],
+      "tags": [
+        "SMBC target",
+        "8%",
+        "smartphone Visa touch"
+      ],
+      "aliases": [
+        "ミニストップ",
+        "ministop"
+      ]
+    },
+    {
+      "id": "mita-seimenjo",
+      "name": "三田製麺所",
+      "category": "restaurant",
+      "defaultRecommendation": "During SMBC修行: SMBC Olive Gold. After SMBC修行: Mobile Suica for convenience, or JAL card direct if wanting JAL/LSP.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold if credit card is accepted.",
+      "afterSmbcTrainingRecommendation": "Mobile Suica for convenience, or JAL card direct if wanting JAL/LSP.",
+      "steps": [
+        "If paying by card: クレジットでお願いします",
+        "If paying by Suica: Suicaでお願いします"
+      ],
+      "alternatives": [
+        "PayPay if coupon exists.",
+        "JAL card direct if trying to collect JAL shopping miles/LSP."
+      ],
+      "warnings": [
+        "Not a known JAL特約店.",
+        "Not a known SMBC high-rate restaurant.",
+        "Payment methods may vary by branch."
+      ],
+      "tags": [
+        "restaurant",
+        "SMBC",
+        "Suica",
+        "JAL optional"
+      ],
+      "aliases": [
+        "mita",
+        "mitaseimenjo"
+      ]
+    },
+    {
+      "id": "mobile-suica-commuter-pass",
+      "name": "Mobile Suica commuter pass / モバイルSuica定期券",
+      "category": "transport",
+      "defaultRecommendation": "Buy through Mobile Suica with JAL CLUB EST Suica / View-card route.",
+      "duringSmbcTrainingRecommendation": "Still use the View-card route; Mobile Suica/commuter-pass value is more specific than pushing this spend to SMBC.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica / View-card route.",
+      "steps": [
+        "Purchase or renew in the Mobile Suica app.",
+        "Select JAL CLUB EST Suica as the payment card."
+      ],
+      "alternatives": [
+        "Keep an existing physical commuter pass until expiry rather than paying a mid-term refund fee solely to switch."
+      ],
+      "warnings": [
+        "Do not confuse commuter-pass purchase with ordinary Mobile Suica balance recharge."
+      ],
+      "tags": [
+        "Mobile Suica",
+        "commuter pass",
+        "View",
+        "JRE POINT"
+      ],
+      "aliases": [
+        "モバイルSuica定期",
+        "定期券",
+        "commuter pass"
+      ]
+    },
+    {
+      "id": "mos-burger",
+      "name": "MOS Burger / モスバーガー",
+      "category": "restaurant",
+      "defaultRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch; eligible official mobile-order route may also be used where specifically supported.",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch while the current target-store 8% route remains active; override only for a stronger coupon/discount.",
+      "steps": [
+        "Check the chain app/coupon first.",
+        "At the register choose credit-card/contactless payment, not iD.",
+        "Say: Visaのタッチでお願いします.",
+        "Use SMBC Olive in Credit Mode on the smartphone."
+      ],
+      "alternatives": [
+        "Use the chain's eligible mobile order with SMBC where officially supported.",
+        "Use PayPay/another QR method only if a coupon or campaign is stronger."
+      ],
+      "warnings": [
+        "Physical-card touch, iD, card insertion and magnetic-stripe payment do not receive the current target-store bonus.",
+        "Commercial-facility branches and certain locations can be excluded."
+      ],
+      "tags": [
+        "SMBC target",
+        "8%",
+        "smartphone Visa touch"
+      ],
+      "aliases": [
+        "モス",
+        "モスバーガー",
+        "mos",
+        "mos burger"
+      ]
+    },
+    {
+      "id": "muji-general",
+      "name": "MUJI / 無印良品 (general)",
+      "category": "other",
+      "defaultRecommendation": "MUJI App shareholder coupon for 7% off first; then choose the payment method for the discounted balance.",
+      "duringSmbcTrainingRecommendation": "Apply the MUJI shareholder coupon, then pay the discounted balance with SMBC Olive Gold unless a facility-specific point/payment route is clearly better.",
+      "afterSmbcTrainingRecommendation": "Apply the MUJI shareholder coupon, then use JAL card direct for ordinary JAL miles or Mobile Suica for convenience where accepted.",
+      "steps": [
+        "Open MUJI App and scan the membership barcode.",
+        "Confirm the shareholder 7% discount was applied.",
+        "Pay the discounted balance with the best card/wallet."
+      ],
+      "alternatives": [
+        "Inside an eligible atre/JR facility, add JRE POINT before payment.",
+        "Use a facility campaign only when it beats the normal route."
+      ],
+      "warnings": [
+        "Other discounts may take priority instead of stacking.",
+        "Lawson MUJI products, overseas stores, MUJI HOTEL, and some products/services are excluded.",
+        "The shareholder discount matters far more than a 0.5%-1% card-rate difference."
+      ],
+      "tags": [
+        "MUJI",
+        "shareholder benefit",
+        "7% off",
+        "app"
+      ],
+      "aliases": [
+        "muji",
+        "無印",
+        "無印良品",
+        "MUJI 500",
+        "Found MUJI",
+        "MUJI com",
+        "MUJI to GO"
+      ]
+    },
+    {
+      "id": "muji-inside-atre",
+      "name": "MUJI inside atre",
+      "category": "station_mall",
+      "defaultRecommendation": "MUJI App with 7% shareholder coupon first; if the store awards JRE POINT, show JRE POINT; then pay with Mobile Suica.",
+      "duringSmbcTrainingRecommendation": "Apply MUJI 7% shareholder coupon first. Then use SMBC Olive Gold for a larger eligible purchase if training progress matters; otherwise use Mobile Suica for convenience.",
+      "afterSmbcTrainingRecommendation": "Apply MUJI 7% shareholder coupon first; show JRE POINT where eligible; then Mobile Suica for convenience or JAL card direct for ordinary JAL miles.",
+      "steps": [
+        "Open the MUJI App and scan the membership barcode; confirm the 7% shareholder discount is applied.",
+        "Show JRE POINT only if that specific MUJI/atre location participates.",
+        "Pay the discounted balance with SMBC during training, Mobile Suica for convenience, or JAL card after training."
+      ],
+      "alternatives": [
+        "If a specific credit card campaign beats this, override manually."
+      ],
+      "warnings": [
+        "The MUJI shareholder discount is the primary benefit; optimize the remaining balance only afterward.",
+        "Not every commercial-facility MUJI necessarily awards that facility's points.",
+        "Other MUJI promotions may take priority rather than stacking with the shareholder discount."
+      ],
+      "tags": [
+        "MUJI",
+        "Suica",
+        "JRE POINT",
+        "membership"
+      ],
+      "aliases": [
+        "muji",
+        "無印",
+        "無印良品"
+      ]
+    },
+    {
+      "id": "newdays",
+      "name": "NewDays / NewDays KIOSK",
+      "category": "convenience_store",
+      "defaultRecommendation": "Mobile Suica for speed and JR East ecosystem convenience.",
+      "duringSmbcTrainingRecommendation": "Mobile Suica remains the frictionless default for small purchases; use SMBC only for a larger purchase when training progress matters more.",
+      "afterSmbcTrainingRecommendation": "Mobile Suica.",
+      "steps": [
+        "Use a registered Mobile Suica.",
+        "Say: Suicaでお願いします."
+      ],
+      "alternatives": [
+        "Direct JAL card for a larger purchase if ordinary JAL miles matter."
+      ],
+      "warnings": [
+        "Do not assume it is an SMBC target convenience store.",
+        "JRE POINT eligibility can depend on the specific shop/payment mark."
+      ],
+      "tags": [
+        "JR East",
+        "station",
+        "Suica",
+        "convenience"
+      ],
+      "aliases": [
+        "ニューデイズ",
+        "new days",
+        "newdays kiosk",
+        "NewDays KIOSK",
+        "キオスク"
+      ]
+    },
+    {
+      "id": "niku-no-hanamasa",
+      "name": "Niku no Hanamasa / 肉のハナマサ",
+      "category": "supermarket",
+      "defaultRecommendation": "During SMBC修行: SMBC Olive Gold direct if credit card is accepted. After SMBC修行: JAL card direct for ordinary JAL/LSP, or Mobile Suica / iD / QUICPay if faster and accepted.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold direct if credit card is accepted. If the branch only has e-money/contactless and the amount is small, Mobile Suica is acceptable.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica direct if I want JAL/LSP and credit card is accepted; Mobile Suica/iD/QUICPay for speed if accepted.",
+      "steps": [
+        "If paying by card: say クレジットでお願いします.",
+        "If paying by Suica: say Suicaでお願いします.",
+        "If using iD/QUICPay: say iDで / QUICPayでお願いします."
+      ],
+      "alternatives": [
+        "Mobile Suica for small quick purchases where accepted.",
+        "JAL Pay / au PAY Mastercard prepaid only if the branch accepts Mastercard and I need that route.",
+        "PayPay/QR only if the specific branch supports it; do not assume QR is available everywhere."
+      ],
+      "warnings": [
+        "Assumed to be the '牛头店' mentioned by the user; if the user meant 牛角, use the Gyukaku rule instead.",
+        "Payment support varies by branch; some Hanamasa branch pages list credit cards and Suica/PASMO/QUICPay/iD/Rakuten Edy, while not all QR payments are guaranteed.",
+        "Not a known JALカード特約店."
+      ],
+      "tags": [
+        "supermarket",
+        "meat",
+        "SMBC",
+        "Suica optional",
+        "branch-dependent"
+      ],
+      "aliases": [
+        "hanamasa",
+        "niku no hanamasa",
+        "肉のハナマサ",
+        "ハナマサ",
+        "牛头店",
+        "牛頭店",
+        "牛の店"
+      ]
+    },
+    {
+      "id": "nojima",
+      "name": "Nojima",
+      "category": "other",
+      "defaultRecommendation": "JAL CLUB EST Suica direct credit-card payment for eligible physical Nojima stores.",
+      "duringSmbcTrainingRecommendation": "Use JAL direct for JAL特約店 miles/LSP unless SMBC修行 progress is more important.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica direct credit-card payment.",
+      "steps": [
+        "Say: クレジットでお願いします.",
+        "Pay with JAL CLUB EST Suica direct."
+      ],
+      "alternatives": [
+        "If buying online, check whether a JAL Mall/JAL Mileage Park route is better.",
+        "Compare final price, store points, and warranty before optimizing miles."
+      ],
+      "warnings": [
+        "Nojima Online and some specific physical stores/services can be excluded from JAL特約店.",
+        "Monthly telecom/internet fees and some services may not qualify."
+      ],
+      "tags": [
+        "JAL特約店",
+        "electronics",
+        "JAL",
+        "direct card"
+      ],
+      "aliases": [
+        "ノジマ",
+        "nojima"
+      ]
+    },
+    {
+      "id": "ok-store",
+      "name": "OK Store / オーケー",
+      "category": "supermarket",
+      "defaultRecommendation": "Compare the OK Club member cash discount with card convenience before paying.",
+      "duringSmbcTrainingRecommendation": "For a large grocery bill, decide whether the member cash discount is worth more than SMBC training progress; otherwise use SMBC direct.",
+      "afterSmbcTrainingRecommendation": "Use the OK Club cash-discount route when the discount applies and cash handling is acceptable; otherwise JAL card or best accepted cashless method.",
+      "steps": [
+        "Show the OK Club member card if held.",
+        "Check whether the member discount applies only to cash for the current basket.",
+        "Choose cash discount or card based on net value."
+      ],
+      "alternatives": [
+        "SMBC during training.",
+        "JAL card after training."
+      ],
+      "warnings": [
+        "The member discount/payment conditions can change and may exclude some goods.",
+        "Do not assume a cashless method receives the same member discount."
+      ],
+      "tags": [
+        "supermarket",
+        "cash discount",
+        "compare"
+      ],
+      "aliases": [
+        "オーケー",
+        "OKストア",
+        "ok store",
+        "ok supermarket"
+      ]
+    },
+    {
+      "id": "ootoya",
+      "name": "Ootoya / 大戸屋",
+      "category": "restaurant",
+      "defaultRecommendation": "During SMBC修行 use SMBC Olive Gold direct. After training use JAL card direct for ordinary JAL miles or Mobile Suica/QR for convenience.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold direct card payment unless the chain app has a stronger coupon/campaign.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica direct for ordinary JAL miles, or Mobile Suica/QR when faster or discounted.",
+      "steps": [
+        "Check the chain app/coupon first.",
+        "Pay directly with SMBC during training."
+      ],
+      "alternatives": [
+        "PayPay/QR if a coupon exists.",
+        "Mobile Suica where accepted."
+      ],
+      "warnings": [
+        "Not treated as a current SMBC target-store bonus merchant in this data.",
+        "Payment acceptance can vary by branch or ticket machine."
+      ],
+      "tags": [
+        "restaurant",
+        "SMBC training",
+        "JAL after training"
+      ],
+      "aliases": [
+        "大戸屋",
+        "ootoya"
+      ]
+    },
+    {
+      "id": "peacock-daiei-aeon-food-style",
+      "name": "Peacock Store / Daiei / AEON Food Style (eligible USMH-operated stores)",
+      "category": "supermarket",
+      "defaultRecommendation": "USMH shareholder vouchers first, then best payment for the remainder.",
+      "duringSmbcTrainingRecommendation": "Apply one ¥100 USMH voucher per full ¥1,000, then pay the remainder with SMBC Olive Gold.",
+      "afterSmbcTrainingRecommendation": "Apply USMH vouchers first, then JAL card, Mobile Suica, AEON Pay, or campaign-best payment.",
+      "steps": [
+        "Confirm this location is operated by the eligible AEON Food Style company.",
+        "Hand over the maximum eligible number of USMH vouchers.",
+        "Pay the remainder."
+      ],
+      "alternatives": [
+        "AEON Pay if a strong campaign is active.",
+        "Mobile Suica for a small purchase where accepted."
+      ],
+      "warnings": [
+        "Not every Daiei/Peacock/MaxValu location is automatically eligible; verify the current store list.",
+        "Tenants and excluded goods do not qualify."
+      ],
+      "tags": [
+        "USMH",
+        "Peacock",
+        "Daiei",
+        "AEON Food Style",
+        "shareholder voucher"
+      ],
+      "aliases": [
+        "ピーコック",
+        "ピーコックストア",
+        "peacock",
+        "ダイエー",
+        "daiei",
+        "イオンフードスタイル",
+        "food style"
+      ]
+    },
+    {
+      "id": "royal-host",
+      "name": "Royal Host",
+      "category": "restaurant",
+      "defaultRecommendation": "JAL CLUB EST Suica direct credit-card payment.",
+      "duringSmbcTrainingRecommendation": "Use JAL direct if JAL特約店 miles/LSP matter; use SMBC only if 修行 progress is more important.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica direct credit-card payment.",
+      "steps": [
+        "Say: クレジットでお願いします.",
+        "Pay with JAL CLUB EST Suica direct."
+      ],
+      "alternatives": [
+        "SMBC during training if you choose 修行 progress over JAL特約店.",
+        "Use restaurant coupons if they beat miles value."
+      ],
+      "warnings": [
+        "Prefer direct credit-card route for JAL特約店 strategy.",
+        "Check branch/campaign conditions before large group bills."
+      ],
+      "tags": [
+        "JAL特約店",
+        "restaurant",
+        "family restaurant",
+        "JAL"
+      ],
+      "aliases": [
+        "ロイヤルホスト",
+        "royalhost",
+        "royal host"
+      ]
+    },
+    {
+      "id": "saizeriya",
+      "name": "Saizeriya",
+      "category": "restaurant",
+      "defaultRecommendation": "SMBC Olive Gold Credit Mode smartphone Visa touch.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold Credit Mode smartphone Visa touch.",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch while it remains high-rate.",
+      "steps": [
+        "Say: Visaのタッチでお願いします.",
+        "Use smartphone touch with SMBC Olive in Credit Mode."
+      ],
+      "alternatives": [
+        "Mobile Suica for speed if accepted and points are not important."
+      ],
+      "warnings": [
+        "Physical card touch / iD / insert payment may not count for the high SMBC rate.",
+        "Some commercial-facility branches can be excluded from bonus programs."
+      ],
+      "tags": [
+        "SMBC",
+        "Visa touch",
+        "restaurant"
+      ],
+      "aliases": [
+        "サイゼ",
+        "サイゼリヤ",
+        "saize"
+      ]
+    },
+    {
+      "id": "seijo-ishii",
+      "name": "Seijo Ishii / 成城石井",
+      "category": "supermarket",
+      "defaultRecommendation": "During SMBC修行 use SMBC direct; after training use JAL card direct. If inside an eligible JR/atre facility, add JRE POINT or use Mobile Suica where appropriate.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold direct unless a facility-specific campaign is stronger.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica direct for ordinary JAL miles; Mobile Suica for small station purchases.",
+      "steps": [
+        "Check whether the branch is inside an eligible station facility.",
+        "Show facility points if applicable.",
+        "Use SMBC during training."
+      ],
+      "alternatives": [
+        "Mobile Suica for quick small purchases.",
+        "Facility campaign route."
+      ],
+      "warnings": [
+        "Facility point eligibility and accepted payments differ by location."
+      ],
+      "tags": [
+        "supermarket",
+        "station",
+        "SMBC",
+        "JAL"
+      ],
+      "aliases": [
+        "成城石井",
+        "seijo ishii"
+      ]
+    },
+    {
+      "id": "seiyu",
+      "name": "Seiyu / 西友",
+      "category": "supermarket",
+      "defaultRecommendation": "Store/Rakuten point layer where relevant, then best current payment.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold for ordinary grocery spend unless a Seiyu/Rakuten campaign clearly beats the training value.",
+      "afterSmbcTrainingRecommendation": "JAL card direct for ordinary JAL miles or campaign-best Rakuten/QR/card route.",
+      "steps": [
+        "Scan any eligible store/point barcode.",
+        "Use SMBC during training."
+      ],
+      "alternatives": [
+        "Campaign-specific Rakuten Pay/card route.",
+        "Mobile Suica for small purchases where accepted."
+      ],
+      "warnings": [
+        "Campaign days and point conditions change; do not hard-code Rakuten as always best."
+      ],
+      "tags": [
+        "supermarket",
+        "SMBC",
+        "campaign"
+      ],
+      "aliases": [
+        "西友",
+        "seiyu"
+      ]
+    },
+    {
+      "id": "seven-eleven",
+      "name": "7-Eleven",
+      "category": "convenience_store",
+      "defaultRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold Credit Mode smartphone Visa touch",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch if it remains high-rate. If JP BANK JCB campaign is higher, use JP BANK JCB temporarily.",
+      "steps": [
+        "Scan 7-Eleven app if relevant.",
+        "Say: Visaのタッチでお願いします",
+        "Use smartphone touch with SMBC Olive in Credit Mode."
+      ],
+      "alternatives": [
+        "JP BANK EXTAGE JCB only when there is a stronger campaign."
+      ],
+      "warnings": [
+        "Physical card touch / iD / insert payment may not count for the high SMBC rate.",
+        "Confirm current campaign before overriding."
+      ],
+      "tags": [
+        "SMBC",
+        "Visa touch",
+        "convenience",
+        "high-rate"
+      ],
+      "aliases": [
+        "7eleven",
+        "seven",
+        "セブン",
+        "セブンイレブン"
+      ]
+    },
+    {
+      "id": "skylark-target-restaurants",
+      "name": "Skylark target restaurants (Jonathan / Bamiyan / Shabu-yo etc.)",
+      "category": "restaurant",
+      "defaultRecommendation": "App coupon first, then SMBC Olive Gold Credit Mode via smartphone Visa touch.",
+      "duringSmbcTrainingRecommendation": "Use the app coupon, then SMBC Olive Credit Mode smartphone Visa touch.",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch while the current target-store route remains active.",
+      "steps": [
+        "Open the Skylark app and apply a coupon where available.",
+        "Say: Visaのタッチでお願いします.",
+        "Use Olive Credit Mode via smartphone."
+      ],
+      "alternatives": [
+        "QR payment only if a coupon/campaign is stronger."
+      ],
+      "warnings": [
+        "Only specified Skylark brands are included; not every group brand automatically qualifies.",
+        "Commercial-facility exclusions can apply.",
+        "Physical card/iD/insert routes do not receive the target-store bonus."
+      ],
+      "tags": [
+        "SMBC target",
+        "Skylark",
+        "coupon",
+        "8%"
+      ],
+      "aliases": [
+        "ジョナサン",
+        "jonathan",
+        "バーミヤン",
+        "bamiyan",
+        "しゃぶ葉",
+        "shabuyo",
+        "夢庵",
+        "yumean",
+        "ステーキガスト",
+        "から好し",
+        "むさしの森珈琲",
+        "藍屋",
+        "グラッチェガーデンズ",
+        "魚屋路",
+        "chawan",
+        "La Ohana",
+        "とんから亭",
+        "桃菜"
+      ]
+    },
+    {
+      "id": "smart-ex",
+      "name": "Smart EX / Tokaido-Sanyo-Kyushu Shinkansen",
+      "category": "transport",
+      "defaultRecommendation": "Register JAL CLUB EST Suica as the payment card and Mobile Suica as the boarding IC after SMBC training.",
+      "duringSmbcTrainingRecommendation": "Use SMBC Olive Gold as the Smart EX payment card when the large ticket amount is useful for 100万円修行; register Mobile Suica only as the boarding IC.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica as payment card; Mobile Suica as boarding IC.",
+      "steps": [
+        "Buy the ticket in Smart EX.",
+        "Choose SMBC during training or JAL card after training.",
+        "Register Mobile Suica as the boarding IC and tap through the Shinkansen gate."
+      ],
+      "alternatives": [
+        "Compare EX早特/discounted products before optimizing card rewards."
+      ],
+      "warnings": [
+        "The Shinkansen fare is charged to the registered credit card, not deducted from Suica balance.",
+        "Smart EX is not the same as JR East Ekinet/View Plus treatment."
+      ],
+      "tags": [
+        "Shinkansen",
+        "Smart EX",
+        "SMBC training",
+        "JAL"
+      ],
+      "aliases": [
+        "スマートEX",
+        "smart ex",
+        "東海道新幹線",
+        "山陽新幹線",
+        "九州新幹線"
+      ]
+    },
+    {
+      "id": "starbucks",
+      "name": "Starbucks Japan",
+      "category": "restaurant",
+      "defaultRecommendation": "During SMBC修行, use eligible Starbucks mobile order/App Clip and pay via Apple Pay with Olive Credit Mode for the SMBC target-store route. At the physical cashier, treat payment as ordinary spend.",
+      "duringSmbcTrainingRecommendation": "Prefer eligible Starbucks mobile order/App Clip -> Apple Pay -> SMBC Olive Credit Mode. Do not charge a Starbucks Card expecting the SMBC target-store bonus.",
+      "afterSmbcTrainingRecommendation": "Use Starbucks app/card when its rewards or campaigns are worthwhile; otherwise Mobile Suica for speed or JAL card direct for ordinary JAL miles.",
+      "steps": [
+        "For the SMBC target-store route, order through the Starbucks app or App Clip.",
+        "Select Apple Pay and ensure SMBC Olive Credit Mode is used.",
+        "At a physical cashier, choose the best ordinary payment route instead."
+      ],
+      "alternatives": [
+        "Mobile order/app campaign route if available.",
+        "PayPay/QR only if that branch/campaign supports it."
+      ],
+      "warnings": [
+        "The current SMBC Starbucks route is eligible mobile order/App Clip via Apple Pay, not ordinary in-store smartphone touch.",
+        "Starbucks Card recharge is not the eligible SMBC mobile-order transaction.",
+        "Commercial-facility or transaction-level exclusions may apply."
+      ],
+      "tags": [
+        "coffee",
+        "mobile order",
+        "SMBC target",
+        "app"
+      ],
+      "aliases": [
+        "スタバ",
+        "starbucks",
+        "starbucks coffee",
+        "スターバックス"
+      ]
+    },
+    {
+      "id": "sukiya",
+      "name": "Sukiya",
+      "category": "restaurant",
+      "defaultRecommendation": "SMBC Olive Gold Credit Mode smartphone Visa touch.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold Credit Mode smartphone Visa touch.",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch while it remains high-rate.",
+      "steps": [
+        "Say: Visaのタッチでお願いします.",
+        "Use smartphone touch with SMBC Olive in Credit Mode."
+      ],
+      "alternatives": [
+        "PayPay/d払い/楽天ペイ/au PAY only when a coupon/campaign beats SMBC.",
+        "Mobile Suica for fastest low-friction payment."
+      ],
+      "warnings": [
+        "Physical card touch / iD / insert payment may not count for the high SMBC rate.",
+        "Campaign and target-store rules can change."
+      ],
+      "tags": [
+        "SMBC",
+        "Visa touch",
+        "restaurant",
+        "gyudon"
+      ],
+      "aliases": [
+        "すき家",
+        "sukiya"
+      ]
+    },
+    {
+      "id": "summit",
+      "name": "Summit Store / サミット",
+      "category": "supermarket",
+      "defaultRecommendation": "Summit app/point layer first, then best payment.",
+      "duringSmbcTrainingRecommendation": "Scan the Summit app/point layer, then pay with SMBC Olive Gold.",
+      "afterSmbcTrainingRecommendation": "Scan the store app/point layer, then JAL card direct or campaign-best payment.",
+      "steps": [
+        "Show the Summit app/point card.",
+        "Pay with SMBC during training."
+      ],
+      "alternatives": [
+        "QR/campaign route when clearly stronger.",
+        "Mobile Suica for speed where accepted."
+      ],
+      "warnings": [
+        "Store promotions and payment acceptance may differ by branch."
+      ],
+      "tags": [
+        "supermarket",
+        "app",
+        "SMBC"
+      ],
+      "aliases": [
+        "サミット",
+        "summit store",
+        "summit"
+      ]
+    },
+    {
+      "id": "sushiro",
+      "name": "Sushiro / スシロー",
+      "category": "restaurant",
+      "defaultRecommendation": "Use the Sushiro app/coupon layer first. During SMBC修行 pay the remaining amount directly with SMBC Olive Gold via Apple Pay/Visa touch if available; do not route through PayPay without a coupon.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold direct smartphone Visa touch/Apple Pay. PayPay funded by SMBC adds no meaningful benefit when there is no PayPay coupon.",
+      "afterSmbcTrainingRecommendation": "JAL card direct for ordinary JAL miles, or QUO Card Pay if an existing/discounted balance is available.",
+      "steps": [
+        "Use Sushiro app reservation/available coupons first.",
+        "If holding a valid FOOD & LIFE shareholder voucher, apply it before payment.",
+        "Otherwise during training choose credit-card payment and use SMBC Olive Credit Mode smartphone Visa touch where supported.",
+        "Use QUO Card Pay only if already held or acquired below face value."
+      ],
+      "alternatives": [
+        "QUO Card Pay at participating branches.",
+        "FOOD & LIFE shareholder voucher only if legitimately held.",
+        "PayPay only when a coupon/campaign exists or card payment is inconvenient."
+      ],
+      "warnings": [
+        "Sushiro is not in the current SMBC target-restaurant list; SMBC is used here for ordinary counted spend, not the restaurant bonus.",
+        "FOOD & LIFE shareholder vouchers prohibit commercial resale/transfer; do not build a strategy around buying resold vouchers.",
+        "QUO Card Pay acceptance excludes some branches, especially certain shopping-facility locations."
+      ],
+      "tags": [
+        "restaurant",
+        "sushi",
+        "SMBC training",
+        "QUO Card Pay",
+        "app"
+      ],
+      "aliases": [
+        "スシロー",
+        "sushiro",
+        "あきんどスシロー"
+      ]
+    },
+    {
+      "id": "uniqlo",
+      "name": "UNIQLO",
+      "category": "other",
+      "defaultRecommendation": "During SMBC修行: SMBC Olive Gold direct. After SMBC修行: JAL card direct for ordinary JAL miles, or campaign-best payment.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold direct for counted ordinary spend.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica direct if I want ordinary JAL shopping miles; otherwise use campaign-best payment.",
+      "steps": [
+        "Scan UNIQLO app membership barcode if relevant.",
+        "Say: クレジットでお願いします.",
+        "Pay with SMBC during 修行 or JAL after 修行 depending on goal."
+      ],
+      "alternatives": [
+        "Online/app payment campaign if stronger.",
+        "Mobile Suica only if accepted and convenience beats optimization."
+      ],
+      "warnings": [
+        "Not a known JAL特約店 in this data.",
+        "Campaigns can override the default."
+      ],
+      "tags": [
+        "apparel",
+        "SMBC",
+        "JAL optional",
+        "campaign"
+      ],
+      "aliases": [
+        "ユニクロ",
+        "uniqlo"
+      ]
+    },
+    {
+      "id": "uq-mobile",
+      "name": "UQ mobile bill",
+      "category": "other",
+      "defaultRecommendation": "If I have au PAY Card and plan is eligible for payment discount, use au PAY Card. If I do not have au PAY Card, use SMBC Olive Gold during SMBC修行.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold if no au PAY Card discount applies.",
+      "afterSmbcTrainingRecommendation": "Re-evaluate based on whether au PAY Card exists and whether discount applies.",
+      "steps": [
+        "Set the best eligible payment method in UQ mobile billing settings."
+      ],
+      "alternatives": [
+        "JAL card if focusing on JAL/LSP and no au PAY Card discount."
+      ],
+      "warnings": [
+        "au PAY balance payment is not automatically best.",
+        "UQ monthly payment is a stable spend source for SMBC修行."
+      ],
+      "tags": [
+        "UQ",
+        "au PAY",
+        "SMBC",
+        "recurring"
+      ],
+      "aliases": [
+        "uq",
+        "uq mobile",
+        "uqモバイル",
+        "mobile bill"
+      ]
+    },
+    {
+      "id": "usmh-group-general",
+      "name": "USMH group supermarkets",
+      "category": "supermarket",
+      "defaultRecommendation": "Use one USMH ¥100 shareholder voucher per full ¥1,000 of eligible spend, then optimize the remaining balance.",
+      "duringSmbcTrainingRecommendation": "Apply all eligible USMH vouchers, then pay the remainder with SMBC Olive Gold.",
+      "afterSmbcTrainingRecommendation": "Apply all eligible USMH vouchers, then pay the remainder with JAL card, Mobile Suica, or the strongest campaign route.",
+      "steps": [
+        "Aim for a basket total at or just above a ¥1,000 multiple when practical.",
+        "Hand vouchers to the cashier before payment.",
+        "Pay the remaining balance separately."
+      ],
+      "alternatives": [
+        "Choose an eligible USMH benefit product instead of vouchers only at the shareholder-election stage, not at checkout."
+      ],
+      "warnings": [
+        "Eligible chains include Maruetsu, Kasumi, Inageya and eligible AEON Food Style-operated stores, with exclusions.",
+        "Ordinary AEON stores and unrelated MaxValu operators are not automatically eligible.",
+        "Tenants and specified goods can be excluded."
+      ],
+      "tags": [
+        "USMH",
+        "shareholder voucher",
+        "10% on full ¥1000 blocks",
+        "supermarket"
+      ],
+      "aliases": [
+        "USMH",
+        "U.S.M.H",
+        "ユナイテッドスーパーマーケット",
+        "株主優待券"
+      ]
+    },
+    {
+      "id": "welcia",
+      "name": "Welcia / ウエルシア",
+      "category": "other",
+      "defaultRecommendation": "Store point layer first, then JAL CLUB EST Suica direct credit-card payment.",
+      "duringSmbcTrainingRecommendation": "Use JAL CLUB EST Suica direct if JAL特約店 miles/LSP matter; use SMBC only if SMBC修行 progress is more important.",
+      "afterSmbcTrainingRecommendation": "JAL CLUB EST Suica direct credit-card payment.",
+      "steps": [
+        "Show relevant store point barcode first if using one.",
+        "Say: クレジットでお願いします.",
+        "Pay with physical JAL CLUB EST Suica / ordinary credit-card route."
+      ],
+      "alternatives": [
+        "Use store-specific point day/campaign route if it clearly beats JAL miles.",
+        "PayPay/QR only when coupon/campaign is stronger."
+      ],
+      "warnings": [
+        "Welcia online purchases are not the same as physical-store JAL特約店 purchases.",
+        "Some stores can be excluded; verify if making a large purchase."
+      ],
+      "tags": [
+        "JAL特約店",
+        "drugstore",
+        "JAL",
+        "direct card"
+      ],
+      "aliases": [
+        "ウエルシア",
+        "welcia",
+        "welcia yakkyoku"
+      ]
+    },
+    {
+      "id": "yahoo-lohaco",
+      "name": "Yahoo!ショッピング / LOHACO",
+      "category": "online",
+      "defaultRecommendation": "PayPay Gold / PayPay Credit",
+      "duringSmbcTrainingRecommendation": "PayPay Gold / PayPay Credit unless SMBC修行 progress is more important than PayPay ecosystem value.",
+      "afterSmbcTrainingRecommendation": "PayPay Gold / PayPay Credit",
+      "steps": [
+        "Use PayPay ecosystem payment."
+      ],
+      "alternatives": [
+        "Use other cards only if a specific campaign beats PayPay."
+      ],
+      "warnings": [
+        "PayPay Gold value depends on LYP, Yahoo/LOHACO usage, and annual fee math."
+      ],
+      "tags": [
+        "PayPay",
+        "Yahoo",
+        "LOHACO",
+        "LYP"
+      ],
+      "aliases": [
+        "yahoo",
+        "lohaco",
+        "ヤフー",
+        "ロハコ"
+      ]
+    },
+    {
+      "id": "yoshinoya",
+      "name": "Yoshinoya / 吉野家",
+      "category": "restaurant",
+      "defaultRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch.",
+      "duringSmbcTrainingRecommendation": "SMBC Olive Gold Credit Mode via smartphone Visa touch; eligible official mobile-order route may also be used where specifically supported.",
+      "afterSmbcTrainingRecommendation": "Continue SMBC smartphone touch while the current target-store 8% route remains active; override only for a stronger coupon/discount.",
+      "steps": [
+        "Check the chain app/coupon first.",
+        "At the register choose credit-card/contactless payment, not iD.",
+        "Say: Visaのタッチでお願いします.",
+        "Use SMBC Olive in Credit Mode on the smartphone."
+      ],
+      "alternatives": [
+        "Use the chain's eligible mobile order with SMBC where officially supported.",
+        "Use PayPay/another QR method only if a coupon or campaign is stronger."
+      ],
+      "warnings": [
+        "Physical-card touch, iD, card insertion and magnetic-stripe payment do not receive the current target-store bonus.",
+        "Commercial-facility branches and certain locations can be excluded."
+      ],
+      "tags": [
+        "SMBC target",
+        "8%",
+        "smartphone Visa touch"
+      ],
+      "aliases": [
+        "吉野家",
+        "yoshinoya"
+      ]
+    }
+  ],
+  "globalRules": [
+    {
+      "id": "apply-discounts-first",
+      "priority": 100,
+      "rule": "Apply valid shareholder benefits, store coupons, and fixed-value vouchers before choosing the payment method for the remaining balance.",
+      "examples": [
+        "MUJI shareholder coupon: scan MUJI App and apply 7% off first.",
+        "USMH shareholder voucher: hand over one ¥100 voucher for each full ¥1,000 of eligible spend, then pay the remainder."
+      ]
+    },
+    {
+      "id": "muji-shareholder-overrides-card",
+      "priority": 95,
+      "rule": "At eligible MUJI stores, the 7% shareholder discount is more important than the difference between ordinary card reward rates. Always scan the MUJI App first."
+    },
+    {
+      "id": "usmh-basket-threshold",
+      "priority": 95,
+      "rule": "At eligible USMH-group stores, plan the basket around ¥1,000 thresholds because each full ¥1,000 permits one ¥100 shareholder voucher.",
+      "examples": [
+        "¥1,999: one voucher.",
+        "¥2,000: two vouchers.",
+        "¥2,999: two vouchers.",
+        "¥3,000: three vouchers."
+      ]
+    },
+    {
+      "id": "smbc-target-route",
+      "priority": 90,
+      "rule": "At current SMBC target convenience stores and restaurants, use Olive Credit Mode via smartphone Visa touch or an explicitly eligible mobile-order route. Do not use physical-card touch, iD, insert, or magnetic stripe when seeking the target-store bonus."
+    },
+    {
+      "id": "ordinary-spend-during-training",
+      "priority": 80,
+      "rule": "Until the SMBC 100万円修行 deadline, ordinary eligible spending defaults to SMBC Olive Gold unless a shareholder benefit, strong coupon, JAL特約店 route, or clearly higher-value campaign overrides it."
+    },
+    {
+      "id": "ordinary-spend-after-training",
+      "priority": 70,
+      "rule": "After SMBC training, ordinary direct card spend defaults to JAL CLUB EST Suica when the goal is JAL shopping miles/LSP; use Mobile Suica for low-friction small purchases."
+    }
+  ]
+}
