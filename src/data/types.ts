@@ -12,6 +12,11 @@ export type PaymentMethod = {
     | "PayPay"
     | "FamiPay"
     | "Other";
+  status?: string;
+  mode?: string;
+  annualFeeYen?: number;
+  creditLimitYen?: number;
+  cashAdvanceLimitYen?: number;
   bestFor: string[];
   avoidFor: string[];
   notes: string[];
@@ -24,25 +29,39 @@ export type MerchantCategory =
   | "station_mall"
   | "airline"
   | "online"
+  | "transport"
+  | "drugstore"
+  | "electronics"
+  | "retail"
   | "other";
+
+export type MerchantFilters = {
+  storeCategory?: string[];
+  storeSubcategory?: string[];
+  paymentMethods?: string[];
+  rewardPrograms?: string[];
+  benefits?: string[];
+  conditions?: string[];
+};
 
 export type MerchantRule = {
   id: string;
   name: string;
-  category: MerchantCategory;
+  category: MerchantCategory | string;
+  categoryDisplay?: string;
+  subCategoryDisplay?: string;
   defaultRecommendation: string;
-  duringSmbcTrainingRecommendation?: string;
-  afterSmbcTrainingRecommendation?: string;
   steps: string[];
   alternatives: string[];
   warnings: string[];
   tags: string[];
+  tagKeys?: string[];
+  filters?: MerchantFilters;
   aliases?: string[];
   examples?: string[];
 };
 
 export type Goal =
-  | "finish_smbc_training"
   | "maximize_jal_miles"
   | "maximize_jal_lsp"
   | "maximize_cashback"
