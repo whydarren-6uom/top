@@ -6,8 +6,7 @@ const paymentPatterns: Array<[RegExp, string]> = [
   [/JP BANK.*FamiPay|FamiPay.*JP BANK/i, "JP BANK EXTAGE JCB -> FamiPay"],
   [/SMBC Olive Gold.*Visa touch|smartphone Visa touch/i, "SMBC Olive Gold smartphone Visa touch"],
   [/JAL CLUB EST Suica.*direct|JAL card direct|JAL direct/i, "JAL CLUB EST Suica direct"],
-  [/JAL Pay.*au PAY.*PayPay/i, "JAL Pay -> au PAY Prepaid -> PayPay MC"],
-  [/PayPay Gold|PayPay Credit/i, "PayPay Gold / PayPay Credit"],
+  [/PayPay Card Mastercard/i, "PayPay Card Mastercard"],
   [/LaCuCa.*SMBC|Life app.*SMBC/i, "LaCuCa/Life app + SMBC Olive Gold"],
   [/SMBC Olive Gold/i, "SMBC Olive Gold"],
   [/Mobile Suica/i, "Mobile Suica"],
@@ -17,30 +16,27 @@ const paymentPatterns: Array<[RegExp, string]> = [
   [/FamiPay/i, "FamiPay"],
   [/PayPay/i, "PayPay"],
   [/JAL CLUB EST Suica/i, "JAL CLUB EST Suica"],
+  [/Fidelity Rewards Visa/i, "Fidelity Rewards Visa"],
+  [/HSBC.*Elite/i, "HSBC US Elite"],
+  [/Chase Sapphire Preferred/i, "Chase Sapphire Preferred"],
   [/Best current campaign|campaign-best|active campaign/i, "Best current campaign"],
   [/Cash/i, "Cash"],
 ];
 
 export function compactRecommendation(value?: string) {
-  if (!value) {
-    return "-";
-  }
+  if (!value) return "-";
 
   const matches = paymentPatterns
     .filter(([pattern]) => pattern.test(value))
     .map(([, label]) => label);
   const unique = Array.from(new Set(matches));
 
-  if (unique.length > 0) {
-    return unique.slice(0, 2).join(" / ");
-  }
-
+  if (unique.length > 0) return unique.slice(0, 2).join(" / ");
   return value.length > 72 ? `${value.slice(0, 69).trim()}...` : value;
 }
 
 export function isCashierPhrase(item: string) {
   const normalized = item.trim().toLowerCase();
-
   return (
     normalized.startsWith("say:") ||
     normalized.includes(" say ") ||
@@ -56,43 +52,30 @@ export function getUsefulSteps(merchant: MerchantRule) {
 }
 
 export function getFilterableTags(merchants: MerchantRule[]) {
-  const tags = merchants.flatMap((merchant) => merchant.tags);
-
-  return Array.from(
-    new Set(
-      tags
-        .filter((tag) => !/^not\s+/i.test(tag.trim()))
-        .filter((tag) => tag !== "JAL optional")
-        .sort((a, b) => a.localeCompare(b)),
-    ),
-  );
+  const tags = merchants.flatMap((merchant) => merchant.tags ?? []);
+  return Array.from(new Set(tags.filter(Boolean).sort((a, b) => a.localeCompare(b))));
 }
 
-export function filterMerchants(
-  merchants: MerchantRule[],
-  query: string,
-  tag: string,
-) {
+export function filterMerchants(merchants: MerchantRule[], query: string, tag: string) {
   const term = query.trim().toLowerCase();
 
   return merchants.filter((merchant) => {
     const matchesTag = !tag || merchant.tags.includes(tag);
+    if (!matchesTag) return false;
+    if (!term) return true;
 
-    if (!matchesTag) {
-      return false;
-    }
-
-    if (!term) {
-      return true;
-    }
+    const filters = merchant.filters
+      ? Object.values(merchant.filters).flatMap((values) => values ?? [])
+      : [];
 
     const searchable = [
       merchant.name,
       merchant.category,
+      merchant.categoryDisplay ?? "",
+      merchant.subCategoryDisplay ?? "",
       merchant.defaultRecommendation,
-      merchant.duringSmbcTrainingRecommendation ?? "",
-      merchant.afterSmbcTrainingRecommendation ?? "",
       ...merchant.tags,
+      ...filters,
       ...(merchant.aliases ?? []),
       ...(merchant.examples ?? []),
     ]
