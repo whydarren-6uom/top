@@ -4,7 +4,7 @@
 
 <div align="center">
 <h1>dar.wang</h1>
-<p>Personal portfolio website of Darren Wang - Software Engineer & QA Engineer</p>
+<p>Personal portfolio website of Darren Wang - Software Engineer</p>
 </div>
 
 # Tech Stack

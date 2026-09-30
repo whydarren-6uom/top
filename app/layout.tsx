@@ -9,9 +9,9 @@ import Footer from "./components/global/Footer";
 import { Providers } from "./providers";
 
 const options = {
-  title: "Darren Wang | Software Engineer & QA Engineer",
+  title: "Darren Wang | Software Engineer",
   description:
-    "Darren Wang is a Software Engineer and QA Engineer based in Tokyo, Japan, specializing in full-stack development, API integration, and quality assurance automation",
+    "Darren Wang is a Software Engineer based in Tokyo, Japan, specializing in full-stack development, API integration, and reliable production systems",
   url: "https://dar.wang",
 };
 
