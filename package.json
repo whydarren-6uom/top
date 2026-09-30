@@ -10,7 +10,8 @@
     "lint": "next lint",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "validate:payments": "node --experimental-strip-types scripts/validate-payments.mjs"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",

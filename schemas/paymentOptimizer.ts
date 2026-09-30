@@ -33,7 +33,7 @@ export default defineType({
       title: "Data JSON File",
       type: "file",
       description:
-        "Upload the full payment optimizer JSON file. This is the source of truth for /payments.",
+        "Optional validated v13 override for /payments. Older, malformed, or unavailable files fall back to the checked-in v13 catalog.",
       options: {
         accept: "application/json,.json",
       },

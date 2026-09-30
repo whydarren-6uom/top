@@ -1,51 +1,20 @@
-import type { MerchantRule, PaymentMethod } from "./types";
+import type { EligibilityDefaults, MerchantRule, PaymentMethod, PaymentPreferences } from "./types";
 
-export type DashboardMetric = {
-  label: string;
-  value: string;
-  detail?: string;
+export type CatalogCoverage = {
+  jalCardSpecial: { count: number; source: string; pages?: number; asOf?: string; scope?: string };
+  jcbPartner: { count: number; source: string; asOf?: string; fullyReviewed20x?: number; otherEntries?: string };
 };
 
 export type PaymentOptimizerData = {
+  schemaVersion: number;
   lastUpdated: string;
-  canonicalStatusVersion?: number;
-  canonicalStatusAsOf?: string;
-  userSettings: {
-    paypayMastercardLimitYen?: number;
-    paypayMastercardCashAdvanceLimitYen?: number;
-    smbcPaymentMode?: string;
-    smbcCreditModeStatus?: string;
-    paypayGoldStatus?: string;
-    defaultOptimizationGoal?: string;
-    [key: string]: unknown;
-  };
+  timezone: string;
+  userSettings: PaymentPreferences;
+  eligibilityDefaults: EligibilityDefaults;
   paymentMethods: PaymentMethod[];
+  cards: PaymentMethod[];
   merchants: MerchantRule[];
-  homepage?: {
-    title?: string;
-    subtitle?: string;
-    defaultNow?: Record<
-      string,
-      {
-        default?: string;
-        why?: string;
-        how?: string;
-        rechargeFrom?: string;
-        card?: string;
-        through?: string;
-        rule?: string;
-        status?: string;
-      }
-    >;
-    cards?: {
-      japan?: Array<Record<string, unknown>>;
-      us?: Array<Record<string, unknown>>;
-      closed?: Array<Record<string, unknown>>;
-    };
-    rememberAtCheckout?: Array<Record<string, unknown>>;
-    shareholderBenefits?: Array<Record<string, unknown>>;
-    activeCampaigns?: Array<Record<string, unknown>>;
-    pointsAndExpiry?: Array<Record<string, unknown>>;
-    searchFirst?: string[];
-  };
+  globalRules: Array<{ id: string; rule: string }>;
+  catalogCoverage: CatalogCoverage;
+  source: "checked-in-v13" | "sanity-v13";
 };

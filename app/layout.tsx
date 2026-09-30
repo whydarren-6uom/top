@@ -57,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body
         className={`${incognito.variable} ${gitlabmono.variable} font-inter dark:bg-zinc-900 bg-white dark:text-white text-zinc-700`}
       >

@@ -1,87 +1,80 @@
+export type Region = "JP" | "US" | "CN";
+
+export type SourceLink = { label: string; url: string };
+
+export type CardAccount = {
+  status: string;
+  network?: string;
+  mode?: string;
+  creditModeStatus?: string;
+  issuerServicer?: string;
+  billingCurrency?: string;
+  annualFeeYen?: number;
+};
+
 export type PaymentMethod = {
   id: string;
   name: string;
-  type: "credit_card" | "prepaid" | "wallet" | "point_card" | "membership";
-  network?:
-    | "Visa"
-    | "Mastercard"
-    | "JCB"
-    | "Suica"
-    | "QUICPay"
-    | "iD"
-    | "PayPay"
-    | "FamiPay"
-    | "Other";
-  status?: string;
-  mode?: string;
-  annualFeeYen?: number;
-  creditLimitYen?: number;
-  cashAdvanceLimitYen?: number;
-  bestFor: string[];
-  avoidFor: string[];
-  notes: string[];
+  type: string;
+  region?: Region;
+  account?: CardAccount;
+  rewards: string[];
+  traits: string[];
+  links: SourceLink[];
+  sourceAsOf?: string;
+  eligibleForRecommendations: boolean;
 };
 
-export type MerchantCategory =
-  | "convenience_store"
-  | "restaurant"
-  | "supermarket"
-  | "station_mall"
-  | "airline"
-  | "online"
-  | "transport"
-  | "drugstore"
-  | "electronics"
-  | "retail"
-  | "other";
+export type RecommendationCandidate = { id: string | null; pct: number | null; how: string; note: string };
 
-export type MerchantFilters = {
-  storeCategory?: string[];
-  storeSubcategory?: string[];
-  paymentMethods?: string[];
-  rewardPrograms?: string[];
-  benefits?: string[];
-  conditions?: string[];
+export type JcbOffer = {
+  id: string;
+  url: string;
+  advertisedMultiplier?: string;
+  pointValuePercent: number | null;
+  eligibility?: string;
+  registrationRequired: boolean;
+  channel: string;
+  startsOn: string;
+  endsOn: string | null;
+  premiumOnlyOrTiered: boolean;
+  fixedRewardPoints: number | null;
 };
 
 export type MerchantRule = {
   id: string;
   name: string;
-  category: MerchantCategory | string;
-  categoryDisplay?: string;
-  subCategoryDisplay?: string;
+  category: string;
+  aliases: string[];
+  program: string;
+  notes: string[];
+  memberSteps: string[];
+  qualification?: string;
+  acceptance?: string;
+  shareholder?: string;
   defaultRecommendation: string;
-  steps: string[];
-  alternatives: string[];
-  warnings: string[];
-  tags: string[];
-  tagKeys?: string[];
-  filters?: MerchantFilters;
-  aliases?: string[];
-  examples?: string[];
+  recommendation: RecommendationCandidate & { opportunity: RecommendationCandidate | null };
+  sourceUrls: string[];
+  jcbOffer?: JcbOffer;
+  directoryEntry?: { name?: string; detailUrl?: string; area?: string; category?: string };
 };
 
-export type Goal =
-  | "maximize_jal_miles"
-  | "maximize_jal_lsp"
-  | "maximize_cashback"
-  | "use_fastest_payment"
-  | "use_mastercard_only"
-  | "use_current_campaign";
-
-export type RecommendationInput = {
-  merchantId?: string;
-  category?: MerchantCategory | string;
-  amount?: number;
-  date?: string;
-  goal?: Goal;
-  campaignOverride?: string;
+export type PaymentPreferences = {
+  defaultOptimizationGoal: string;
+  preferJal: boolean;
+  hasMujiShareholderCoupon: boolean;
+  hasUsmhShareholderVouchers: boolean;
+  jalMileValueYen: number;
+  allowUsCardsInJapan: boolean;
 };
 
-export type Recommendation = {
-  primary: string;
-  secondary?: string[];
-  steps: string[];
-  reason: string;
-  warnings: string[];
+export type EligibilityDefaults = {
+  jcbRegisteredMerchantIds: string[];
+  jcbOsEligibilityConfirmed: boolean;
+  paypayCreditIdentityVerified: boolean;
+  discoverActivationConfirmed: boolean;
+  discoverQuarterRemainingUsd: number | null;
+  hsbcChinaCashbackEnrolled: boolean;
 };
+
+export type Recommendation = RecommendationCandidate & { opportunity: RecommendationCandidate | null };
