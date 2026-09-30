@@ -64,3 +64,6 @@ Thumbs.db
 *.log
 *.tmp
 .cache/
+.open-next/
+.wrangler/
+.wrangler-dry-run/

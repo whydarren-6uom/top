@@ -2,15 +2,7 @@ export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 
 export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
 
-export const token = process.env.NEXT_PUBLIC_SANITY_ACCESS_TOKEN;
-// Uncomment the line below if you want to make the access token required
-// export const token = checkValue(
-//   process.env.NEXT_PUBLIC_SANITY_ACCESS_TOKEN,
-//   "NEXT_PUBLIC_SANITY_ACCESS_TOKEN",
-//   "https://sanity.io"
-// );
-
-export const hookSecret = process.env.NEXT_PUBLIC_SANITY_HOOK_SECRET;
+export const hookSecret = process.env.SANITY_REVALIDATE_SECRET;
 export const mode = process.env.NODE_ENV;
 
 export const apiVersion =

@@ -1,9 +1,9 @@
 <div align="center">
-<a href="https://darrenwang.site"><img src="./public/logo.png" width="60px"></a>
+<a href="https://dar.wang"><img src="./public/logo.png" width="60px"></a>
 </div>
 
 <div align="center">
-<h1>darrenwang.site</h1>
+<h1>dar.wang</h1>
 <p>Personal portfolio website of Darren Wang - Software Engineer & QA Engineer</p>
 </div>
 
@@ -11,7 +11,7 @@
 
 - [Next.js 16][nextjs] - React Framework with App Router and Turbopack
 - [React 19][react] - UI Library
-- [Vercel][vercel] - Hosting and Deployment
+- [Cloudflare Workers][cloudflare] - Hosting and Deployment
 - [Sanity.io v4][sanity] - Headless CMS and Content Lake
 - [Tailwind CSS v4][tailwind] - Utility-first CSS Framework
 - [Umami][umami] - Privacy-focused Analytics
@@ -111,7 +111,6 @@ NEXT_PUBLIC_SANITY_DATASET="production"
 NEXT_PUBLIC_SANITY_API_VERSION="2023-07-21"
 
 # Optional: Sanity Access Token (not required for public data)
-# NEXT_PUBLIC_SANITY_ACCESS_TOKEN=""
 
 # Optional: GitHub Profile (for contribution graph)
 NEXT_PUBLIC_GITHUB_USERNAME="your-github-username"
@@ -154,53 +153,24 @@ By default, the UI will be blank. To add content:
 npm run build
 ```
 
-This will:
+This creates the native Next.js production build. To create the deployable
+Cloudflare Worker artifact, run:
 
-1. Run ESLint to check for errors
-2. Build an optimized production bundle
-3. Generate static pages where possible
+```bash
+npm run build:cloudflare
+```
 
 ## Deployment
 
-### Recommended: Vercel (Free)
+The site uses the committed OpenNext configuration in `wrangler.jsonc` and
+`open-next.config.ts`:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+```bash
+npm run deploy
+```
 
-1. Push your code to GitHub
-2. Import your repository on [Vercel](https://vercel.com)
-3. Add your environment variables
-4. Deploy!
-
-Vercel is made by the creators of Next.js and offers:
-
-- Zero configuration
-- Automatic HTTPS
-- Global CDN
-- Automatic deployments on push
-- Free hobby tier
-
-### Alternative: Netlify
-
-1. Push your code to GitHub
-2. Connect your repository on [Netlify](https://netlify.com)
-3. Set build command: `npm run build`
-4. Set publish directory: `.next`
-5. Add environment variables
-6. Deploy!
-
-### GitHub Pages Note
-
-⚠️ **This project cannot be directly deployed to GitHub Pages** because it requires a Node.js server. GitHub Pages only hosts static files.
-
-**Options for GitHub Pages:**
-
-1. Use Vercel or Netlify instead (recommended)
-2. Export as static site (limited functionality):
-   ```bash
-   # Add to next.config.js:
-   output: 'export'
-   ```
-   Note: This disables Server-Side Rendering, API routes, and dynamic features.
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for Cloudflare build settings, environment
+variables, Sanity setup, and the domain-cutover checklist.
 
 ## Project Structure
 
@@ -324,7 +294,7 @@ This portfolio is based on the [victoreke.com][victor-site] template by Victor E
 If you use this template, please provide attribution by linking to the original source:
 
 - **Template by**: [Victor Eke](https://victoreke.com)
-- **Customized by**: [Darren Wang](https://darrenwang.site)
+- **Customized by**: [Darren Wang](https://dar.wang)
 
 ---
 
@@ -334,16 +304,16 @@ Built with ❤️ using Next.js 16, React 19, Tailwind CSS v4, and Sanity v4
 
 [nextjs]: https://nextjs.org
 [react]: https://react.dev
-[vercel]: https://vercel.com
+[cloudflare]: https://www.cloudflare.com/developer-platform/products/workers/
 [sanity]: https://sanity.io
 [tailwind]: https://tailwindcss.com
 [umami]: https://umami.is
 [framer]: https://www.framer.com/motion
 [nexttheme]: https://github.com/pacocoursey/next-themes
 [reactrefractor]: https://github.com/rexxars/react-refractor
-[site]: https://darrenwang.site
+[site]: https://dar.wang
 [victor-site]: https://victoreke.com
-[studio]: https://darrenwang.site/studio
+[studio]: https://dar.wang/studio
 [env-example]: .env.example
 [localhost]: http://localhost:3000
 [localhost-studio]: http://localhost:3000/studio

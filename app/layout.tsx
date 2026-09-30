@@ -7,13 +7,12 @@ import { gitlabmono } from "./assets/font/font";
 import Navbar from "./components/global/Navbar";
 import Footer from "./components/global/Footer";
 import { Providers } from "./providers";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const options = {
   title: "Darren Wang | Software Engineer & QA Engineer",
   description:
     "Darren Wang is a Software Engineer and QA Engineer based in Tokyo, Japan, specializing in full-stack development, API integration, and quality assurance automation",
-  url: "https://darrenwang.site",
+  url: "https://dar.wang",
 };
 
 export const metadata: Metadata = {
@@ -27,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: options.title,
     url: options.url,
-    siteName: "darrenwang.site",
+    siteName: "dar.wang",
     locale: "en-US",
     type: "website",
     description: options.description,
@@ -67,7 +66,6 @@ export default function RootLayout({
           {children}
           <Footer />
         </Providers>
-        <SpeedInsights />
       </body>
       <Script
         defer

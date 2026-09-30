@@ -9,7 +9,7 @@ import { structure } from "./sanity/structure";
 
 export default defineConfig({
   name: "darrenwang",
-  title: "darrenwang.site",
+  title: "dar.wang",
   basePath: "/studio",
   projectId: projectId ?? "local-dev",
   dataset: dataset ?? "production",

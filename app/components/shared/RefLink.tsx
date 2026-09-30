@@ -1,5 +1,4 @@
-import { Url } from "next/dist/shared/lib/router/router";
-import Link from "next/link";
+import Link, { type LinkProps } from "next/link";
 import { HTMLAttributeAnchorTarget } from "react";
 
 export default function RefLink({
@@ -8,14 +7,14 @@ export default function RefLink({
   className,
   target = "_blank",
 }: {
-  href: Url;
+  href: LinkProps["href"];
   children?: React.ReactNode;
   className?: string;
   target?: HTMLAttributeAnchorTarget;
 }) {
   return (
     <Link
-      href={href + "?ref=darrenwang.site"}
+      href={href + "?ref=dar.wang"}
       rel="noopener"
       target={target}
       className={className}

@@ -10,11 +10,11 @@ import PageHeading from "../components/shared/PageHeading";
 
 export const metadata: Metadata = {
   title: "Projects | Darren Wang",
-  metadataBase: new URL("https://darrenwang.site/projects"),
+  metadataBase: new URL("https://dar.wang/projects"),
   description: "Explore projects built by Darren Wang",
   openGraph: {
     title: "Projects | Darren Wang",
-    url: "https://darrenwang.site/projects",
+    url: "https://dar.wang/projects",
     description: "Explore projects built by Darren Wang",
   },
 };
