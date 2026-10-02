@@ -1,0 +1,65 @@
+name: Refresh Takarakuji results
+
+on:
+  workflow_dispatch:
+    inputs:
+      full:
+        description: Refresh all currently available historical months
+        type: boolean
+        default: false
+  schedule:
+    - cron: "30 12 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: takarakuji-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+      - name: Install checker dependencies
+        working-directory: tools/takarakuji
+        run: pip install -r requirements.txt
+      - name: Install browser for official-page fallback
+        run: python -m playwright install --with-deps chromium
+      - name: Validate checker parity
+        working-directory: tools/takarakuji
+        run: |
+          python -m unittest -v
+          python parity_check.py
+      - name: Refresh validated official results
+        id: sync
+        continue-on-error: true
+        working-directory: tools/takarakuji
+        run: |
+          if [ "${{ inputs.full }}" = "true" ]; then
+            python sync_data.py --full --output ../../public/takarakuji/results.json
+          else
+            python sync_data.py --output ../../public/takarakuji/results.json
+          fi
+      - name: Commit a changed validated snapshot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/takarakuji/results.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update Takarakuji result snapshot'
+            git push
+          fi
+      - name: Report a sync failure
+        if: steps.sync.outcome == 'failure'
+        run: |
+          echo '### ⚠️ Takarakuji synchronization was unavailable' >> "$GITHUB_STEP_SUMMARY"
+          echo 'The existing validated snapshot was retained; the website will show its sync status.' >> "$GITHUB_STEP_SUMMARY"

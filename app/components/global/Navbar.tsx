@@ -9,6 +9,7 @@ export default function Navbar() {
     { title: "Home", href: "/" },
     { title: "About", href: "/about" },
     { title: "Projects", href: "/projects" },
+    { title: "Takarakuji", href: "/takarakuji" },
   ];
 
   return (

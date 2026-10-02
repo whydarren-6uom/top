@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { HiBeaker, HiHome, HiOutlineX, HiUser } from "react-icons/hi";
+import { HiTicket } from "react-icons/hi2";
 
 export default function MobileMenu() {
   const [navShow, setNavShow] = useState(false);
@@ -11,6 +12,7 @@ export default function MobileMenu() {
     { title: "Home", href: "/", icon: HiHome },
     { title: "About", href: "/about", icon: HiUser },
     { title: "Projects", href: "/projects", icon: HiBeaker },
+    { title: "Takarakuji", href: "/takarakuji", icon: HiTicket },
   ];
 
   const onToggleNav = () => {

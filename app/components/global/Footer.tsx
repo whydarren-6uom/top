@@ -50,9 +50,7 @@ export default function Footer() {
                   target="_blank"
                   className="flex items-center gap-x-2 dark:text-white text-zinc-600 hover:underline"
                 >
-                  <span aria-hidden="true" className="text-[#f48120]">
-                    ●
-                  </span>{" "}
+                  <Image src="/cloudflare.svg" width={26} height={11} alt="Cloudflare" />
                   Cloudflare
                 </a>
               </li>
