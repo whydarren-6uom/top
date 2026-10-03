@@ -1,11 +1,104 @@
 {
   "schema_version": 1,
-  "last_attempt": "2026-10-01T18:33:30.317419+00:00",
+  "last_attempt": "2026-10-03T16:36:04.117869+00:00",
   "last_success": "2026-10-01T18:33:30.317419+00:00",
   "last_complete_success": "2026-10-01T18:33:30.317419+00:00",
-  "sync_status": "ok",
+  "sync_status": "failed",
   "seed_note": "数字选择式和地域券均通过官方 CSV 严格校验后自动更新；无法识别的规则不会作未中奖判定。",
-  "errors": [],
+  "errors": [
+    {
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto6/index.html",
+      "error": "官网返回 HTTP 403，没有判定中奖与否"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto7/index.html",
+      "error": "官网返回 HTTP 403，没有判定中奖与否"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/miniloto/index.html",
+      "error": "官网返回 HTTP 403，没有判定中奖与否"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/bingo/bingo5/index.html",
+      "error": "官网返回 HTTP 403，没有判定中奖与否"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
+      "error": "官网返回 HTTP 403，没有判定中奖与否"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
+      "error": "官网返回 HTTP 403，没有判定中奖与否"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=zenkoku",
+      "error": "官网返回 HTTP 403，没有判定中奖与否"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=tokyo",
+      "error": "官网返回 HTTP 403，没有判定中奖与否"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=kct",
+      "error": "官网返回 HTTP 403，没有判定中奖与否"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=kinki",
+      "error": "官网返回 HTTP 403，没有判定中奖与否"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=nishinihon",
+      "error": "官网返回 HTTP 403，没有判定中奖与否"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=chiiki",
+      "error": "官网返回 HTTP 403，没有判定中奖与否"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto7/csv/loto7.csv",
+      "error": "官方 CSV 索引缺失、重复或顺序异常"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto6/csv/loto6.csv",
+      "error": "官方 CSV 索引缺失、重复或顺序异常"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/loto/miniloto/csv/miniloto.csv",
+      "error": "官方 CSV 索引缺失、重复或顺序异常"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/bingo/bingo5/csv/bingo5.csv",
+      "error": "官方 CSV 索引缺失、重复或顺序异常"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/numbers/csv/numbers.csv",
+      "error": "官方 CSV 索引缺失、重复或顺序异常"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/zenkoku/csv/zenkoku.csv",
+      "error": "地域 CSV header 异常"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/tokyo/csv/tokyo.csv",
+      "error": "地域 CSV header 异常"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/kct/csv/kct.csv",
+      "error": "地域 CSV header 异常"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/kinki/csv/kinki.csv",
+      "error": "地域 CSV header 异常"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/nishinihon/csv/nishinihon.csv",
+      "error": "地域 CSV header 异常"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/chiiki/csv/chiiki.csv",
+      "error": "地域 CSV header 异常"
+    }
+  ],
   "coverage": {
     "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto7/csv/loto7.csv": {
       "last_success": "2026-10-01T18:33:30.317419+00:00",
