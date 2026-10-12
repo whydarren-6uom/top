@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "last_attempt": "2026-10-11T17:45:17.074848+00:00",
-  "last_success": "2026-10-11T17:45:17.074848+00:00",
+  "last_attempt": "2026-10-12T21:23:09.882168+00:00",
+  "last_success": "2026-10-12T21:23:09.882168+00:00",
   "last_complete_success": "2026-10-08T18:58:15.841557+00:00",
   "sync_status": "partial",
   "seed_note": "数字选择式和地域券均通过官方 CSV 严格校验后自动更新；无法识别的规则不会作未中奖判定。",
@@ -59,6 +59,14 @@
       "error": "官方 CSV 索引缺失、重复或顺序异常"
     },
     {
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto6/csv/loto6.csv",
+      "error": "官方 CSV header 异常"
+    },
+    {
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/bingo/bingo5/csv/bingo5.csv",
+      "error": "官方 CSV 索引缺失、重复或顺序异常"
+    },
+    {
       "source": "https://www.mizuhobank.co.jp/retail/takarakuji/numbers/csv/numbers.csv",
       "error": "官方 CSV 索引缺失、重复或顺序异常"
     },
@@ -71,11 +79,11 @@
       "error": "地域 CSV header 异常"
     },
     {
-      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/kinki/csv/kinki.csv",
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/kct/csv/kct.csv",
       "error": "地域 CSV header 异常"
     },
     {
-      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/nishinihon/csv/nishinihon.csv",
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/kinki/csv/kinki.csv",
       "error": "地域 CSV header 异常"
     },
     {
@@ -107,7 +115,7 @@
       "count": 1
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/loto/miniloto/csv/miniloto.csv": {
-      "last_success": "2026-10-11T17:45:17.074848+00:00",
+      "last_success": "2026-10-12T21:23:09.882168+00:00",
       "count": 0,
       "transport": "r.jina.ai text gateway"
     },
@@ -154,7 +162,7 @@
       "transport": "r.jina.ai text gateway"
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/nishinihon/csv/nishinihon.csv": {
-      "last_success": "2026-10-08T18:58:15.841557+00:00",
+      "last_success": "2026-10-12T21:23:09.882168+00:00",
       "count": 18,
       "transport": "r.jina.ai text gateway"
     },
@@ -5873,7 +5881,7 @@
           "digits": "4"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -5963,7 +5971,7 @@
           "digits": "4"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -6070,7 +6078,7 @@
           "digits": "8231"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -6160,7 +6168,7 @@
           "digits": "5"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -6290,7 +6298,7 @@
           "digits": "6623"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -6380,7 +6388,7 @@
           "digits": "9"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -6494,7 +6502,7 @@
           "digits": "4550"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -6576,7 +6584,7 @@
           "digits": "0"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -6698,7 +6706,7 @@
           "digits": "7513"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -6780,7 +6788,7 @@
           "digits": "1"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -6871,7 +6879,7 @@
           "digits": "2"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -6953,7 +6961,7 @@
           "digits": "4"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -7035,7 +7043,7 @@
           "digits": "0"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -7125,7 +7133,7 @@
           "digits": "5432"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -7231,7 +7239,7 @@
           "digits": "4"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -7329,7 +7337,7 @@
           "digits": "6178"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -7411,7 +7419,7 @@
           "digits": "1"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "nishinihon",
@@ -7525,7 +7533,7 @@
           "digits": "4877"
         }
       ],
-      "fetched_at": "2026-10-08T18:58:15.841557+00:00"
+      "fetched_at": "2026-10-12T21:23:09.882168+00:00"
     },
     {
       "game": "numbers3",
