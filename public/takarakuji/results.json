@@ -1,104 +1,15 @@
 {
   "schema_version": 1,
-  "last_attempt": "2026-10-16T16:52:10.217725+00:00",
-  "last_success": "2026-10-16T16:52:10.217725+00:00",
-  "last_complete_success": "2026-10-15T17:16:27.405286+00:00",
-  "sync_status": "partial",
+  "last_attempt": "2026-10-17T15:49:37.271352+00:00",
+  "last_success": "2026-10-17T15:49:37.271352+00:00",
+  "last_complete_success": "2026-10-17T15:49:37.271352+00:00",
+  "sync_status": "ok",
   "seed_note": "数字选择式和地域券均通过官方 CSV 严格校验后自动更新；无法识别的规则不会作未中奖判定。",
-  "errors": [
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto6/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/loto7/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/loto/miniloto/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/bingo/bingo5/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers3/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/numbers/numbers4/index.html",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=zenkoku",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=tokyo",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=kct",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=kinki",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=nishinihon",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/takarakuji/check/tsujyo/top.html?type=chiiki",
-      "error": "官网返回 HTTP 403，没有判定中奖与否"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto7/csv/loto7.csv",
-      "error": "官方 CSV header 异常"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto6/csv/loto6.csv",
-      "error": "官方 CSV 索引缺失、重复或顺序异常"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/loto/miniloto/csv/miniloto.csv",
-      "error": "官方 CSV 索引缺失、重复或顺序异常"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/bingo/bingo5/csv/bingo5.csv",
-      "error": "官方 CSV 索引缺失、重复或顺序异常"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/numbers/csv/numbers.csv",
-      "error": "官方 CSV 索引缺失、重复或顺序异常"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/zenkoku/csv/zenkoku.csv",
-      "error": "地域 CSV header 异常"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/tokyo/csv/tokyo.csv",
-      "error": "地域 CSV header 异常"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/kct/csv/kct.csv",
-      "error": "地域 CSV header 异常"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/nishinihon/csv/nishinihon.csv",
-      "error": "地域 CSV header 异常"
-    },
-    {
-      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/chiiki/csv/chiiki.csv",
-      "error": "地域 CSV header 异常"
-    }
-  ],
+  "errors": [],
   "coverage": {
     "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto7/csv/loto7.csv": {
-      "last_success": "2026-10-15T17:16:27.405286+00:00",
-      "count": 0,
+      "last_success": "2026-10-17T15:49:37.271352+00:00",
+      "count": 1,
       "transport": "r.jina.ai text gateway"
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto6/csv/A1022138.CSV": {
@@ -106,8 +17,8 @@
       "count": 1
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto6/csv/loto6.csv": {
-      "last_success": "2026-10-15T17:16:27.405286+00:00",
-      "count": 1,
+      "last_success": "2026-10-17T15:49:37.271352+00:00",
+      "count": 0,
       "transport": "r.jina.ai text gateway"
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/loto/miniloto/csv/A1011401.CSV": {
@@ -119,7 +30,7 @@
       "count": 1
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/loto/miniloto/csv/miniloto.csv": {
-      "last_success": "2026-10-15T17:16:27.405286+00:00",
+      "last_success": "2026-10-17T15:49:37.271352+00:00",
       "count": 0,
       "transport": "r.jina.ai text gateway"
     },
@@ -132,7 +43,7 @@
       "count": 1
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/bingo/bingo5/csv/bingo5.csv": {
-      "last_success": "2026-10-15T17:16:27.405286+00:00",
+      "last_success": "2026-10-17T15:49:37.271352+00:00",
       "count": 0,
       "transport": "r.jina.ai text gateway"
     },
@@ -141,37 +52,37 @@
       "count": 2
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/numbers/csv/numbers.csv": {
-      "last_success": "2026-10-15T17:16:27.405286+00:00",
+      "last_success": "2026-10-17T15:49:37.271352+00:00",
       "count": 2,
       "transport": "r.jina.ai text gateway"
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/zenkoku/csv/zenkoku.csv": {
-      "last_success": "2026-10-15T17:16:27.405286+00:00",
+      "last_success": "2026-10-17T15:49:37.271352+00:00",
       "count": 16,
       "transport": "r.jina.ai text gateway"
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/tokyo/csv/tokyo.csv": {
-      "last_success": "2026-10-15T17:16:27.405286+00:00",
+      "last_success": "2026-10-17T15:49:37.271352+00:00",
       "count": 18,
       "transport": "r.jina.ai text gateway"
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/kct/csv/kct.csv": {
-      "last_success": "2026-10-15T17:16:27.405286+00:00",
+      "last_success": "2026-10-17T15:49:37.271352+00:00",
       "count": 18,
       "transport": "r.jina.ai text gateway"
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/kinki/csv/kinki.csv": {
-      "last_success": "2026-10-16T16:52:10.217725+00:00",
+      "last_success": "2026-10-17T15:49:37.271352+00:00",
       "count": 18,
       "transport": "r.jina.ai text gateway"
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/nishinihon/csv/nishinihon.csv": {
-      "last_success": "2026-10-15T17:16:27.405286+00:00",
+      "last_success": "2026-10-17T15:49:37.271352+00:00",
       "count": 18,
       "transport": "r.jina.ai text gateway"
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/tsujyo/chiiki/csv/chiiki.csv": {
-      "last_success": "2026-10-15T17:16:27.405286+00:00",
+      "last_success": "2026-10-17T15:49:37.271352+00:00",
       "count": 3,
       "transport": "r.jina.ai text gateway"
     },
@@ -333,6 +244,14 @@
     },
     "https://www.mizuhobank.co.jp/retail/takarakuji/numbers/csv/A1007093.CSV": {
       "last_success": "2026-10-15T17:16:27.405286+00:00",
+      "count": 2
+    },
+    "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto7/csv/A1030699.CSV": {
+      "last_success": "2026-10-17T15:49:37.271352+00:00",
+      "count": 1
+    },
+    "https://www.mizuhobank.co.jp/retail/takarakuji/numbers/csv/A1007094.CSV": {
+      "last_success": "2026-10-17T15:49:37.271352+00:00",
       "count": 2
     }
   },
@@ -880,7 +799,7 @@
           "digits": "9"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "chiiki",
@@ -986,7 +905,7 @@
           "digits": "3"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "chiiki",
@@ -1092,7 +1011,7 @@
           "digits": "176"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -1419,7 +1338,7 @@
           "digits": "1"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -1509,7 +1428,7 @@
           "digits": "5"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -1632,7 +1551,7 @@
           "digits": "8389"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -1730,7 +1649,7 @@
           "digits": "4"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -1852,7 +1771,7 @@
           "digits": "4683"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -1942,7 +1861,7 @@
           "digits": "5"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -2064,7 +1983,7 @@
           "digits": "7685"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -2146,7 +2065,7 @@
           "digits": "1"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -2284,7 +2203,7 @@
           "digits": "0447"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -2382,7 +2301,7 @@
           "digits": "0"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -2481,7 +2400,7 @@
           "digits": "9"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -2571,7 +2490,7 @@
           "digits": "0"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -2661,7 +2580,7 @@
           "digits": "5"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -2767,7 +2686,7 @@
           "digits": "4635"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -2873,7 +2792,7 @@
           "digits": "5"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -2995,7 +2914,7 @@
           "digits": "0260"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -3085,7 +3004,7 @@
           "digits": "8"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kct",
@@ -3215,7 +3134,7 @@
           "digits": "5697"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -3470,7 +3389,7 @@
           "digits": "2"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -3552,7 +3471,7 @@
           "digits": "6"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -3651,7 +3570,7 @@
           "digits": "6714"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -3733,7 +3652,7 @@
           "digits": "5"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -3839,7 +3758,7 @@
           "digits": "2859"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -3921,7 +3840,7 @@
           "digits": "2"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -4019,7 +3938,7 @@
           "digits": "1355"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -4093,7 +4012,7 @@
           "digits": "3"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -4215,7 +4134,7 @@
           "digits": "5618"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -4289,7 +4208,7 @@
           "digits": "8"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -4372,7 +4291,7 @@
           "digits": "9"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -4446,7 +4365,7 @@
           "digits": "0"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -4520,7 +4439,7 @@
           "digits": "9"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -4594,7 +4513,7 @@
           "digits": "9528"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -4676,7 +4595,7 @@
           "digits": "7"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -4782,7 +4701,7 @@
           "digits": "1623"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -4856,7 +4775,7 @@
           "digits": "8"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "kinki",
@@ -4962,7 +4881,7 @@
           "digits": "8850"
         }
       ],
-      "fetched_at": "2026-10-16T16:52:10.217725+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "loto6",
@@ -5570,6 +5489,34 @@
       "fetched_at": "2026-10-13T19:27:45.730581+00:00"
     },
     {
+      "game": "loto7",
+      "draw": 699,
+      "date": "2026-10-16",
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/loto/loto7/csv/A1030699.CSV",
+      "prizes": {
+        "1等": null,
+        "2等": 9688200,
+        "3等": 429200,
+        "4等": 5700,
+        "5等": 1200,
+        "6等": 900
+      },
+      "numbers": [
+        5,
+        6,
+        8,
+        14,
+        15,
+        22,
+        29
+      ],
+      "bonus": [
+        3,
+        16
+      ],
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
+    },
+    {
       "game": "miniloto",
       "draw": 1400,
       "date": "2026-08-18",
@@ -6053,7 +6000,7 @@
           "digits": "4"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -6143,7 +6090,7 @@
           "digits": "4"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -6250,7 +6197,7 @@
           "digits": "8231"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -6340,7 +6287,7 @@
           "digits": "5"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -6470,7 +6417,7 @@
           "digits": "6623"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -6560,7 +6507,7 @@
           "digits": "9"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -6674,7 +6621,7 @@
           "digits": "4550"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -6756,7 +6703,7 @@
           "digits": "0"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -6878,7 +6825,7 @@
           "digits": "7513"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -6960,7 +6907,7 @@
           "digits": "1"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -7051,7 +6998,7 @@
           "digits": "2"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -7133,7 +7080,7 @@
           "digits": "4"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -7215,7 +7162,7 @@
           "digits": "0"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -7305,7 +7252,7 @@
           "digits": "5432"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -7411,7 +7358,7 @@
           "digits": "4"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -7509,7 +7456,7 @@
           "digits": "6178"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -7591,7 +7538,7 @@
           "digits": "1"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "nishinihon",
@@ -7705,7 +7652,7 @@
           "digits": "4877"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "numbers3",
@@ -8203,6 +8150,21 @@
       "fetched_at": "2026-10-15T17:16:27.405286+00:00"
     },
     {
+      "game": "numbers3",
+      "draw": 7094,
+      "date": "2026-10-16",
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/numbers/csv/A1007094.CSV",
+      "prizes": {
+        "straight": 96400,
+        "box": 32100,
+        "set_straight": 64200,
+        "set_box": 16000,
+        "mini": 9600
+      },
+      "number": "011",
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
+    },
+    {
       "game": "numbers4",
       "draw": 7061,
       "date": "2026-09-01",
@@ -8665,6 +8627,20 @@
       "fetched_at": "2026-10-15T17:16:27.405286+00:00"
     },
     {
+      "game": "numbers4",
+      "draw": 7094,
+      "date": "2026-10-16",
+      "source": "https://www.mizuhobank.co.jp/retail/takarakuji/numbers/csv/A1007094.CSV",
+      "prizes": {
+        "straight": 902200,
+        "box": 75100,
+        "set_straight": 488600,
+        "set_box": 37500
+      },
+      "number": "4166",
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
+    },
+    {
       "game": "tokyo",
       "draw": 2629,
       "date": "2025-08-29",
@@ -8941,7 +8917,7 @@
           "digits": "2"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -9023,7 +8999,7 @@
           "digits": "9"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -9122,7 +9098,7 @@
           "digits": "0231"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -9212,7 +9188,7 @@
           "digits": "3"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -9318,7 +9294,7 @@
           "digits": "9934"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -9392,7 +9368,7 @@
           "digits": "6"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -9498,7 +9474,7 @@
           "digits": "4855"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -9572,7 +9548,7 @@
           "digits": "2"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -9702,7 +9678,7 @@
           "digits": "3967"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -9784,7 +9760,7 @@
           "digits": "1"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -9867,7 +9843,7 @@
           "digits": "1"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -9941,7 +9917,7 @@
           "digits": "0"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -10015,7 +9991,7 @@
           "digits": "6"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -10097,7 +10073,7 @@
           "digits": "1123"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -10187,7 +10163,7 @@
           "digits": "7"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -10285,7 +10261,7 @@
           "digits": "2608"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -10359,7 +10335,7 @@
           "digits": "5"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "tokyo",
@@ -10473,7 +10449,7 @@
           "digits": "9139"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -10663,7 +10639,7 @@
           "digits": "9"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -10739,7 +10715,7 @@
           "digits": "6"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -10876,7 +10852,7 @@
           "digits": "0"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -10976,7 +10952,7 @@
           "digits": "3"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -11084,7 +11060,7 @@
           "digits": "1"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -11216,7 +11192,7 @@
           "digits": "1"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -11351,7 +11327,7 @@
           "digits": "6"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -11481,7 +11457,7 @@
           "digits": "0180"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -11600,7 +11576,7 @@
           "digits": "7"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -11736,7 +11712,7 @@
           "digits": "9"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -11868,7 +11844,7 @@
           "digits": "4"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -11936,7 +11912,7 @@
           "digits": "6"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -12003,7 +11979,7 @@
           "digits": "1"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -12062,7 +12038,7 @@
           "digits": "4"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -12168,7 +12144,7 @@
           "digits": "0956"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     },
     {
       "game": "zenkoku",
@@ -12308,7 +12284,7 @@
           "digits": "1"
         }
       ],
-      "fetched_at": "2026-10-15T17:16:27.405286+00:00"
+      "fetched_at": "2026-10-17T15:49:37.271352+00:00"
     }
   ]
 }
